@@ -1,16 +1,75 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+	.slider {
+		@apply relative h-[30vh];
+	}
+	.image {
+		@apply w-[1000rem] h-[180%] rounded;
+	}
+	.right {
+		@apply h-10 absolute top-[50%] right-[32px] z-10 cursor-pointer;
+	}
+	.left {
+		@apply h-10 absolute top-[50%] left-[32px] z-10 cursor-pointer;
+	}
+	.top {
+		@apply top-[50%];
+	}
+	.tp {
+		@apply py-[15px] px-[10px];
+	}
+	.tm {
+		@apply mx-[10px] mb-[10px];
+	}
+	.mh {
+		@apply pt-[140px];
+	}
+	.xm {
+		@apply px-[70px];
+	}
+	.wi {
+		@apply w-[300px];
+	}
+	.yu {
+		@apply pl-[55px];
+	}
+	.tb {
+		@apply py-[15px] px-[60px];
+	}
+	.min {
+		@apply min-h-[200px];
+	}
+	.tbx {
+		@apply pt-[60px] px-[50px] pb-[20px];
+	}
+	.tr {
+		@apply transition-all duration-75 ease-in-out appearance-none;
+	}
+	.lg {
+		@apply pt-[100px] px-[0px] pb-[60px];
+	}
+	.menu {
+		@apply w-[350px] duration-[850ms] top-0 z-30 -left-full bg-white shadow h-[100vh] flex justify-center fixed;
+	}
+	.menu.active{
+		@apply left-0 duration-[350ms];
+	}
+	.pa{
+		@apply py-[8px] pl-[16px];
+	}
+	.he{
+		@apply h-[60px];
+	}
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
-* {
-  box-sizing: border-box;
-}
+@layer custom{
+
+	.widht {
+		width: calc(100% - 300px);
+	}
+}  

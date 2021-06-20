@@ -5,11 +5,20 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build-css": "tailwindcss build styles/globals.css -o public/style.css",
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.1",
     "next": "10.2.3",
+    "pure-react-carousel": "^1.27.6",
     "react": "17.0.2",
+    "react-currency-format": "^1.0.0",
     "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.1",
+    "tailwindcss": "^2.1.4"
   }
 }
