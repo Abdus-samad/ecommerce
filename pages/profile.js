@@ -15,7 +15,7 @@ const profile = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Header />
-			<div className='w-full h-auto tmin-h-screen flex flex-wrap bg-white lg lg:mh lg:xm lg:pb-8'>
+			<div className='w-full h-auto min-h-screen flex flex-wrap bg-white lg lg:mh lg:xm lg:pb-8'>
 				<SideBar />
 				<ProfileForm />
 			</div>

@@ -1,47 +1,43 @@
+import SData from './SData';
+import {useRouter} from 'next/router';
+
 const Sidebar = () => {
-    return (
-        <div>
-            <div className='wi flex-shrink mr-7'>
-					<div className='w-full hidden h-auto lg:flex flex-col flex-shrink bg-white border shadow-2xl'>
-						<div className='flex flex-col w-full py-10'>
-							<div className='flex'>
-								<a className='flex items-center text-black tb'>
-									<span>Your Order</span>
-								</a>
-							</div>
+	const router = useRouter();
 
-							<div className='flex'>
-								<a className='flex items-center text-black tb'>
-									<span>Need Help</span>
-								</a>
-							</div>
+	return (
+		<div>
+			<div className='wi flex-shrink mr-7'>
+				<div className='w-full h-auto lg:flex flex-col flex-shrink bg-white border shadow-2xl'>
+					<ul className='flex flex-col w-full py-10'>
+						<div className='flex'>
+							<li>
+								{SData.map((item, index) => {
+									return (
+										<a
+											key={index}
+											href={item.path}
+											className={`flex items-center hover:text-green-800 tb  ${
+												router.asPath === item.path
+													? 'text-green-800 border-l-4 border-green-800'
+													: 'text-gray-800'
+											}`}>
+											<span>{item.title}</span>
+										</a>
+									);
+								})}
+							</li>
 						</div>
+					</ul>
 
-						<div className='flex flex-col w-full py-10 bg-gray-300'>
-							<div className='flex'>
-								<a className='flex items-center text-green-500 border-l-4 border-green-500 yu'>
-									<span>Profile</span>
-								</a>
-							</div>
-							<a className='border-none text-left cursor-pointer text-gray-800 tb'>Logout</a>
-						</div>
+					<div className='flex flex-col w-full py-10 bg-gray-100'>
+						<a className='border-none text-left cursor-pointer text-gray-800 tb'>
+							Logout
+						</a>
 					</div>
 				</div>
-        </div>
-    )
-}
+			</div>
+		</div>
+	);
+};
 
-export default Sidebar
-// 
-{/* <div className="cursor-pointer">
-<a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black items-center justify-center'>
-	Offer
-</a>
-</div>
-
-<div className='flex justify-center items-center md:col-span-2 lg:col-span-1 lg:col-start-2 cursor-pointer'>
-<button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-Join
-</button>
-</div> 
-*/}
+export default Sidebar;
