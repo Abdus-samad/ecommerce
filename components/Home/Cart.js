@@ -1,19 +1,58 @@
-import { ShoppingCartIcon } from '@heroicons/react/solid'
+import {XIcon} from '@heroicons/react/outline';
+import {ShoppingBagIcon, ShoppingCartIcon} from '@heroicons/react/solid';
 
-
+import {useContext, useState} from 'react';
+import Subtotal from '../Subtotal';
+import CartProduct from './CartProduct';
+import CartContext from '../../context/cartContext';
 
 const Cart = () => {
-    return (
-        <div className='h-auto w-auto right-0 z-90 top -mt-11 flex flex-col items-center justify-center bg-green-600 p-0 rounded-xl shadow-md border-0 cursor-pointer fixed'>
-            <a className='text-sm flex items-center justify-center tp text-white'>
-            <span>
-                <ShoppingCartIcon className='h-5' />
-            </span>
-            0 Item
-            </a>
-            <span className='h-8 w-auto rounded-lg overflow-hidden flex items-center justify-center bg-white text-green-600 tm'>$2.00</span>
-        </div>
-    )
-}
+	const [drawer, setDrawer] = useState(false);
+	const showDrawer = () => setDrawer(!drawer);
 
-export default Cart
+	const cartContext = useContext(CartContext);
+
+	const { cart } = cartContext;
+
+	return (
+		<>
+			<div
+				onClick={showDrawer}
+				className='h-auto w-auto right-0 z-90 top -mt-11 flex flex-col items-center justify-center bg-green-600 p-0 rounded-xl shadow-md border-0 cursor-pointer fixed'>
+				<Subtotal />
+			</div>
+			<div className={drawer ? 'side active' : 'side'}>
+				<div className='w-full h-full flex flex-col rounded bg-white box-content'>
+					<div className=' px-6 py-4 bg-white flex items-center justify-between border-b border-gray-100'>
+						<div className='inline-flex items-center text-green-700'>
+							<ShoppingBagIcon className='h-7 w-5' />
+							{!!cart ? (
+								<span className='text-base font-bold text-green-700 pl-2'>{` ${cart.length} item`}</span>
+							) : (
+								''
+							)}
+						</div>
+						<a className='w-4 h-4 inline-flex items-center justify-center p-0 border-0 outline-none flex-shrink-0 cursor-pointer text-gray-300 transition-all duration-75 bg-transparent'>
+							<XIcon className='h-5' onClick={showDrawer} />
+						</a>
+					</div>
+					<div className='max-h-full w-full h-auto'>
+						<div></div>
+						{cart.map((item) => (
+							<CartProduct
+								id={item.id}
+								title={item.title}
+								image={item.image}
+								price={item.price}
+								rating={item.rating}
+							/>
+						))}
+					</div>
+				</div>
+			</div>
+		</>
+	);
+};
+
+export default Cart;
+

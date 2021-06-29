@@ -58,12 +58,12 @@ const ProfileForm = () => {
 					<div className='box-boder flex-initial px-2'>
 						<h3 className='text-base mb-6 flex items-center text-gray-800 font-semibold'>Contact Number</h3>
 						<div className='flex flex-col lg:flex-row'>
-							<div className='flex-grow flex flex-wrap'>
+							<div className='flex-grow flex flex-wrap '>
 								<a
 								onClick={() => {
 									setOpen(true)
 								}}
-								className='flex-col text-left items-center inline p-4 border border-green-800 bg-white'>
+								className='flex-col text-left flex inline p-4 border border-green-800 bg-white cursor-pointer'>
 								<span className='font-bold mb-1 text-sm'>Primary</span>
 								<span className='text-base font-medium text-gray-800'>08054176385</span>
 								</a>
@@ -72,7 +72,7 @@ const ProfileForm = () => {
 								onClick={() => {
 									setOpen(true)
 								}}
-								className='flex-auto flex-col text-left items-center inline p-4 border border-green-800 bg-white'>
+								className='flex-auto flex-col text-left inline p-4 border border-green-800 bg-white'>
 								<span className='font-bold mb-1 text-sm'>Primary</span>
 								</a>
 								{open && <FormModal close={setOpen}/>}

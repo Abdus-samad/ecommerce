@@ -88,30 +88,34 @@
 	.inline{
 		@apply  rounded px-5 py-4 mb-4 mr-10 relative text-sm font-medium text-gray-900 max-w-[240px] w-full transition-all duration-[0.25s] ease-linear;
 	}
+	.side {
+		@apply w-[420px] bottom-0 z-30 -right-full bg-white shadow h-[100vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
+	}
+	.side.active{
+		@apply right-0 duration-[350ms];
+	}
+	.radius{
+		@apply rounded-[200px] h-[90px] w-[30px];
+	}
+	.size{
+		@apply w-[18px] h-[18px];
+	}
 }
 
 
 /*
-display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    border-radius: 6px;
-    background-color: rgb(247, 247, 247);
-    border: 1px solid rgb(247, 247, 247);
-    text-align: center;
-    padding: 15px 20px;
-    margin-bottom: 15px;
-    margin-right: 15px;
-    position: relative;
-    font-family: Lato, sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    color: rgb(13, 17, 54);
-    line-height: 24px;
-    max-width: 240px;
-    cursor: pointer;
-    width: 100%;
-    transition: all 0.25s ease 0s;
+width: 420px;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    bottom: 0px;
+    right: -450px;
+    z-index: 1010;
+    box-shadow: rgb(0 0 0 / 16%) 0px 21px 36px;
+    transition: all 0.35s ease-in-out 0s;
+}
+
+
 
  */
 

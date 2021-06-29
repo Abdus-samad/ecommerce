@@ -1,35 +1,39 @@
 import React, {useReducer} from 'react';
-import Context from './Context';
+import CartContext from './cartContext';
 import reducer from './reducer';
-import {SPAGE, SUPAGE} from './Types';
+import {ADD_TO_CART, REMOVE_FROM_CART} from './Types';
 
 const State = (props) => {
 	const initialState = {
 		cart: [],
 		user: null,
 	};
+
 	const [state, dispatch] = useReducer(reducer, initialState);
 
-	const SwitchToSignUp = () => {
+	const addToCart = (item) => {
 		dispatch({
-			type: SPAGE,
+			type: ADD_TO_CART,
+			payload: item,
 		});
 	};
-	const SwitchToSignIn = () => {
-        dispatch({
-			type: SUPAGE,
-		});
-    };
-	
-	
+	const removeFromCart = (id) => {
+		dispatch({
+			type: REMOVE_FROM_CART,
+			payload: id,
+
+		})
+	}
+
 	return (
-		<Context.Provider
+		<CartContext.Provider
 			value={{
-				SwitchToSignUp,
-                SwitchToSignIn
+				cart: state.cart,
+				addToCart,
+				removeFromCart
 			}}>
 			{props.children}
-		</Context.Provider>
+		</CartContext.Provider>
 	);
 };
 

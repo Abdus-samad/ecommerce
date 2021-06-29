@@ -28,8 +28,8 @@ const Header = () => {
 						/>
 					</a>
 				</Link>
-				<form className='hidden lg:flex flex-grow px-6 py-3 mx-8 border border-gray-200 bg-gray-200 rounded max-w-lg items-center'>
-					<SearchIcon className='h-6 text-blue-500  sm:inline-flex' />
+				<form className='hidden  lg:flex flex-grow px-6 py-3 mx-8 border border-gray-200 bg-gray-200 rounded max-w-lg items-center'>
+					<SearchIcon className='h-6 text-gray-500  sm:inline-flex' />
 					<input
 						className=' flex-grow ml-4 w-full bg-gray-200 focus:outline-none'
 						type='text'

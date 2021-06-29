@@ -1,6 +1,6 @@
 const FormModal = ({close}) => {
 	return (
-		<div className=''>
+		<div className='z-10'>
 			<div className=''>
 				<button onClick={() => close(false)}>X</button>
 				<div className=''>
