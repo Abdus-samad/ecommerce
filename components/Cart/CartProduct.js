@@ -2,7 +2,7 @@ import {MinusIcon, PlusIcon, XIcon} from '@heroicons/react/outline';
 import Image from 'next/image';
 import {useContext} from 'react';
 import CurrencyFormat from 'react-currency-format';
-import CartContext from '../../context/cartContext';
+import CartContext from '../../context/Cart/cartContext';
 
 const CartProduct = ({id, image, price, name, count}) => {
 	const cartContext = useContext(CartContext);
@@ -19,14 +19,13 @@ const CartProduct = ({id, image, price, name, count}) => {
 		return product.count;
 	};
 
+	const productTotal = () => Number(price) * count
+
 	const remove = () => {
 		removeFromCart(id);
 	};
-	const getCartTotal = (cart) =>
-		cart?.reduce(
-			(amount, item) => Number(item.price * item.count) + amount,
-			0
-		);
+	
+
 	return (
 		<div className='text-base font-bold border-b border-gray-100 flex items-center py-8 px-6'>
 			<div className='flex text-base radius justify-between items-center overflow-hidden flex-shrink-0 flex-col-reverse bg-gray-200'>
@@ -40,13 +39,13 @@ const CartProduct = ({id, image, price, name, count}) => {
 			</div>
 			<img src={image} alt='' className='w-16 h-16 object-cover mx-4' />
 			<div className='flex flex-col ml-4'>
-				<span className='leading-3 text-gray-800'>{(name, count)}</span>
+				<span className='leading-3 text-gray-800'>{name}</span>
 				<span className='my-3 text-green-700'>${price}</span>
 			</div>
 			<CurrencyFormat
 				renderText={(value) => <span className='ml-auto'>{value}</span>}
 				decimalScale={2}
-				value={getCartTotal(cart) || '0.00'}
+				value={productTotal() || '0.00'}
 				displayType={'text'}
 				thousandSeparator={true}
 				prefix={'$'}

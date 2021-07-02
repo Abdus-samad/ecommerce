@@ -100,41 +100,26 @@
 	.size{
 		@apply w-[18px] h-[18px];
 	}
-}
-
-
-/*
-width: 420px;
-    height: 100vh;
-    background-color: rgb(255, 255, 255);
-    position: fixed;
-    bottom: 0px;
-    right: -450px;
-    z-index: 1010;
-    box-shadow: rgb(0 0 0 / 16%) 0px 21px 36px;
-    transition: all 0.35s ease-in-out 0s;
-}
-
-
-
- */
-
-@layer custom{
-
-		@media only screen and (min-width: 0em) and (max-width: 47.99em){
-
-			.hdxRDm {
-				margin-bottom: 20px;
-			}
-		}
-
-@media only screen and (min-width: 0em){
-
-	.hh {
-		flex-basis: 100%;
-		max-width: 100%;
-		display: block;
-	} 
-}
-
+	.body{
+		@apply lg:pt-[20px] lg:pb-[60px] pt-[60px];
 	}
+	.imgspace{
+		@apply pt-[30px] px-[25px] pb-[60px] lg:p-[60px] flex w-[50%] relative justify-center items-center;
+	}
+	.max{
+		@apply max-h-[450px];
+	}
+	.slide{
+		@apply flex-auto relative w-[566px];
+	}
+	.text{
+		@apply w-[50%] border-l border-gray-300 py-[55px] px-[60px];
+	}
+	.width{
+		@apply pb-[100px]
+	}
+}
+
+
+
+

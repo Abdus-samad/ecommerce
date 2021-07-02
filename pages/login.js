@@ -1,7 +1,7 @@
-import LoginForm from '../components/Modals/LoginForm';
-import SignUp from '../components/Modals/SignUp';
+import LoginForm from '../components/Auth/LoginForm';
+import SignUp from '../components/Auth/SignUp';
 import {useState} from 'react';
-import {loginContext} from '../components/Modals/loginContext';
+import {loginContext} from '../components/Auth/loginContext';
 import Head from 'next/head';
 
 const login = () => {

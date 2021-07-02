@@ -1,12 +1,12 @@
 import React, {useReducer} from 'react';
 import CartContext from './cartContext';
-import reducer from './reducer';
-import {ADD_TO_CART, REMOVE_FROM_CART} from './Types';
+import reducer from './cartReducer';
+import {ADD_TO_CART, FILTER_PRODUCT, REMOVE_FROM_CART} from '../Types';
 
-const State = (props) => {
+const CartState = (props) => {
 	const initialState = {
 		cart: [],
-		user: null,
+		filter: null,
 	};
 
 	const [state, dispatch] = useReducer(reducer, initialState);
@@ -21,20 +21,27 @@ const State = (props) => {
 		dispatch({
 			type: REMOVE_FROM_CART,
 			payload: id,
+		});
+	};
 
-		})
-	}
+	const filterProduct = (Tag) => {
+		dispatch({
+			type: FILTER_PRODUCT,
+			payload: Tag,
+		});
+	};
 
 	return (
 		<CartContext.Provider
 			value={{
 				cart: state.cart,
+				filter: state.filter,
 				addToCart,
-				removeFromCart
+				removeFromCart,
 			}}>
 			{props.children}
 		</CartContext.Provider>
 	);
 };
 
-export default State;
+export default CartState;

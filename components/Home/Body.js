@@ -1,7 +1,7 @@
 import React from 'react';
 import Side from './Side';
-import ImageSlider from './ImageSlider'
-import Cart from './Cart'
+import ImageSlider from '../Reuseables/ImageSlider'
+import Cart from '../Cart/Cart'
 import Product from './Product'
 
 const Body = () => {

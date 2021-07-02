@@ -1,4 +1,4 @@
-import {ADD_TO_CART, REMOVE_FROM_CART} from './Types';
+import {ADD_TO_CART, FILTER_PRODUCT, REMOVE_FROM_CART} from '../Types';
 
 const reducer = (state, action) => {
 	switch (action.type) {
@@ -45,6 +45,17 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				cart: newCart.length ? newCart : [],
+			};
+
+		case FILTER_PRODUCT:
+			return {
+				...state,
+				filter: state.cart.filter((cart) => {
+					const regex = new RegExp(`${action.payload}`, 'gi');
+					return (
+						cart.Tag.match(regex)
+					);
+				}),
 			};
 	}
 };

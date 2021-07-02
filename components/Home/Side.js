@@ -3,86 +3,86 @@ import {EmojiHappyIcon} from '@heroicons/react/outline';
 const Side = () => {
 	return (
 		<div>
-			<div className='lg:grid hidden grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2'>
-				<div className='card m-2 p-3 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
-					<div className='m-3 flex flex-col items-center'>
+			<div className='lg:grid hidden grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-3'>
+				<div className='bg-white text-center py-4 px-2 rounded cursor-pointer border-2 border-white'>
+					<div className='flex justify-center items-center h-20 py-3 px-5 box-border'>
 						<EmojiHappyIcon className='h-10 w-10 mb-3' />
-						<p className='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
-							Friut & <br /> vegetable
-						</p>
 					</div>
+					<p className='font-semibold text-sm text-gray-700'>
+						Friut & vegetable
+					</p>
 				</div>
-				<div className='card m-2 p-3 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
-					<div className='m-3 flex flex-col items-center'>
+				<div className='bg-white text-center py-4 px-2 rounded cursor-pointer border-2 border-white'>
+					<div className='flex justify-center items-center h-20 py-3 px-5 box-border'>
 						<EmojiHappyIcon className='h-10 w-10 mb-3' />
-						<p className='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
-							Friut & <br /> vegetable
-						</p>
 					</div>
+					<p className='font-semibold text-sm text-gray-700'>
+						Friut & vegetable
+					</p>
 				</div>
-				<div className='card m-2 p-3 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
-					<div className='m-3 flex flex-col items-center'>
+				<div className='bg-white text-center py-4 px-2 rounded cursor-pointer border-2 border-white'>
+					<div className='flex justify-center items-center h-20 py-3 px-5 box-border'>
 						<EmojiHappyIcon className='h-10 w-10 mb-3' />
-						<p className='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
-							Friut & <br /> vegetable
-						</p>
 					</div>
+					<p className='font-semibold text-sm text-gray-700'>
+						Friut & vegetable
+					</p>
 				</div>
-				<div className='card m-2 p-3 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
-					<div className='m-3 flex flex-col items-center'>
+				<div className='bg-white text-center py-4 px-2 rounded cursor-pointer border-2 border-white'>
+					<div className='flex justify-center items-center h-20 py-3 px-5 box-border'>
 						<EmojiHappyIcon className='h-10 w-10 mb-3' />
-						<p className='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
-							Friut & <br /> vegetable
-						</p>
 					</div>
+					<p className='font-semibold text-sm text-gray-700'>
+						Friut & vegetable
+					</p>
 				</div>
-				<div className='card m-2 p-3 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
-					<div className='m-3 flex flex-col items-center'>
+				<div className='bg-white text-center py-4 px-2 rounded cursor-pointer border-2 border-white'>
+					<div className='flex justify-center items-center h-20 py-3 px-5 box-border'>
 						<EmojiHappyIcon className='h-10 w-10 mb-3' />
-						<p className='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
-							Friut & <br /> vegetable
-						</p>
 					</div>
+					<p className='font-semibold text-sm text-gray-700'>
+						Friut & vegetable
+					</p>
 				</div>
-				<div className='card m-2 p-3 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
-					<div className='m-3 flex flex-col items-center'>
+				<div className='bg-white text-center py-4 px-2 rounded cursor-pointer border-2 border-white'>
+					<div className='flex justify-center items-center h-20 py-3 px-5 box-border'>
 						<EmojiHappyIcon className='h-10 w-10 mb-3' />
-						<p className='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
-							Friut & <br /> vegetable
-						</p>
 					</div>
+					<p className='font-semibold text-sm text-gray-700'>
+						Friut & vegetable
+					</p>
 				</div>
-				<div className='card m-2 p-3 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
-					<div className='m-3 flex flex-col items-center'>
+				<div className='bg-white text-center py-4 px-2 rounded cursor-pointer border-2 border-white'>
+					<div className='flex justify-center items-center h-20 py-3 px-5 box-border'>
 						<EmojiHappyIcon className='h-10 w-10 mb-3' />
-						<p className='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
-							Friut & <br /> vegetable
-						</p>
 					</div>
+					<p className='font-semibold text-sm text-gray-700'>
+						Friut & vegetable
+					</p>
 				</div>
-				<div className='card m-2 p-3 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
-					<div className='m-3 flex flex-col items-center'>
+				<div className='bg-white text-center py-4 px-2 rounded cursor-pointer border-2 border-white'>
+					<div className='flex justify-center items-center h-20 py-3 px-5 box-border'>
 						<EmojiHappyIcon className='h-10 w-10 mb-3' />
-						<p className='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
-							Friut & <br /> vegetable
-						</p>
 					</div>
+					<p className='font-semibold text-sm text-gray-700'>
+						Friut & vegetable
+					</p>
 				</div>
-				<div className='card m-2 p-3 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
-					<div className='m-3 flex flex-col items-center'>
+				<div className='bg-white text-center py-4 px-2 rounded cursor-pointer border-2 border-white'>
+					<div className='flex justify-center items-center h-20 py-3 px-5 box-border'>
 						<EmojiHappyIcon className='h-10 w-10 mb-3' />
-						<p className='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
-							Friut & <br /> vegetable
-						</p>
 					</div>
+					<p className='font-semibold text-sm text-gray-700'>
+						Friut & vegetable
+					</p>
 				</div>
-				<div className='card m-2 p-3 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
-					<div className='m-3 flex flex-col items-center'>
+				<div className='bg-white text-center py-4 px-2 rounded cursor-pointer border-2 border-white'>
+					<div className='flex justify-center items-center h-20 py-3 px-5 box-border'>
 						<EmojiHappyIcon className='h-10 w-10 mb-3' />
-						<p className='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
-							Friut & <br /> vegetable
-						</p>
 					</div>
+					<p className='font-semibold text-sm text-gray-700'>
+						Friut & vegetable
+					</p>
 				</div>
 			</div>
 		</div>

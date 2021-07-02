@@ -1,5 +1,5 @@
 import ProductOption from './ProductOption'
-import PaginationButtons from './Pagination'
+import PaginationButtons from '../Reuseables/Pagination'
 
 const Product = () => {
     return (

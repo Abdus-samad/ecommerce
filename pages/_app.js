@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
-import State from '../context/State';
+import State from '../context/Cart/CartState';
 
 function MyApp({Component, pageProps}) {
 	return (
