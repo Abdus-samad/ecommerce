@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Header from '../components/Reuseables/Header'
-import SideBar from '../components/Profile/Sidebar'
-import ProfileForm from '../components/Profile/ProfileForm'
+import Header from '../components/Reuseables/Header';
+import SideBar from '../components/Profile/Sidebar';
+import ProfileForm from '../components/Profile/ProfileForm';
 
 const profile = () => {
 	return (

@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Header from '../components/Sidebar/Header'
-import SideBar from '../components/profile/Sidebar'
+import Header from '../components/Reuseables/Header'
+import SideBar from '../components/Profile/Sidebar'
 
 const order = () => {
     return (
