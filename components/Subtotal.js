@@ -1,11 +1,9 @@
 import CurrencyFormat from 'react-currency-format';
 import CartContext from '../context/Cart/cartContext';
 import React, {useContext} from 'react';
-import {useRouter} from 'next/router';
 import {ShoppingCartIcon} from '@heroicons/react/solid';
 
 const Subtotal = () => {
-	const router = useRouter();
 	const cartContext = useContext(CartContext);
 	const {cart} = cartContext;
 
@@ -23,7 +21,7 @@ const Subtotal = () => {
 							</span>
 							{cart.length} items
 						</a>
-						<span className='h-8 w-auto rounded-lg overflow-hidden flex items-center justify-center bg-white text-green-600 tm'>
+						<span className='h-8 w-auto rounded overflow-hidden inline-flex bor items-center justify-center bg-white text-green-600 tm'>
 							{value}
 						</span>
 					</>
@@ -39,3 +37,4 @@ const Subtotal = () => {
 };
 
 export default Subtotal;
+

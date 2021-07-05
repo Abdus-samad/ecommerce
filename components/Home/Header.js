@@ -52,11 +52,11 @@ const Header = () => {
 						</a>
 					</Link>
 					<a href='/login'>
-						<a
+						<button
 							style={{width: '100%'}}
 							className='px-8 text-sm tr flex-shrink-0 text-center h-10 cursor-pointer text-white bg-green-600 hover:bg-green-700 rounded-md flex items-center justify-center'>
 							Join
-						</a>
+						</button>
 					</a>
 				</div>
 			</div>

@@ -3,6 +3,7 @@ import Side from './Side';
 import ImageSlider from '../Reuseables/ImageSlider'
 import Cart from '../Cart/Cart'
 import Product from './Product'
+import BottomCart from '../Cart/BottomCart';
 
 const Body = () => {
     return (
@@ -12,6 +13,7 @@ const Body = () => {
           <ImageSlider />
           <Product /> 
           <Cart />
+          <BottomCart />
         </div>
         </div>
     );

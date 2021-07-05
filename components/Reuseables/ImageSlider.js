@@ -22,7 +22,7 @@ const ImageSlider = () => {
 				</Slide>
 				<Slide index={1}>
 					{' '}
-					<Image src='/Hero-Two.jpg' width={1500} height={350} />
+					<Image src='/Hero-Two.jpg' width={1500} height={350} className='image' />
 				</Slide>
 			</Slider>
 			<ButtonNext className='right bg-white flex h-9 w-9 items-center justify-center shadow rounded-full border-none'>

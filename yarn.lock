@@ -2099,6 +2099,11 @@ react-modal@^3.14.3:
     react-lifecycles-compat "^3.0.0"
     warning "^4.0.3"
 
+react-multi-carousel@^2.6.3:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/react-multi-carousel/-/react-multi-carousel-2.6.3.tgz#9ec39110de17feb6075cb134d046ae2e02df6b98"
+  integrity sha512-fCe+I1BlhTUyNHm/fh3bWavDo8UzoolTd/zrKao/wvb/XFf9dvesfNOawx7ukAzptiHOQhGCWZiNao+J76Byfw==
+
 react-refresh@0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"

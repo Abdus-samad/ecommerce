@@ -1,34 +1,31 @@
-import { useContext } from 'react';
+import { useContext } from "react";
+import CartContext from "../../context/Cart/cartContext";
 import {MinusIcon, PlusIcon} from '@heroicons/react/outline';
-import CartContext from '../../context/Cart/cartContext';
-import Link from 'next/link';
 
-const ProductOption = ({id, image, price, name, count, Tag}) => {
-	
+
+
+const Related = ({id, image, price, name, count}) => {
 	const cartContext = useContext(CartContext);
 
 	const {addToCart, cart, removeFromCart} = cartContext;
 
 	const cartObject = () => {
-		addToCart({id, image, price, name, count, Tag});
+		addToCart({id, image, price, name, count});
 	};
 
+	console.log(cartObject);
 	const cartProductCount = (id) => {
 		const product = cart.find((item) => item.id === id);
 		if (!product) return 0;
 		return product.count;
 	};
-
 	const remove = () => {
 		removeFromCart(id);
 	};
-
 	return (
 		<div className='flex flex-col flex-grow card p-8 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
 			<div className='relative flex items-center justify-center overflow-hidden flex-grow'>
-				<Link href='/product/[id]' as={`/product/${cart.name}`}>
 					<img src={image} className='max-w-full max-h-full h-auto' />
-				</Link>
 			</div>
 			<div className='box-border  '>
 				<div className='flex items-center mb-3'>
@@ -72,4 +69,4 @@ const ProductOption = ({id, image, price, name, count, Tag}) => {
 	);
 };
 
-export default ProductOption;
+export default Related;

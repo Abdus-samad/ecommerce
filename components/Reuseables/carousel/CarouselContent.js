@@ -2,11 +2,11 @@ import ImageData from './ImageData';
 
 const CarouselContent = (props) => {
 	return (
-		<div
+		<ul
 			className='flex-row flex'
 		>
 			{ImageData.map((slide, index) => (
-				<div
+				<li
 					key={index}
 					className={
 						index === props.activeIndex ? 'slide active' : 'slide'
@@ -22,9 +22,9 @@ const CarouselContent = (props) => {
 							margin: 'auto',
 						}}
 					/>
-				</div>
+				</li>
 			))}
-		</div>
+		</ul>
 	);
 };
 

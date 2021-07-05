@@ -9,15 +9,11 @@ const Carousel = () => {
 	const [activeIndex, setActiveIndex] = useState(0);
 	return (
 		<>
-			<div>
 				<CarouselContent activeIndex={activeIndex} />
-			</div>
-			<div className='absolute bottom-0 flex justify-center left-0 top-60 text-center'>
 				<Dot
 					activeIndex={activeIndex}
 					onClick={(activeIndex) => setActiveIndex(activeIndex)}
 				/>
-			</div>
 		</>
 	);
 };
