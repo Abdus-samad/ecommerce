@@ -1,0 +1,16 @@
+.scrollbar::-webkit-scrollbar {
+    width: 4px;
+    cursor: pointer;
+    /*background-color: rgba(229, 231, 235, var(--bg-opacity));*/
+
+}
+.scrollbar::-webkit-scrollbar-track {
+    background-color: rgba(229, 231, 235, var(--bg-opacity));
+    cursor: pointer;
+    /*background: red;*/
+}
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background-color: #9aabc0;
+    /*outline: 1px solid slategrey;*/
+}

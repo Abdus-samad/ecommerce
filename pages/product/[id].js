@@ -3,12 +3,12 @@ import {ShoppingCartIcon} from '@heroicons/react/solid';
 import {useContext, useState} from 'react';
 import CartContext from '../../context/Cart/cartContext';
 import Cart from '../../components/Cart/Cart';
-import Detail from '../../components/homeProduct/Detail';
-import Carousel from '../../components/Reuseables/carousel/Carousel';
+import Detail from '../../components/Products/Detail';
+import Carousel from '../../components/Reuseables/carousel/CarouselC';
 
 import Header from '../../components/Reuseables/Header';
-import Related from '../../components/homeProduct/Related';
-import Option from '../../components/homeProduct/Option';
+import Related from '../../components/Products/Related';
+import Option from '../../components/Products/Option';
 
 const ProductDetail = ({id, image, price, name, count}) => {
 	const cartContext = useContext(CartContext);
@@ -35,9 +35,9 @@ const ProductDetail = ({id, image, price, name, count}) => {
 				<div className='w-full'>
 					<div className='bg-white relative flex flex-wrap items-stretch box-border'>
 						<div className='max-w-full imgspace'>
-							<div className='flex relative items-center overflow-hidden width '>
+							
 								<Carousel />
-							</div>
+							
 						</div>
 						{Detail.map((item, index) => {
 							return (

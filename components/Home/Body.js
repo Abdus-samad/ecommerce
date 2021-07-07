@@ -1,22 +1,24 @@
 import React from 'react';
-import Side from './Side';
-import ImageSlider from '../Reuseables/ImageSlider'
-import Cart from '../Cart/Cart'
-import Product from './Product'
+import Side from '../Side/Side';
+import ImageSlider from '../Banner/ImageSlider';
+import Cart from '../Cart/Cart';
+import Product from './Product';
 import BottomCart from '../Cart/BottomCart';
 
 const Body = () => {
-    return (
-        <div className='grid gap-7 lg:grid-flow-col p-3'>
-            <Side />
-        <div className='mt-2'>
-          <ImageSlider />
-          <Product /> 
-          <Cart />
-          <BottomCart />
-        </div>
-        </div>
-    );
-}
+	return (
+		<div className='grocery'>
+			<Side />
+			<main>
+				<ImageSlider />
+				<section>
+					<Product />
+				</section>
+			</main>
+			<Cart />
+			<BottomCart />
+		</div>
+	);
+};
 
 export default Body;

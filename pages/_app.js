@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '../styles/Style.css'
 import 'tailwindcss/tailwind.css';
 import State from '../context/Cart/CartState';
 

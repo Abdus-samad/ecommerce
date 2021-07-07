@@ -7,6 +7,7 @@ const CartState = (props) => {
 	const initialState = {
 		cart: [],
 		filter: null,
+		loading: false
 	};
 
 	const [state, dispatch] = useReducer(reducer, initialState);

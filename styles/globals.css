@@ -2,19 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
-	.slider {
-		@apply relative h-[30vh] ;
+	.Image {
+		@apply relative min-h-[180px];
 	}
-	.image {
-		@apply w-full h-full;
+	.img {
+		@apply w-full h-full object-left object-cover lg:h-full;
 	}
-	.right {
-		@apply h-10 absolute top-[50%] right-[32px] z-10 cursor-pointer;
+	.next{
+		@apply right-5;
 	}
-	.left {
-		@apply h-10 absolute top-[50%] left-[32px] z-10 cursor-pointer;
+	.prev{
+		@apply left-5;
+	}
+	.grocery {
+		@apply lg:pt-[20px] lg:px-[2rem] grid-cols-sm md:grid-cols-sm lg:pb-[10px] grid lg:grid-cols-gr gap-[30px] pt-[68px] pb-[100px] min-h-screen md:pt-[68px] md:pb-[50px];
+	}
+	.Nav {
+		@apply w-[30px] h-[30px] top-[50%] flex items-center font-bold justify-center  bg-white shadow rounded-full absolute -mt-4 z-10;
 	}
 	.top {
 		@apply top-[50%];
@@ -55,88 +60,89 @@
 	.menu {
 		@apply w-[300px] duration-[850ms] top-0 z-30 -left-full bg-white shadow h-[100vh] flex justify-center fixed;
 	}
-	.menu.active{
+	.menu.active {
 		@apply left-0 duration-[350ms];
 	}
-	.pa{
+	.pa {
 		@apply py-[8px] pl-[16px];
 	}
-	.he{
+	.he {
 		@apply h-[60px];
 	}
-	.pf{
+	.pf {
 		@apply py-[5px] px-[45px];
 	}
-	.t{
-		@apply w-full p-[20px] ;
+	.t {
+		@apply w-full p-[20px];
 	}
-	.wh{
+	.wh {
 		@apply w-[500px] h-[500px] p-[25px];
 	}
-	.m{
+	.m {
 		@apply min-w-[200px] min-h-[200px];
 	}
-	.padding{
+	.padding {
 		@apply pt-[2px] px-[30px];
 	}
-	.wrapper{
-		@apply max-h-[600px] w-[458px] left-[100.5px] top-[32.5px] h-auto absolute lg:top-[30px] lg:left-[454px] ;
+	.wrapper {
+		@apply max-h-[600px] w-[458px] left-[100.5px] top-[32.5px] h-auto absolute lg:top-[30px] lg:left-[454px];
 	}
-	.da{
+	.da {
 		@apply pt-[20px] px-[30px];
 	}
-	.inline{
-		@apply  rounded px-5 py-4 mb-4 mr-10 relative text-sm font-medium text-gray-900 max-w-[240px] w-full transition-all duration-[0.25s] ease-linear;
+	.inline {
+		@apply rounded px-5 py-4 mb-4 mr-10 relative text-sm font-medium text-gray-900 max-w-[240px] w-full transition-all duration-[0.25s] ease-linear;
 	}
 	.side {
 		@apply w-[420px] bottom-0 z-30 -right-full bg-white shadow h-[100vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
 	}
-	.side.active{
+	.side.active {
 		@apply right-0 duration-[350ms];
 	}
-	.radius{
+	.radius {
 		@apply rounded-[200px] h-[90px] w-[30px];
 	}
-	.size{
+	.size {
 		@apply w-[18px] h-[18px];
 	}
-	.body{
+	.body {
 		@apply lg:pt-[20px] lg:pb-[60px] pt-[60px];
 	}
-	.imgspace{
+	.imgspace {
 		@apply pt-[30px] px-[25px] pb-[60px] lg:p-[60px] flex w-[50%] relative justify-center items-center;
 	}
-	.max{
+	.max {
 		@apply max-h-[450px];
 	}
-	.slide{
+	.slide {
 		@apply flex-auto relative w-[566px];
 	}
-	.text{
+	.text {
 		@apply w-[50%] border-l border-gray-300 py-[55px] px-[60px];
 	}
-	.width{
-		@apply pb-[100px]
+	.width {
+		@apply pb-[100px];
 	}
-	.bor{
+	.bor {
 		@apply min-w-[80px];
 	}
 	.bottom {
-		@apply w-full right-0 z-50 -bottom-full bg-white shadow h-[80vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out ;
+		@apply w-full right-0 z-50 -bottom-full bg-white shadow h-[80vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
 	}
-	.bottom.active{
+	.bottom.active {
 		@apply bottom-0 duration-[350ms];
 	}
-	.outline{
+	.outline {
 		@apply outline-none border-[0px] appearance-none right-[70px] bottom-[30px]  rounded-[60px];
 	}
-	.dot{
+	.dot {
 		@apply border border-gray-200 mr-5 w-[70px] h-auto rounded;
 	}
-	.dot.active{
-		@apply border-2 border-green-700
+	.dot.active {
+		@apply border-2 border-green-700;
 	}
-	.inactive{
+	.inactive {
 		@apply transition duration-300 ease-in-out transform-gpu translate-x-5;
 	}
 }
+

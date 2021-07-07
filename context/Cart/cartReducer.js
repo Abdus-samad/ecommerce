@@ -18,6 +18,7 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				cart: [...state.cart, action.payload],
+				loading: false
 			};
 
 		case REMOVE_FROM_CART:
@@ -45,6 +46,7 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				cart: newCart.length ? newCart : [],
+				loading: false
 			};
 
 		case FILTER_PRODUCT:
