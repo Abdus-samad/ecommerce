@@ -1,13 +1,16 @@
 import '../styles/globals.css';
-import '../styles/Style.css'
+import '../styles/Style.css';
 import 'tailwindcss/tailwind.css';
-import State from '../context/Cart/CartState';
+import CartState from '../context/Cart/CartState';
+import ProductState from '../context/Product/ProductState';
 
 function MyApp({Component, pageProps}) {
 	return (
-		<State>
-			<Component {...pageProps} />
-		</State>
+		<CartState>
+			<ProductState>
+				<Component {...pageProps} />
+			</ProductState>
+		</CartState>
 	);
 }
 

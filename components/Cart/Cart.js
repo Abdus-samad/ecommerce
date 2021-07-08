@@ -59,7 +59,7 @@ const Cart = () => {
 									key={item.id}
 									id={item.id}
 									name={item.name}
-									image={item.image}
+									images={item.images}
 									price={item.price}
 									rating={item.rating}
 									count={item.count}

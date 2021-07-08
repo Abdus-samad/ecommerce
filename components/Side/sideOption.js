@@ -11,61 +11,61 @@ import Snack from '../Icon/Snack';
 
 const Data = [
 	{
-		Tag: 'Fruits & Vegetables',
+		category: 'Fruits & Vegetables',
 		icon: (
 			<Fruit />
 		),
 	},
 	{
-		Tag: 'Meat & Fish',
+		category: 'Meat & Fish',
 		icon: (
 		<Meat />
 		),
 	},
 	{
-		Tag: 'Snack',
+		category: 'Snack',
 		icon: (
 		<Snack />
 		),
 	},
 	{
-		Tag: 'PetCare',
+		category: 'PetCare',
 		icon: (
 		<Pet />
 		),
 	},
 	{
-		Tag: 'Home & Cleaning',
+		category: 'Home & Cleaning',
 		icon: (
 		<Home />
 		),
 	},
 	{
-		Tag: 'Dairy',
+		category: 'Dairy',
 		icon: (
 		<Dairy />
 		),
 	},
 	{
-		Tag: 'Cooking',
+		category: 'Cooking',
 		icon: (
 			<Cooking />
 		),
 	},
 	{
-		Tag: 'BreakFast',
+		category: 'BreakFast',
 		icon: (
 		<BreakFast />
 		),
 	},
 	{
-		Tag: 'Beverage',
+		category: 'Beverage',
 		icon: (
 		<Beverage />
 		),
 	},
 	{
-		Tag: 'Beauty & Health',
+		category: 'Beauty & Health',
 		icon: (
 		<Health />
 		),

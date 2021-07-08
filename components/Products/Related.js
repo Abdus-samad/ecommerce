@@ -4,7 +4,7 @@ import {MinusIcon, PlusIcon} from '@heroicons/react/outline';
 
 
 
-const Related = ({id, image, price, name, count}) => {
+const Related = ({id, images, price, name, count}) => {
 	const cartContext = useContext(CartContext);
 
 	const {addToCart, cart, removeFromCart} = cartContext;
@@ -13,7 +13,6 @@ const Related = ({id, image, price, name, count}) => {
 		addToCart({id, image, price, name, count});
 	};
 
-	console.log(cartObject);
 	const cartProductCount = (id) => {
 		const product = cart.find((item) => item.id === id);
 		if (!product) return 0;
@@ -25,7 +24,7 @@ const Related = ({id, image, price, name, count}) => {
 	return (
 		<div className='flex flex-col flex-grow card p-8 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
 			<div className='relative flex items-center justify-center overflow-hidden flex-grow'>
-					<img src={image} className='max-w-full max-h-full h-auto' />
+					<img src={images[0]} className='max-w-full max-h-full h-auto' />
 			</div>
 			<div className='box-border  '>
 				<div className='flex items-center mb-3'>

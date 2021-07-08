@@ -1,16 +1,20 @@
 import { useContext } from 'react';
 import {MinusIcon, PlusIcon} from '@heroicons/react/outline';
 import CartContext from '../../context/Cart/cartContext';
+import ProductContext from '../../context/Product/productContext';
 import Link from 'next/link';
 
-const ProductOption = ({id, image, price, name, count, Tag}) => {
+const ProductOption = ({id, images, price, name, count}) => {
 	
+	const productContext = useContext(ProductContext);
+	const { products } = productContext;
+
 	const cartContext = useContext(CartContext);
 
 	const {addToCart, cart, removeFromCart} = cartContext;
 
 	const cartObject = () => {
-		addToCart({id, image, price, name, count, Tag});
+		addToCart({id, image, price, name, count});
 	};
 
 	const cartProductCount = (id) => {
@@ -23,11 +27,13 @@ const ProductOption = ({id, image, price, name, count, Tag}) => {
 		removeFromCart(id);
 	};
 
+
 	return (
+		
 		<div className='flex flex-col flex-grow card p-8 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
 			<div className='relative flex items-center justify-center overflow-hidden flex-grow'>
-				<Link href='/product/[id]' as={`/product/${cart.name}`}>
-					<img src={image} className='max-w-full max-h-full h-auto' />
+				<Link href='/product/[id]' as={`/product/${id}`}>
+					<img src={images[0]} className='max-w-full max-h-full h-auto' />
 				</Link>
 			</div>
 			<div className='box-border  '>

@@ -4,13 +4,13 @@ import {useContext} from 'react';
 import CurrencyFormat from 'react-currency-format';
 import CartContext from '../../context/Cart/cartContext';
 
-const CartProduct = ({id, image, price, name, count}) => {
+const CartProduct = ({id, images, price, name, count}) => {
 	const cartContext = useContext(CartContext);
 
 	const {addToCart, cart, removeFromCart} = cartContext;
 
 	const cartObject = () => {
-		addToCart({id, image, price, name, count});
+		addToCart({id, images, price, name, count});
 	};
 
 	const cartProductCount = (id) => {
@@ -37,7 +37,7 @@ const CartProduct = ({id, image, price, name, count}) => {
 					<PlusIcon className='size' onClick={() => cartObject()} />
 				</a>
 			</div>
-			<img src={image} alt='' className='w-16 h-16 object-cover mx-4' />
+			<img src={images[0]} alt='' className='w-16 h-16 object-cover mx-4' />
 			<div className='flex flex-col ml-4'>
 				<span className='leading-3 text-gray-800'>{name}</span>
 				<span className='my-3 text-green-700'>${price}</span>
