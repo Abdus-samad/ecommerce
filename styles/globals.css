@@ -90,7 +90,7 @@
 		@apply lg:pt-[0px] lg:pb-[60px] pt-[10px];
 	}
 	.imgspace {
-		@apply pt-[30px] px-[25px] pb-[60px] lg:p-[60px] flex lg:w-[50%] relative justify-center items-center;
+		@apply pt-[30px] px-[25px] pb-[60px] lg:p-[60px] flex w-[50%] relative justify-center items-center;
 	}
 	.max {
 		@apply max-h-[450px];
@@ -118,7 +118,7 @@
 
 	/* Single page */
 	.text {
-		@apply lg:w-[50%] border-l border-gray-300 lg:py-[55px] lg:px-[60px] flex-1 max-w-full py-[30px] px-[25px];
+		@apply w-[50%] border-l border-gray-300 lg:py-[55px] lg:px-[60px] flex-1 max-w-full py-[30px] px-[25px];
 	}
 	/* Carousel */
 	.carImg {
@@ -152,7 +152,7 @@
 
 	/* Drawer s */
 	.bottom {
-		@apply w-full right-0 z-[200]  -bottom-full bg-white shadow h-[90vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
+		@apply w-full right-0 z-[200]  -bottom-full bg-white shadow h-[70vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
 	}
 	.bottom.active {
 		@apply bottom-0 duration-[350ms];
