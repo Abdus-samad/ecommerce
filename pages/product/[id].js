@@ -57,7 +57,7 @@ const ProductDetail = () => {
 						<div className='max-w-full flex-1 imgspace'>
 							{product && <Carousel images={product.images} />}
 						</div>
-						<div className='text  break-words'>
+						<div className='text break-words'>
 							<div className='w-full items-start justify-start mb-3'>
 								<h1 className='text-3xl font-semibold flex'>
 									{product ? product.name : ''}

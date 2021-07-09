@@ -38,7 +38,7 @@
 	.tb {
 		@apply py-[10px] px-[60px];
 	}
-	
+
 	.form {
 		@apply pt-[60px] px-[50px] pb-[20px];
 	}
@@ -59,7 +59,7 @@
 		@apply py-[5px] px-[45px];
 	}
 	.proContainer {
-	@apply w-full p-[20px] lg:min-h-[200px] lg:pt-[60px] lg:px-[50px] lg:pb-[20px];
+		@apply w-full p-[20px] lg:min-h-[200px] lg:pt-[60px] lg:px-[50px] lg:pb-[20px];
 	}
 	.wh {
 		@apply w-[500px] h-[500px] p-[25px];
@@ -90,7 +90,7 @@
 		@apply lg:pt-[0px] lg:pb-[60px] pt-[10px];
 	}
 	.imgspace {
-		@apply pt-[30px] px-[25px] pb-[60px] lg:p-[60px] flex w-[50%] relative justify-center items-center;
+		@apply pt-[30px] px-[25px] pb-[60px] lg:p-[60px] flex lg:w-[50%] relative justify-center items-center;
 	}
 	.max {
 		@apply max-h-[450px];
@@ -98,7 +98,7 @@
 	.slide {
 		@apply flex-auto relative w-[566px];
 	}
-	
+
 	.width {
 		@apply pb-[100px];
 	}
@@ -106,21 +106,19 @@
 		@apply min-w-[80px];
 	}
 
-
 	/* bottom Cart*/
 
 	.outline {
 		@apply outline-none border-[0px] appearance-none right-[50px] bottom-[30px]  rounded-[60px];
 	}
-	
+
 	.custom {
 		@apply pb-[100px];
 	}
 
-
 	/* Single page */
 	.text {
-		@apply w-[50%] border-l border-gray-300 lg:py-[55px] lg:px-[60px] flex-1 max-w-full py-[30px] px-[25px];
+		@apply lg:w-[50%] border-l border-gray-300 lg:py-[55px] lg:px-[60px] flex-1 max-w-full py-[30px] px-[25px];
 	}
 	/* Carousel */
 	.carImg {
