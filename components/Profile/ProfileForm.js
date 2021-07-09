@@ -7,7 +7,7 @@ const ProfileForm = () => {
 
 	return (
 		<div
-			className='p-5 h-auto min lg:w-auto t flex lg:flex-col lg:tbx lg:border lg:border-gray-300'>
+			className='p-5 h-auto lg:w-calc proContainer flex lg:flex-col lg:form lg:border lg:border-gray-300'>
 			<div className='flex flex-col w-full'>
 				<div className='w-full flex items-center justify-between mb-6'>
 					<h3 className='text-xl font-semibold text-gray-800'>
@@ -49,7 +49,7 @@ const ProfileForm = () => {
 					<div className='box-border lg:flex-grow-0 flex-shrink-0 lg:px-2'>
 						<a
 							style={{width: '100%'}}
-							className='mt-8 px-8 text-sm tr flex-shrink-0 text-center h-12 cursor-pointer text-white bg-green-600 hover:bg-green-700 rounded-md flex items-center justify-center'>
+							className='mt-8 px-8 text-sm formBtn flex-shrink-0 text-center h-12 cursor-pointer text-white bg-green-600 hover:bg-green-700 rounded-md flex items-center justify-center'>
 							Save
 						</a>
 					</div>
@@ -63,7 +63,7 @@ const ProfileForm = () => {
 								onClick={() => {
 									setOpen(true)
 								}}
-								className='flex-col text-left flex inline p-4 border border-green-800 bg-white cursor-pointer'>
+								className='flex-col text-left flex line p-4 border border-green-800 bg-white cursor-pointer'>
 								<span className='font-bold mb-1 text-sm'>Primary</span>
 								<span className='text-base font-medium text-gray-800'>08054176385</span>
 								</a>
@@ -72,7 +72,7 @@ const ProfileForm = () => {
 								onClick={() => {
 									setOpen(true)
 								}}
-								className='flex-auto flex-col text-left inline p-4 border border-green-800 bg-white'>
+								className='flex-auto flex-col text-left line p-4 border border-green-800 bg-white'>
 								<span className='font-bold mb-1 text-sm'>Primary</span>
 								</a>
 								{open && <FormModal close={setOpen}/>}

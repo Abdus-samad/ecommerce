@@ -1,8 +1,23 @@
 import Head from 'next/head'
 import Header from '../components/Home/Header'
 import Home from '../components/Home/Body'
+import Topfiltered from '../components/Side/Topfiltered'
+import { useState } from 'react';
+import BackDrop from '../components/Drawer/BackDrop';
+import FilterDrawer from '../components/Side/FilterDrawer';
+
 
 export default function Index() {
+
+  const [drawer, setDrawer] = useState(false);
+
+	const showDrawer = () => setDrawer(!drawer);
+
+	let backdrop
+
+	if (drawer){
+		backdrop = <BackDrop showDrawer={showDrawer} />
+	}
   return (
     <div>
       <Head>
@@ -11,6 +26,9 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header/>
+      <Topfiltered showDrawer={showDrawer}/>
+      <FilterDrawer  drawer={drawer} showDrawer={showDrawer}/>
+      {backdrop}
       <div className='bg-gray-100'>
       <Home/>
       </div>

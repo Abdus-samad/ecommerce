@@ -1,20 +1,17 @@
 import { useContext } from 'react';
 import {MinusIcon, PlusIcon} from '@heroicons/react/outline';
 import CartContext from '../../context/Cart/cartContext';
-import ProductContext from '../../context/Product/productContext';
 import Link from 'next/link';
 
 const ProductOption = ({id, images, price, name, count}) => {
-	
-	const productContext = useContext(ProductContext);
-	const { products } = productContext;
+
 
 	const cartContext = useContext(CartContext);
 
 	const {addToCart, cart, removeFromCart} = cartContext;
 
 	const cartObject = () => {
-		addToCart({id, image, price, name, count});
+		addToCart({id, images, price, name, count});
 	};
 
 	const cartProductCount = (id) => {

@@ -5,7 +5,7 @@ import {useContext, useState} from 'react';
 import CartContext from '../../context/Cart/cartContext';
 import ProductContext from '../../context/Product/productContext';
 import Cart from '../../components/Cart/Cart';
-import Carousel from '../../components/Reuseables/carousel/Carousel';
+import Carousel from '../../components/carousel/Carousel';
 import Header from '../../components/Reuseables/Header';
 import Option from '../../components/Products/Option';
 import {useRouter} from 'next/router';
@@ -54,10 +54,10 @@ const ProductDetail = () => {
 			<div className='body relative bg-gray-200'>
 				<div className='w-full'>
 					<div className='bg-white relative flex flex-wrap items-stretch box-border'>
-						<div className='max-w-full rex imgspace'>
+						<div className='max-w-full flex-1 imgspace'>
 							{product && <Carousel images={product.images} />}
 						</div>
-						<div className='text dex break-words'>
+						<div className='text  break-words'>
 							<div className='w-full items-start justify-start mb-3'>
 								<h1 className='text-3xl font-semibold flex'>
 									{product ? product.name : ''}

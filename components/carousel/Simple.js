@@ -18,12 +18,6 @@ const responsive = {
 		paritialVisibilityGutter: 30,
 	},
 };
-// const images = [
-// 	'/Fruit-2.jpg',
-// 	'/Fruit-2.jpg',
-// 	'/Fruit-2.jpg',
-// 	'/Fruit-2.jpg',
-// ];
 
 const CustomDot = ({index, onClick, active, images}) => {
 	return (
@@ -77,7 +71,7 @@ const Simple = ({deviceType, images}) => {
 								position: 'relative',
 								margin: 'auto',
 							}}
-							className='product-image'
+							className='carImg'
 							src={image}
 						/>
 					</div>

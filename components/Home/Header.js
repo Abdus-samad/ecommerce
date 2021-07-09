@@ -1,7 +1,7 @@
 import {MenuIcon, SearchIcon} from '@heroicons/react/outline';
 import {XIcon} from '@heroicons/react/solid';
 import {useState} from 'react';
-import Data from '../Sidebar/data';
+import Data from '../Drawer/data';
 import Image from 'next/image';
 import {QuestionMarkCircleIcon} from '@heroicons/react/solid';
 import Link from 'next/link';
@@ -21,9 +21,9 @@ const Header = () => {
 				<Link href='/'>
 					<a className='inline-flex items-center p-2 ml-8'>
 						<Image
-							src='/download.svg'
+							src='/cover.png'
 							width={120}
-							height={40}
+							height={50}
 							className='cursor-pointer'
 						/>
 					</a>

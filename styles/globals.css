@@ -2,19 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* display: block;
+    max-width: 100%;
+    max-height: 450px;
+    height: auto; */
+
 @layer components {
-	.Image {
-		@apply relative min-h-[180px];
-	}
-	.img {
-		@apply w-full h-full object-left object-cover lg:h-full;
-	}
-	.next{
-		@apply right-5;
-	}
-	.prev{
-		@apply left-5;
-	}
 	.grocery {
 		@apply lg:pt-[20px] lg:px-[2rem] grid-cols-sm md:grid-cols-sm lg:pb-[10px] grid lg:grid-cols-gr gap-[30px] pt-[68px] pb-[100px] min-h-screen md:pt-[68px] md:pb-[50px];
 	}
@@ -45,24 +38,17 @@
 	.tb {
 		@apply py-[10px] px-[60px];
 	}
-	.min {
-		@apply min-h-[200px];
-	}
-	.tbx {
+	
+	.form {
 		@apply pt-[60px] px-[50px] pb-[20px];
 	}
-	.tr {
+	.fromBtn {
 		@apply transition-all duration-75 ease-in-out appearance-none;
 	}
 	.lg {
 		@apply pt-[100px] px-[0px] pb-[60px];
 	}
-	.menu {
-		@apply w-[300px] duration-[850ms] top-0 z-30 -left-full bg-white shadow h-[100vh] flex justify-center fixed;
-	}
-	.menu.active {
-		@apply left-0 duration-[350ms];
-	}
+
 	.pa {
 		@apply py-[8px] pl-[16px];
 	}
@@ -72,8 +58,8 @@
 	.pf {
 		@apply py-[5px] px-[45px];
 	}
-	.t {
-		@apply w-full p-[20px];
+	.proContainer {
+	@apply w-full p-[20px] lg:min-h-[200px] lg:pt-[60px] lg:px-[50px] lg:pb-[20px];
 	}
 	.wh {
 		@apply w-[500px] h-[500px] p-[25px];
@@ -90,15 +76,10 @@
 	.da {
 		@apply pt-[20px] px-[30px];
 	}
-	.inline {
+	.line {
 		@apply rounded px-5 py-4 mb-4 mr-10 relative text-sm font-medium text-gray-900 max-w-[240px] w-full transition-all duration-[0.25s] ease-linear;
 	}
-	.side {
-		@apply w-[420px] bottom-0 z-30 -right-full bg-white shadow h-[100vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
-	}
-	.side.active {
-		@apply right-0 duration-[350ms];
-	}
+
 	.radius {
 		@apply rounded-[200px] h-[90px] w-[30px];
 	}
@@ -109,7 +90,7 @@
 		@apply lg:pt-[0px] lg:pb-[60px] pt-[10px];
 	}
 	.imgspace {
-		@apply pt-[30px] px-[25px] pb-[60px] lg:p-[60px] flex w-[50%]  relative justify-center items-center;
+		@apply pt-[30px] px-[25px] pb-[60px] lg:p-[60px] flex w-[50%] relative justify-center items-center;
 	}
 	.max {
 		@apply max-h-[450px];
@@ -117,23 +98,45 @@
 	.slide {
 		@apply flex-auto relative w-[566px];
 	}
-	.text {
-		@apply w-[50%] border-l border-gray-300 lg:py-[55px] lg:px-[60px];
-	}
+	
 	.width {
 		@apply pb-[100px];
 	}
 	.bor {
 		@apply min-w-[80px];
 	}
-	.bottom {
-		@apply w-full right-0 z-50 -bottom-full bg-white shadow h-[80vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
-	}
-	.bottom.active {
-		@apply bottom-0 duration-[350ms];
-	}
+
+
+	/* bottom Cart*/
+
 	.outline {
-		@apply outline-none border-[0px] appearance-none right-[70px] bottom-[30px]  rounded-[60px];
+		@apply outline-none border-[0px] appearance-none right-[50px] bottom-[30px]  rounded-[60px];
+	}
+	
+	.custom {
+		@apply pb-[100px];
+	}
+
+
+	/* Single page */
+	.text {
+		@apply w-[50%] border-l border-gray-300 lg:py-[55px] lg:px-[60px] flex-1 max-w-full py-[30px] px-[25px];
+	}
+	/* Carousel */
+	.carImg {
+		@apply block max-w-full max-h-[450px] h-auto;
+	}
+	.Image {
+		@apply relative min-h-[180px];
+	}
+	.img {
+		@apply w-full h-full object-left object-cover lg:h-full;
+	}
+	.next {
+		@apply right-5;
+	}
+	.prev {
+		@apply left-5;
 	}
 	.dot {
 		@apply border border-gray-300 mr-5 w-[70px] h-auto rounded;
@@ -141,11 +144,37 @@
 	.dot.active {
 		@apply border-2 border-green-700;
 	}
-	.inactive {
-		@apply transition duration-300 ease-in-out transform-gpu translate-x-5;
+	/* Filter */
+	.sidebar {
+		@apply bg-white text-center py-4 px-2 rounded cursor-pointer border-2 border-white;
 	}
-	.custom{
-		@apply pb-[100px];
+	.sidebar.active {
+		@apply border-2 border-gray-900;
+	}
+
+	/* Drawer s */
+	.bottom {
+		@apply w-full right-0 z-[200]  -bottom-full bg-white shadow h-[90vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
+	}
+	.bottom.active {
+		@apply bottom-0 duration-[350ms];
+	}
+	.filter {
+		@apply w-full right-0 z-[200] p-8  -bottom-full bg-white shadow h-[70vh] flex justify-center fixed transition-all rounded-3xl  duration-[.35s] ease-in-out;
+	}
+	.filter.active {
+		@apply bottom-0 duration-[350ms];
+	}
+	.side {
+		@apply w-[420px] bottom-0 z-30 -right-full bg-white shadow h-[100vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
+	}
+	.side.active {
+		@apply right-0 duration-[350ms];
+	}
+	.menu {
+		@apply w-[300px] duration-[850ms] top-0 z-[200] -left-full bg-white shadow h-[100vh] flex justify-center fixed;
+	}
+	.menu.active {
+		@apply left-0 duration-[350ms];
 	}
 }
-
