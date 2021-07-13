@@ -39,3 +39,39 @@
 		order: 1;
 	}
 }
+@media (max-width: 0em) {
+	.basis {
+		flex-basis: 100%;
+	}
+}
+@media (min-width: 75em) {
+	.ex {
+		flex-basis: 41.6667%;
+		max-width: 41.6667%;
+		display: block;
+	}
+	.ce {
+		flex-basis: 16.6667%;
+		max-width: 16.6667%;
+		display: block;
+	}
+	.dp {
+		flex-basis: 100%;
+		max-width: 100%;
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 48em) {
+	.dp {
+		flex-basis: 100%;
+		max-width: 100%;
+		display: block;
+	}
+}
+
+
+.nb:hover .btn {
+    opacity: 1;
+    visibility: visible;
+}

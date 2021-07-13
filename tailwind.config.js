@@ -14,9 +14,16 @@ module.exports = {
 			flex: {
 				1: '0 0 100%',
 				2: '1 1 100%',
+				flow: 'row wrap',
+				3: '1 1 calc(33.3333% - 10px)',
+				4: '0 0 auto'
+
 			},
 			width: {
 				calc: 'calc(100% - 330px)',
+			},
+			maxWidth: {
+				4: 'calc(33.3333% - 10px)',
 			},
 		},
 	},

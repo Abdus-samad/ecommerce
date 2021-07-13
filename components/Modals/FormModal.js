@@ -1,17 +1,19 @@
-const FormModal = ({close}) => {
-	return (
-		<div className='z-10'>
-			<div className=''>
-				<button onClick={() => close(false)}>X</button>
-				<div className=''>
-					<h1>Are you</h1>
-				</div>
-				<div className=''>
-					<p className=''>hgdsvhfvhdhfvshjyhgjvcdgycvjcdbcujsvbdujbfwkwbholn</p>
-				</div>
-			</div>
-		</div>
-	);
-};
+import React, { useState } from 'react';
+import { CenterModal, ModalTitle, ModalCloseTarget } from 'react-spring-modal';
 
-export default FormModal;
+export function Center() {
+  const [isOpen, setOpen] = useState(false);
+  return (
+    <>
+      <button onClick={() => setOpen(true)}>Open center modal</button>
+      <CenterModal isOpen={isOpen} onDismiss={() => setOpen(false)}>
+        <ModalTitle>My Center Modal</ModalTitle>
+        <ModalCloseTarget>
+          <button>Close</button>
+        </ModalCloseTarget>
+      </CenterModal>
+    </>
+  );
+}
+
+import 'react-spring-modal/styles.css';

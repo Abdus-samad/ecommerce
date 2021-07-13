@@ -29,22 +29,11 @@
 	.xm {
 		@apply px-[70px];
 	}
-	.wi {
-		@apply w-[300px];
-	}
+
 	.yu {
 		@apply pl-[55px];
 	}
-	.tb {
-		@apply py-[10px] px-[60px];
-	}
 
-	.form {
-		@apply pt-[60px] px-[50px] pb-[20px];
-	}
-	.fromBtn {
-		@apply transition-all duration-75 ease-in-out appearance-none;
-	}
 	.lg {
 		@apply pt-[100px] px-[0px] pb-[60px];
 	}
@@ -58,9 +47,7 @@
 	.pf {
 		@apply py-[5px] px-[45px];
 	}
-	.proContainer {
-		@apply w-full p-[20px] lg:min-h-[200px] lg:pt-[60px] lg:px-[50px] lg:pb-[20px];
-	}
+
 	.wh {
 		@apply w-[500px] h-[500px] p-[25px];
 	}
@@ -86,12 +73,7 @@
 	.size {
 		@apply w-[18px] h-[18px];
 	}
-	.body {
-		@apply lg:pt-[0px] lg:pb-[60px] pt-[10px];
-	}
-	.imgspace {
-		@apply lg:p-[60px] flex lg:w-[50%] relative justify-center items-center;
-	}
+
 	.max {
 		@apply max-h-[450px];
 	}
@@ -99,6 +81,9 @@
 		@apply flex-auto relative w-[566px];
 	}
 
+	.outline {
+		@apply outline-none border-[0px] appearance-none right-[50px] bottom-[30px]  rounded-[60px];
+	}
 	.width {
 		@apply pb-[100px];
 	}
@@ -106,19 +91,68 @@
 		@apply min-w-[80px];
 	}
 
-	/* bottom Cart*/
-
-	.outline {
-		@apply outline-none border-[0px] appearance-none right-[50px] bottom-[30px]  rounded-[60px];
+	/* Profile */
+	.proSide {
+		@apply w-[300px];
 	}
 
+	.proLog {
+		@apply py-[10px] px-[60px];
+	}
+	.proContainer {
+		@apply w-full lg:min-h-[200px] lg:pt-[60px] lg:px-[50px] lg:pb-[20px] flex lg:flex-col lg:border lg:border-gray-300 p-5 h-auto lg:w-calc;
+	}
+	.form {
+		@apply w-full px-[18px] text-base border border-gray-100 rounded transition-all duration-75 bg-gray-100 h-[48px];
+	}
+
+	.formBtn {
+		@apply px-[30px] w-full text-base text-white font-bold cursor-pointer bg-green-600 rounded flex items-center justify-center flex-shrink-0 text-center h-[48px] transition-all duration-75 ease-in-out appearance-none;
+	}
+
+	.formContent {
+		@apply mb-[20px] max-w-full lg:px-[0.5em] lg:flex-auto;
+	}
+	.formContainer {
+		@apply box-border flex flex-initial flex-col lg:flex-row -mx-2;
+	}
+	.label{
+		@apply flex-3 max-w-4 mb-[15px] ;
+	}
+	.contact-1 {
+		@apply inline-flex flex-col text-left p-[15px] items-start rounded bg-white border border-green-600 mr-[15px] relative text-base font-normal w-full cursor-pointer;
+	}
+	.contact-2 {
+		@apply  inline-flex flex-col text-left p-[15px] items-start rounded bg-gray-100 border border-gray-100 mr-[15px] relative text-base font-normal w-full cursor-pointer;
+	}
+	.contactBtn {
+		@apply flex items-center justify-center w-[20px] h-[20px] rounded-[50%] ml-[5px] cursor-pointer text-white;
+	}
+	.wrap{
+		@apply absolute top-[10px] right-[10px] flex items-center opacity-0 transition-all duration-[0.25s] ease-in-out;
+	}
+	.button{
+		@apply flex-3 max-w-4 h-auto min-h-[77px] border border-dashed border-gray-100 mb-[15px] mr-auto hover:border-green-700;
+	}
+	.add{
+		@apply px-[30px] text-base font-bold cursor-pointer transition-all duration-[0.3s] flex items-center justify-center flex-shrink-0 text-center rounded-[6px] text-green-600;
+	}
+	.card{
+		@apply px-4 cursor-pointer transition-all duration-75 ease rounded flex items-center justify-center text-center;
+	}
 	.custom {
 		@apply pb-[100px];
 	}
 
 	/* Single page */
 	.text {
-		@apply lg:w-[50%] border-l border-gray-300 lg:py-[55px] lg:px-[60px] py-[30px] px-[25px];
+		@apply lg:w-[50%] border-l border-gray-300 lg:py-[55px] lg:px-[60px];
+	}
+	.imgspace {
+		@apply lg:p-[60px] flex lg:w-[50%] relative justify-center items-center;
+	}
+	.body {
+		@apply pt-[3px] lg:pb-[60px];
 	}
 	/* Carousel */
 	.carImg {

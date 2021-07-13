@@ -1,13 +1,11 @@
-import { useState } from 'react';
-import FormModal from '../Modals/FormModal'
-
-
+import {useState} from 'react';
+import FormModal from '../Modals/FormModal';
+import {PencilIcon, XIcon, PlusIcon } from '@heroicons/react/solid';
 const ProfileForm = () => {
-	const [open, setOpen] = useState(false)
+	const [open, setOpen] = useState(false);
 
 	return (
-		<div
-			className='p-5 h-auto lg:w-calc proContainer flex lg:flex-col lg:form lg:border lg:border-gray-300'>
+		<div className='proContainer '>
 			<div className='flex flex-col w-full'>
 				<div className='w-full flex items-center justify-between mb-6'>
 					<h3 className='text-xl font-semibold text-gray-800'>
@@ -15,12 +13,12 @@ const ProfileForm = () => {
 					</h3>
 				</div>
 				<div
-					className=' lg:mb-10 box-border -mx-2 lg:flex-initial flex-wrap flex-col lg:flex-row '
+					className='  '
 					style={{
 						marginBottom: '50px',
 						display: 'flex',
 					}}>
-					<div className='box-border lg:flex-grow-0 flex-shrink-0 lg:px-2'>
+					<div className='formContent basis'>
 						<label className='font-bold text-sm text-gray-800 leading-4 mb-4 flex'>
 							Name
 						</label>
@@ -29,11 +27,11 @@ const ProfileForm = () => {
 							label='Name'
 							name='name'
 							height='48px'
-							className='block w-full px-5 border-solid border-gray-100 h-12 text-sm rounded-md text-gray-800 bg-gray-200'
+							className='block form'
 							value='Alex Hunter'
 						/>
 					</div>
-					<div className='box-border lg:flex-grow-0 flex-shrink-0 lg:px-2'>
+					<div className='formContent basis ex'>
 						<label className='font-bold text-sm text-gray-800 leading-4 mb-4 flex'>
 							Email
 						</label>
@@ -42,43 +40,125 @@ const ProfileForm = () => {
 							label='Name'
 							name='name'
 							height='48px'
-							className='block w-full px-5 border-solid border-gray-100 h-12 text-sm rounded-md text-gray-800 bg-gray-200'
+							className='block form'
 							value='alexh@gmail'
 						/>
 					</div>
-					<div className='box-border lg:flex-grow-0 flex-shrink-0 lg:px-2'>
-						<a
-							style={{width: '100%'}}
-							className='mt-8 px-8 text-sm formBtn flex-shrink-0 text-center h-12 cursor-pointer text-white bg-green-600 hover:bg-green-700 rounded-md flex items-center justify-center'>
+					<div className='formContent basis ce ex'>
+						<a style={{width: '100%'}} className='formBtn mt-8'>
 							Save
 						</a>
 					</div>
 				</div>
 				<div className='mb-10 box-border -mx-2 flex-initial flex-wrap flex-row'>
-					<div className='box-boder flex-initial px-2'>
-						<h3 className='text-base mb-6 flex items-center text-gray-800 font-semibold'>Contact Number</h3>
-						<div className='flex flex-col lg:flex-row'>
-							<div className='flex-grow flex flex-wrap '>
-								<a
-								onClick={() => {
-									setOpen(true)
-								}}
-								className='flex-col text-left flex line p-4 border border-green-800 bg-white cursor-pointer'>
-								<span className='font-bold mb-1 text-sm'>Primary</span>
-								<span className='text-base font-medium text-gray-800'>08054176385</span>
-								</a>
-								{open && <FormModal close={setOpen}/>}
-								<a
-								onClick={() => {
-									setOpen(true)
-								}}
-								className='flex-auto flex-col text-left line p-4 border border-green-800 bg-white'>
-								<span className='font-bold mb-1 text-sm'>Primary</span>
-								</a>
-								{open && <FormModal close={setOpen}/>}
+					<div className='box-boder flex-4 px-2 dp'>
+						<h3 className='text-base mb-6 flex items-center text-gray-800 font-semibold'>
+							Contact Number
+						</h3>
+						<div className='flex flex-col'>
+							<div className='flex-grow flex flex-wrap justify-between'>
+								<label className='contact-1 label nb'>
+									<span className='text-sm font-bold text-gray-800 mb-1'>
+										Primary
+									</span>
+									<span className='text-base font-normal text-gray-600'>
+										09090463445
+									</span>
+									<span className='btn wrap'>
+										<span className='contactBtn bg-green-600'>
+											<PencilIcon className='h-4' />{' '}
+										</span>
+										<span className='contactBtn bg-red-500'>
+											<XIcon className='h-4' />{' '}
+										</span>
+									</span>
+								</label>
+								<label className='contact-2 label nb'>
+									<span className='text-sm font-bold text-gray-800 mb-1'>
+										Secondary
+									</span>
+									<span className='text-base font-normal text-gray-600'>
+										08077436736
+									</span>
+									<span className='btn wrap'>
+										<span className='contactBtn bg-green-600'>
+											<PencilIcon className='h-4' />{' '}
+										</span>
+										<span className='contactBtn bg-red-500'>
+											<XIcon className='h-4' />{' '}
+										</span>
+									</span>
+								</label>
+								<button className='button add'>
+									Add Contact
+								</button>
 							</div>
 						</div>
 					</div>
+				</div>
+				<div className='mb-10 box-border -mx-2 flex-initial flex-wrap flex-row'>
+					<div className='box-boder flex-4 px-2 dp relative'>
+						<h3 className='text-base mb-6 flex items-center text-gray-800 font-semibold'>
+							Delivery Address
+						</h3>
+						<div className='flex flex-col'>
+							<div className='flex-grow flex flex-wrap justify-between'>
+								<label className='contact-1 label nb'>
+									<span className='text-sm font-bold text-gray-800 mb-1'>
+										Home
+									</span>
+									<span className='text-base font-normal text-gray-600'>
+										27 Street, 2569 Heritage Road Visalia,
+										CA 93291
+									</span>
+									<span className='btn wrap'>
+										<span className='contactBtn bg-green-600'>
+											<PencilIcon className='h-4' />{' '}
+										</span>
+										<span className='contactBtn bg-red-500'>
+											<XIcon className='h-4' />{' '}
+										</span>
+									</span>
+								</label>
+								<label className='contact-2 label nb'>
+									<span className='text-sm font-bold text-gray-800 mb-1'>
+										Office
+									</span>
+									<span className='text-base font-normal text-gray-600'>
+										33 Baker Street, Crescent Road, CA 65746
+									</span>
+									<span className='btn wrap'>
+										<span className='contactBtn bg-green-600'>
+											<PencilIcon className='h-4' />{' '}
+										</span>
+										<span className='contactBtn bg-red-500'>
+											<XIcon className='h-4' />{' '}
+										</span>
+									</span>
+								</label>
+								<button className='button add'>
+									Add Address
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className='mb-10 box-border -mx-2 flex-initial flex-wrap flex-row'>
+					<div className='box-boder flex-4 px-2 dp relative'>
+					<h3 className='text-base mb-6 flex items-center text-gray-800 font-semibold'>
+							Payment Option
+					</h3>
+					<header className='flex justify-between items-center -mt-4'>
+						<span className='text-sm font-bold text-green-600 block'>Saved Cards</span>
+						<a className='text-sm font-bold text-green-600 h-10 card'>
+							<span className='mr-2'><PlusIcon className='h-4' /> </span>
+							Add Cards
+						</a>
+					</header>
+					<div className='mt-4 -mx-3 relative'>
+						
+					</div>
+					</div> 
 				</div>
 			</div>
 		</div>
@@ -86,10 +166,11 @@ const ProfileForm = () => {
 };
 
 export default ProfileForm;
-/*
-font-family: Lato, sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    color: rgb(66, 69, 97);
+
+/**
+margin-top: 15px;
+    margin-left: -10px;
+    margin-right: -10px;
+    position: relative;
 
  */

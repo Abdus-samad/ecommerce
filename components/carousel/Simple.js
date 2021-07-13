@@ -3,19 +3,25 @@ import React from 'react';
 
 const responsive = {
 	desktop: {
-		breakpoint: {max: 3000, min: 1024},
+		breakpoint: {
+			max: 3000,
+			min: 1024,
+		},
 		items: 1,
-		paritialVisibilityGutter: 60,
-	},
-	tablet: {
-		breakpoint: {max: 1024, min: 464},
-		items: 1,
-		paritialVisibilityGutter: 50,
 	},
 	mobile: {
-		breakpoint: {max: 464, min: 0},
+		breakpoint: {
+			max: 464,
+			min: 0,
+		},
 		items: 1,
-		paritialVisibilityGutter: 30,
+	},
+	tablet: {
+		breakpoint: {
+			max: 1024,
+			min: 200,
+		},
+		items: 1,
 	},
 };
 
@@ -46,7 +52,14 @@ const CustomDot = ({index, onClick, active, images}) => {
 	);
 };
 
-const Simple = ({deviceType, images}) => {
+const Simple = ({deviceType: {mobile, tablet, desktop}, images}) => {
+	let deviceType = 'desktop';
+	if (mobile) {
+		deviceType = 'mobile';
+	}
+	if (tablet) {
+		deviceType = 'tablet';
+	}
 	return (
 		<Carousel
 			showDots

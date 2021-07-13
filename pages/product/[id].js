@@ -10,10 +10,23 @@ import Header from '../../components/Reuseables/Header';
 import Option from '../../components/Products/Option';
 import {useRouter} from 'next/router';
 import Spinner from '../../components/Spinner';
+import Drawer from '../../components/Drawer/Drawer';
+import BackDrop from '../../components/Drawer/BackDrop';
 
 const ProductDetail = () => {
-	const router = useRouter();
+	//  Drawer
+	const [drawer, setDrawer] = useState(false);
 
+	const showDrawer = () => setDrawer(!drawer);
+
+	let backdrop;
+
+	if (drawer) {
+		backdrop = <BackDrop showDrawer={showDrawer} />;
+	}
+
+	//  Product
+	const router = useRouter();
 	const {id} = router.query;
 
 	const productContext = useContext(ProductContext);
@@ -25,6 +38,7 @@ const ProductDetail = () => {
 
 	const product = products.find((product) => product.id === id);
 
+	// Cart
 	const cartContext = useContext(CartContext);
 	const {addToCart, cart, removeFromCart} = cartContext;
 
@@ -50,7 +64,9 @@ const ProductDetail = () => {
 
 	return (
 		<>
-			<Header />
+			<Header showDrawer={showDrawer} />
+			<Drawer drawer={drawer} showDrawer={showDrawer} />
+			{backdrop}
 			<div className='body relative bg-gray-200'>
 				<div className='w-full'>
 					<div className='bg-white relative flex flex-wrap items-stretch box-border'>
@@ -123,7 +139,7 @@ const ProductDetail = () => {
 					</div>
 				</div>
 			</div>
-			<Cart />
+			{/* <Cart /> */}
 		</>
 	);
 };
