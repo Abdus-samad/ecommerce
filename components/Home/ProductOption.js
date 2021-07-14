@@ -24,16 +24,15 @@ const ProductOption = ({id, images, price, name, count}) => {
 		removeFromCart(id);
 	};
 
-
 	return (
-		
-		<div className='flex flex-col flex-grow card p-8 cursor-pointer border border-gray-100 bg-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
+	
+		<div className='flex flex-col flex-grow rounded-md border border-gray-100 bg-white cursor-pointer hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
 			<div className='relative flex items-center justify-center overflow-hidden flex-grow'>
 				<Link href='/product/[id]' as={`/product/${id}`}>
 					<img src={images[0]} className='max-w-full max-h-full h-auto' />
 				</Link>
 			</div>
-			<div className='box-border  '>
+			<div className='box-border px-5 pb-5 '>
 				<div className='flex items-center mb-3'>
 					<span className='text-gray-800 text-lg font-semibold'>
 						${price}

@@ -140,10 +140,13 @@
 	.card{
 		@apply px-4 cursor-pointer transition-all duration-75 ease rounded flex items-center justify-center text-center;
 	}
+	.span{
+		@apply text-base font-bold text-gray-900;
+	}
 	.custom {
 		@apply pb-[100px];
 	}
-
+	
 	/* Single page */
 	.text {
 		@apply lg:w-[50%] border-l border-gray-300 lg:py-[55px] lg:px-[60px];
