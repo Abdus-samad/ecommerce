@@ -32,7 +32,7 @@ const profile = () => {
 			<Header showDrawer={showDrawer} />
 			<Drawer drawer={drawer} showDrawer={showDrawer} />
 			{backdrop}
-			<div className='w-full h-auto min-h-screen flex flex-wrap bg-white lg lg:mh lg:xm lg:pb-8'>
+			<div className='w-full h-auto min-h-screen flex flex-wrap bg-white profileBody'>
 				<SideBar />
 				<div className='proContainer '>
 					<div className='flex flex-col w-full'>

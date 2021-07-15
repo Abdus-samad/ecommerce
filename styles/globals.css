@@ -34,6 +34,8 @@
 		@apply pl-[55px];
 	}
 
+	
+
 	.lg {
 		@apply pt-[100px] px-[0px] pb-[60px];
 	}
@@ -92,8 +94,11 @@
 	}
 
 	/* Profile */
+	.profileBody{
+		@apply lg:pt-[140px] lg:px-[70px] pt-[100px] pb-[60px]
+	}
 	.proSide {
-		@apply w-[300px];
+		@apply w-[300px] flex-shrink mr-7;
 	}
 
 	.proLog {
@@ -143,10 +148,16 @@
 	.span{
 		@apply text-base font-bold text-gray-900;
 	}
+	.spand {
+		@apply flex items-center justify-between mb-2;
+	}
 	.custom {
 		@apply pb-[100px];
 	}
-	
+	.delete{
+		@apply flex items-center justify-center w-[18px] h-[18px] rounded-[50%] cursor-pointer text-white bg-red-500 absolute top-[10px] right-[20px] z-[9] opacity-0 transition ease-in-out duration-[.2s];
+	}
+    
 	/* Single page */
 	.text {
 		@apply lg:w-[50%] border-l border-gray-300 lg:py-[55px] lg:px-[60px];

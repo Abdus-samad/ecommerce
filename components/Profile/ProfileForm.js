@@ -3,7 +3,15 @@ import FormModal from '../Modals/FormModal';
 import {PencilIcon, XIcon, PlusIcon} from '@heroicons/react/solid';
 import Payment from '../payment/Payment';
 const ProfileForm = () => {
-	const [open, setOpen] = useState(false);
+
+	const [profile, setProfile] = useState({
+		name: '',
+		email: '',
+	  });
+	
+	  const { name, email } = profile;
+	
+	  const onChange = (e) => setProfile({ ...profile, [e.target.name]: e.target.value });
 
 	return (
 		<div classnames>
@@ -30,7 +38,9 @@ const ProfileForm = () => {
 						name='name'
 						height='48px'
 						className='block form'
-						value='Alex Hunter'
+						value={name}
+					name='name'
+					onChange={onChange}
 					/>
 				</div>
 				<div className='formContent basis ex'>
@@ -43,7 +53,9 @@ const ProfileForm = () => {
 						name='name'
 						height='48px'
 						className='block form'
-						value='alexh@gmail'
+						value={email}
+					name='email'
+					onChange={onChange}
 					/>
 				</div>
 				<div className='formContent basis ce ex'>

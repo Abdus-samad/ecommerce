@@ -1,5 +1,12 @@
-import { PlusIcon } from '@heroicons/react/solid';
-// import PaymentCard from './Card';
+import {PlusIcon} from '@heroicons/react/solid';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import 'swiper/swiper.min.css';
+import 'swiper/components/pagination/pagination.min.css';
+
+import SwiperCore, {Pagination} from 'swiper/core';
+import PaymentCard from './PaymentCard';
+
+SwiperCore.use([Pagination]);
 
 const Payment = () => {
 	return (
@@ -20,7 +27,7 @@ const Payment = () => {
 					</a>
 				</header>
 				<div className='mt-4 -mx-3 relative'>
-					{/* <PaymentCard /> */}
+					<PaymentCard />
 				</div>
 			</div>
 		</div>

@@ -1,6 +1,9 @@
 import { PencilIcon, XIcon } from "@heroicons/react/solid";
+import { useState } from "react";
 
-const Address = () => {
+const Address = ({close}) => {
+	
+
 	return (
 		<div className='mb-10 box-border -mx-2 flex-initial flex-wrap flex-row'>
 			<div className='box-boder flex-4 px-2 dp relative'>
