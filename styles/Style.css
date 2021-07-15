@@ -21,7 +21,8 @@
 	z-index: 50;
 	top: 0;
 	left: 0;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.7);
+	overflow: hidden;
 }
 
 @media (max-width: 767px) {
@@ -42,6 +43,8 @@
 @media (max-width: 0em) {
 	.basis {
 		flex-basis: 100%;
+		max-width: 100%;
+		display: block;
 	}
 }
 @media (min-width: 75em) {

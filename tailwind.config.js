@@ -16,7 +16,8 @@ module.exports = {
 				2: '1 1 100%',
 				flow: 'row wrap',
 				3: '1 1 calc(33.3333% - 10px)',
-				4: '0 0 auto'
+				4: '0 0 auto',
+				5: '1 1 calc(50% - 10px)',
 
 			},
 			width: {
@@ -24,6 +25,7 @@ module.exports = {
 			},
 			maxWidth: {
 				4: 'calc(33.3333% - 10px)',
+				5: 'calc(50% - 10px);'
 			},
 		},
 	},

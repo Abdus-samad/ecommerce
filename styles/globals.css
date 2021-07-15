@@ -34,8 +34,6 @@
 		@apply pl-[55px];
 	}
 
-	
-
 	.lg {
 		@apply pt-[100px] px-[0px] pb-[60px];
 	}
@@ -92,10 +90,27 @@
 	.bor {
 		@apply min-w-[80px];
 	}
+	/* Modal */
+	.Close {
+		@apply shadow-sm right-[10px] cursor-pointer bg-white text-gray-800 rounded-full p-[9px] fixed top-[10px] inline-flex items-center justify-center w-[30px] h-[30px];
+	}
+	.Modal {
+		@apply w-full p-[30px] bg-gray-200 h-auto box-border shadow-md;
+	}
+	.Mcon {
+		@apply w-[360px] h-auto absolute lg:left-[503px] lg:top-[210.5px] transform scale-90 lg:max-h-[557px] max-h-[490px] left-[106.5px] top-[167px];
+	}
 
+	.input {
+		@apply w-full h-[54px] rounded-[6px] border border-gray-100 text-gray-900 font-normal text-base px-[18px] box-border transition-colors duration-[0.25s] ease;
+	}
+
+	.ModalBtn {
+		@apply px-[15px] text-base border-0 font-bold cursor-pointer text-white bg-green-600 rounded-[6px] flex items-center justify-center flex-shrink-0 text-center transition-all duration-150 ease;
+	}
 	/* Profile */
-	.profileBody{
-		@apply lg:pt-[140px] lg:px-[70px] pt-[100px] pb-[60px]
+	.profileBody {
+		@apply lg:pt-[140px] lg:px-[70px] pt-[100px] pb-[60px];
 	}
 	.proSide {
 		@apply w-[300px] flex-shrink mr-7;
@@ -121,31 +136,31 @@
 	.formContainer {
 		@apply box-border flex flex-initial flex-col lg:flex-row -mx-2;
 	}
-	.label{
-		@apply flex-3 max-w-4 mb-[15px] ;
+	.label {
+		@apply lg:flex-3 lg:max-w-4 flex-5 max-w-5 mb-[15px];
 	}
 	.contact-1 {
 		@apply inline-flex flex-col text-left p-[15px] items-start rounded bg-white border border-green-600 mr-[15px] relative text-base font-normal w-full cursor-pointer;
 	}
 	.contact-2 {
-		@apply  inline-flex flex-col text-left p-[15px] items-start rounded bg-gray-100 border border-gray-100 mr-[15px] relative text-base font-normal w-full cursor-pointer;
+		@apply inline-flex flex-col text-left p-[15px] items-start rounded bg-gray-100 border border-gray-100 mr-[15px] relative text-base font-normal w-full cursor-pointer;
 	}
 	.contactBtn {
 		@apply flex items-center justify-center w-[20px] h-[20px] rounded-[50%] ml-[5px] cursor-pointer text-white;
 	}
-	.wrap{
+	.wrap {
 		@apply absolute top-[10px] right-[10px] flex items-center opacity-0 transition-all duration-[0.25s] ease-in-out;
 	}
-	.button{
-		@apply flex-3 max-w-4 h-auto min-h-[77px] border border-dashed border-gray-100 mb-[15px] mr-auto hover:border-green-700;
+	.button {
+		@apply lg:flex-3 lg:max-w-4 flex-5 max-w-5 h-auto min-h-[77px] border border-dashed border-gray-100 mb-[15px] mr-auto hover:border-green-700;
 	}
-	.add{
+	.add {
 		@apply px-[30px] text-base font-bold cursor-pointer transition-all duration-[0.3s] flex items-center justify-center flex-shrink-0 text-center rounded-[6px] text-green-600;
 	}
-	.card{
+	.card {
 		@apply px-4 cursor-pointer transition-all duration-75 ease rounded flex items-center justify-center text-center;
 	}
-	.span{
+	.span {
 		@apply text-base font-bold text-gray-900;
 	}
 	.spand {
@@ -154,10 +169,10 @@
 	.custom {
 		@apply pb-[100px];
 	}
-	.delete{
+	.delete {
 		@apply flex items-center justify-center w-[18px] h-[18px] rounded-[50%] cursor-pointer text-white bg-red-500 absolute top-[10px] right-[20px] z-[9] opacity-0 transition ease-in-out duration-[.2s];
 	}
-    
+
 	/* Single page */
 	.text {
 		@apply lg:w-[50%] border-l border-gray-300 lg:py-[55px] lg:px-[60px];

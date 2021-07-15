@@ -1,7 +1,7 @@
 import { PencilIcon, XIcon } from "@heroicons/react/solid";
 import { useState } from "react";
 
-const Address = ({close}) => {
+const Address = () => {
 	
 
 	return (
