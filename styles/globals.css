@@ -91,18 +91,27 @@
 		@apply min-w-[80px];
 	}
 	/* Modal */
+	.PayBtn{
+		@apply text-white bg-[#32325d] px-[14px] rounded-[6px] whitespace-nowrap inline-block h-[40px] text-sm font-semibold transition-all duration-150 ease cursor-pointer;
+	}
+	.textarea {
+		@apply h-auto min-h-[171px] pt-[15px] resize-none;
+	}
 	.Close {
-		@apply shadow-sm right-[10px] cursor-pointer bg-white text-gray-800 rounded-full p-[9px] fixed top-[10px] inline-flex items-center justify-center w-[30px] h-[30px];
+		@apply shadow-sm right-[10px] cursor-pointer bg-white text-gray-800 rounded-full z-[99999] p-[9px] fixed top-[10px] inline-flex items-center justify-center w-[30px] h-[30px];
+	}
+	.ModalWrapper{
+		@apply w-full h-full flex overflow-hidden fixed z-[9999] top-0 left-0;
 	}
 	.Modal {
-		@apply w-full p-[30px] bg-gray-200 h-auto box-border shadow-md;
+		@apply w-full p-[30px] bg-[#f7f8f9] h-auto box-border shadow-md overflow-hidden rounded;
 	}
 	.Mcon {
-		@apply w-[360px] h-auto absolute lg:left-[503px] lg:top-[210.5px] transform scale-90 lg:max-h-[557px] max-h-[490px] left-[106.5px] top-[167px];
+		@apply  z-[99999] ;
 	}
 
 	.input {
-		@apply w-full h-[54px] rounded-[6px] border border-gray-100 text-gray-900 font-normal text-base px-[18px] box-border transition-colors duration-[0.25s] ease;
+		@apply w-full h-[54px] rounded-[6px] border border-[#e6e6e6] text-gray-900 font-normal text-base px-[18px] box-border transition-colors duration-[0.25s] ease;
 	}
 
 	.ModalBtn {

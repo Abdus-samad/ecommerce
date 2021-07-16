@@ -7,7 +7,7 @@ import BackDrop from '../components/Drawer/BackDrop';
 import {useState} from 'react';
 import Contact from '../components/contact/contact';
 import Address from '../components/Address/Address';
-import Payment from '../components/payment/Payment';
+
 
 const profile = () => {
 	const [drawer, setDrawer] = useState(false);
@@ -39,7 +39,6 @@ const profile = () => {
 						<ProfileForm />
 						<Contact />
 						<Address />
-						<Payment />
 					</div>
 				</div>
 			</div>

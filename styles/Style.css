@@ -15,14 +15,37 @@
 }
 
 .backdrop {
-	position: fixed;
 	width: 100%;
 	height: 100%;
-	z-index: 50;
 	top: 0;
 	left: 0;
+	bottom: 0;
+	right: 0;
 	background-color: rgba(0, 0, 0, 0.7);
-	overflow: hidden;
+	z-index: 9999;
+	position: fixed;
+}
+
+.Mcont {
+	max-height: 577px;
+	width: 360px;
+	height: auto;
+	position: absolute;
+	left: 503px;
+	top: 210.5px;
+	opacity: 1;
+	transform: scale3d(1, 1, 1);
+}
+
+.area {
+	max-height: 577px;
+	width: 360px;
+	height: auto;
+	position: absolute;
+	left: 503px;
+	top: 120.5px;
+	opacity: 1;
+	transform: scale3d(1, 1, 1);
 }
 
 @media (max-width: 767px) {
@@ -39,12 +62,43 @@
 		border: 0px;
 		order: 1;
 	}
+	.Mcont {
+		max-height: 490px;
+		width: 360px;
+		height: auto;
+		position: absolute;
+		left: 40px;
+		top: 167px;
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
+	}
+
+	.area {
+		max-height: 490px;
+		width: 360px;
+		height: auto;
+		position: absolute;
+		left: 40px;
+		top: 77px;
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
+	}
 }
 @media (max-width: 0em) {
 	.basis {
 		flex-basis: 100%;
 		max-width: 100%;
 		display: block;
+	}
+	.MCont {
+		max-height: 490px;
+		width: 360px;
+		height: auto;
+		position: absolute;
+		left: 10px;
+		top: 167px;
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
 	}
 }
 @media (min-width: 75em) {
@@ -73,8 +127,7 @@
 	}
 }
 
-
 .nb:hover .btn {
-    opacity: 1;
-    visibility: visible;
+	opacity: 1;
+	visibility: visible;
 }

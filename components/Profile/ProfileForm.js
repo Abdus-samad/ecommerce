@@ -14,7 +14,7 @@ const ProfileForm = () => {
 	  const onChange = (e) => setProfile({ ...profile, [e.target.name]: e.target.value });
 
 	return (
-		<div classnames>
+		<div >
 			<div className='w-full flex items-center justify-between mb-6'>
 				<h3 className='text-xl font-semibold text-gray-800'>
 					Your Profile

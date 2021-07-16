@@ -1,8 +1,8 @@
 import React, {useRef, useState} from 'react';
-// Import Swiper React components
+
 import {Swiper, SwiperSlide} from 'swiper/react';
 
-// Import Swiper styles
+
 import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import 'swiper/components/navigation/navigation.min.css';
@@ -10,7 +10,7 @@ import 'swiper/components/navigation/navigation.min.css';
 import SwiperCore, {Navigation} from 'swiper/core';
 import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/react/outline';
 
-// install Swiper modules
+
 SwiperCore.use([Navigation]);
 
 export default function App() {

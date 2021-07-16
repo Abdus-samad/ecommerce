@@ -10,21 +10,17 @@ const Modal = ({open, close}) => {
 			<button onClick={close} className='Close'>
 				<XIcon className='h-8 w-8' />
 			</button>
-			<div className='ModalWrapper' >
-				<div className='Mcon  Mcont'>
+			<div className='ModalWrapper'>
+				<div className='Mcon area'>
 					<div className='Modal'>
 						<form>
 							<h2 className='text-xl font-bold text-gray-800 mb-4'>
-								Edit Contact
+								Enter Card Info
 							</h2>
 							<div className='w-full flex flex-col mb-4'>
 								<input type='text' className='input' />
 							</div>
-							<button
-								style={{width: '100%', height: '44px'}}
-								className='ModalBtn'>
-								Save Contact
-							</button>
+							<button className='PayBtn'>Pay Now</button>
 						</form>
 					</div>
 				</div>

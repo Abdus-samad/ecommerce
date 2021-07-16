@@ -1,8 +1,10 @@
 import { PencilIcon, XIcon } from "@heroicons/react/solid";
 import { useState } from "react";
+import Modal from "./Modal";
 
 const Address = () => {
 	
+	const [open, setOpen] = useState(false);
 
 	return (
 		<div className='mb-10 box-border -mx-2 flex-initial flex-wrap flex-row'>
@@ -36,7 +38,9 @@ const Address = () => {
 								33 Baker Street, Crescent Road, CA 65746
 							</span>
 							<span className='btn wrap'>
-								<span className='contactBtn bg-green-600'>
+								<span 
+								onClick={() => setOpen(true)}
+								className='contactBtn bg-green-600'>
 									<PencilIcon className='h-4' />{' '}
 								</span>
 								<span className='contactBtn bg-red-500'>
@@ -48,6 +52,7 @@ const Address = () => {
 					</div>
 				</div>
 			</div>
+			<Modal open={open} close={() => setOpen(false)} />
 		</div>
 	);
 };

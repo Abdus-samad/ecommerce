@@ -5,7 +5,6 @@ import Modal from './Modal';
 const contact = () => {
 	const [open, setOpen] = useState(false);
 
-
 	return (
 		<div className='mb-10 box-border -mx-2 flex-initial flex-wrap flex-row'>
 			<div className='box-boder flex-4 px-2 dp'>
@@ -40,7 +39,9 @@ const contact = () => {
 								08077436736
 							</span>
 							<span className='btn wrap'>
-								<span className='contactBtn bg-green-600'>
+								<span
+									onClick={() => setOpen(true)}
+									className='contactBtn bg-green-600'>
 									<PencilIcon className='h-4' />{' '}
 								</span>
 								<span className='contactBtn bg-red-500'>
