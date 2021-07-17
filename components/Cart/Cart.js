@@ -25,7 +25,7 @@ const Cart = () => {
 		<>
 			<div
 				onClick={showDrawer}
-				className='hidden  h-auto w-auto right-0 z-20 top -mt-11 md:flex flex-col items-center justify-center bg-green-600 p-0 shadow-md rounded-tl-md rounded-bl-md border-0 cursor-pointer fixed'>
+				className='hidden  h-auto w-auto right-0 z-10 top -mt-11 md:flex flex-col items-center justify-center bg-green-600 p-0 shadow-md rounded-tl-md rounded-bl-md border-0 cursor-pointer fixed'>
 				<Subtotal />
 			</div>
 			<div className={drawer ? 'side active' : 'side'}>

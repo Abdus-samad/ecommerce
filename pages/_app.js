@@ -3,14 +3,17 @@ import '../styles/Style.css';
 import 'tailwindcss/tailwind.css';
 import CartState from '../context/Cart/CartState';
 import ProductState from '../context/Product/ProductState';
+import AuthState from '../context/Auth/AuthState';
 
 function MyApp({Component, pageProps}) {
 	return (
-		<CartState>
-			<ProductState>
-				<Component {...pageProps} />
-			</ProductState>
-		</CartState>
+		<AuthState>
+			<CartState>
+				<ProductState>
+					<Component {...pageProps} />
+				</ProductState>
+			</CartState>
+		</AuthState>
 	);
 }
 

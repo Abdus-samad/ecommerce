@@ -33,7 +33,7 @@ const login = () => {
 					<div className='wrapper rounded border bg-white  shadow p-8'>
 						<div className='w-full h-full box-border'>
 							<div className='text-center bg-white'>
-								<div className='padding'>
+								<div className='loginContent'>
 									{active === 'signin' && (
 										<div>
 											<h3 className='mb-2 text-2xl font-semibold text-green-600'>

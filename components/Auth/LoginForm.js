@@ -1,18 +1,27 @@
 import {useContext, useState} from 'react';
-
+import {auth} from '../../firebase';
+import {useRouter} from 'next/router';
 import {loginContext} from './loginContext';
 
 const LoginForm = () => {
 	const {SwitchToSignUp} = useContext(loginContext);
-
+	const router = useRouter();
 	const [user, setUser] = useState({
 		email: '',
 		password: '',
-	  });
-	
-	  const { email, password } = user;
-	
-	  const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
+	});
+
+	const {email, password} = user;
+
+	const onChange = (e) => setUser({...user, [e.target.name]: e.target.value});
+
+	const signIn = (e) => {
+		e.preventDefault();
+		auth.signInWithEmailAndPassword(email, password).then((auth) => {
+			router.push('/');
+		});
+	};
+
 	return (
 		<>
 			<form>
@@ -34,7 +43,9 @@ const LoginForm = () => {
 					onChange={onChange}
 					required
 				/>
-				<button className='px-8 text-base font-bold cursor-pointer transition-all duration-100 ease w-full rounded flex items-center justify-center flex-shrink-0 text-center border-0 text-white h-12 bg-green-600'>
+				<button
+					onClick={signIn}
+					className='px-8 text-base font-bold cursor-pointer transition-all duration-100 ease w-full rounded flex items-center justify-center flex-shrink-0 text-center border-0 text-white h-12 bg-green-600'>
 					Continue
 				</button>
 			</form>

@@ -1,8 +1,33 @@
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 import {loginContext} from './loginContext';
+import {auth} from '../../firebase';
+import {useRouter} from 'next/router';
 
 const SignUp = () => {
+	const router = useRouter();
+
 	const {SwitchToSignIn} = useContext(loginContext);
+
+	const [user, setUser] = useState({
+		email: '',
+		password: '',
+	});
+
+	const {email, password} = user;
+
+	const onChange = (e) => setUser({...user, [e.target.name]: e.target.value});
+
+	const register = (e) => {
+		e.preventDefault();
+		auth.createUserWithEmailAndPassword(email, password)
+			.then((auth) => {
+				if (auth) {
+					router.push('/');
+				}
+			})
+			.catch((error) => alert(error.message));
+	};
+
 	return (
 		<>
 			<form className=''>
@@ -10,11 +35,19 @@ const SignUp = () => {
 					type='email'
 					placeholder='Email'
 					className='block w-full px-5 text-base border border-gray-300 rounded text-gray-800 transition-all duration-100 ease h-12 mb-3 bg-gray-300'
+					value={email}
+					name='email'
+					onChange={onChange}
+					required
 				/>
 				<input
 					type='password'
 					placeholder='password'
 					className='block w-full px-5 text-base border border-gray-300 rounded text-gray-800 transition-all duration-100 ease h-12 mb-3 bg-gray-300'
+					value={password}
+					name='password'
+					onChange={onChange}
+					required
 				/>
 				<p className='text-xs font-medium text-gray-800 w-full text-center da mb-2'>
 					By signing up, you agree to Pickbazar's
@@ -22,7 +55,9 @@ const SignUp = () => {
 						Terms & Condtion
 					</a>
 				</p>
-				<button className='px-8 text-base font-bold cursor-pointer transition-all duration-100 ease w-full rounded flex items-center justify-center flex-shrink-0 text-center border-0 text-white h-12 bg-green-600'>
+				<button
+					onClick={register}
+					className='px-8 text-base font-bold cursor-pointer transition-all duration-100 ease w-full rounded flex items-center justify-center flex-shrink-0 text-center border-0 text-white h-12 bg-green-600'>
 					Continue
 				</button>
 			</form>

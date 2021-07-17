@@ -54,11 +54,11 @@
 	.m {
 		@apply min-w-[200px] min-h-[200px];
 	}
-	.padding {
+	.loginContent {
 		@apply pt-[2px] px-[30px];
 	}
 	.wrapper {
-		@apply max-h-[600px] w-[458px] left-[100.5px] top-[32.5px] h-auto absolute lg:top-[30px] lg:left-[454px];
+		@apply max-h-[600px] w-[458px] left-[20px] top-[30px] h-auto absolute lg:top-[30px] lg:left-[454px];
 	}
 	.da {
 		@apply pt-[20px] px-[30px];
@@ -91,7 +91,7 @@
 		@apply min-w-[80px];
 	}
 	/* Modal */
-	.PayBtn{
+	.PayBtn {
 		@apply text-white bg-[#32325d] px-[14px] rounded-[6px] whitespace-nowrap inline-block h-[40px] text-sm font-semibold transition-all duration-150 ease cursor-pointer;
 	}
 	.textarea {
@@ -100,14 +100,14 @@
 	.Close {
 		@apply shadow-sm right-[10px] cursor-pointer bg-white text-gray-800 rounded-full z-[99999] p-[9px] fixed top-[10px] inline-flex items-center justify-center w-[30px] h-[30px];
 	}
-	.ModalWrapper{
+	.ModalWrapper {
 		@apply w-full h-full flex overflow-hidden fixed z-[9999] top-0 left-0;
 	}
 	.Modal {
 		@apply w-full p-[30px] bg-[#f7f8f9] h-auto box-border shadow-md overflow-hidden rounded;
 	}
 	.Mcon {
-		@apply  z-[99999] ;
+		@apply z-[99999];
 	}
 
 	.input {
@@ -224,13 +224,13 @@
 
 	/* Drawer s */
 	.bottom {
-		@apply w-full right-0 z-[200]  -bottom-full bg-white shadow h-[70vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
+		@apply w-full right-0   z-[999990] -bottom-full bg-white shadow h-[70vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
 	}
 	.bottom.active {
 		@apply bottom-0 duration-[350ms];
 	}
 	.filter {
-		@apply w-full right-0 z-[200] p-8  -bottom-full bg-white shadow h-[70vh] flex justify-center fixed transition-all rounded-3xl  duration-[.35s] ease-in-out;
+		@apply w-full right-0 z-[999990] p-8  -bottom-full bg-white shadow h-[70vh] flex justify-center fixed transition-all rounded-3xl  duration-[.35s] ease-in-out;
 	}
 	.filter.active {
 		@apply bottom-0 duration-[350ms];
@@ -242,9 +242,21 @@
 		@apply right-0 duration-[350ms];
 	}
 	.menu {
-		@apply w-[300px] duration-[850ms] top-0 z-[200] -left-full bg-white shadow h-[100vh] flex justify-center fixed;
+		@apply w-[300px] duration-[850ms] z-[999990]  top-0  -left-full bg-white shadow h-[100vh] flex justify-center fixed;
 	}
 	.menu.active {
 		@apply left-0 duration-[350ms];
+	}
+
+/* PopOver */
+	.Popover {
+		@apply py-[20px] left-auto right-0 top-top block min-w-[200px] absolute rounded-[6px] z-[10000000] bg-white shadow-2xl;
+	}
+
+	.Item{
+		@apply py-[12px] px-[30px] cursor-pointer whitespace-nowrap text-[15px] font-bold leading-[1.2em] transition-all duration-[.15s] ease-in-out hover:text-green-700;
+	}
+	.PopImg{
+		@apply block w-[38px] h-[38px] overflow-hidden rounded-full cursor-pointer;
 	}
 }

@@ -1,13 +1,23 @@
 import {MenuIcon, SearchIcon} from '@heroicons/react/outline';
-import {useState} from 'react';
+import {useState, useContext, useEffect} from 'react';
 import Image from 'next/image';
 import {QuestionMarkCircleIcon} from '@heroicons/react/solid';
 import Link from 'next/link';
 import Topfiltered from '../Side/Topfiltered';
 import FilterDrawer from '../Side/FilterDrawer';
 import BackDrop from '../Drawer/BackDrop';
+import {auth } from '../../firebase'
+import AuthContext from '../../context/Auth/authContext';
+import HeaderOp from '../Reuseables/HeaderOp'
+
+
 
 const Header = (props) => {
+
+	const authContext = useContext(AuthContext);
+	const { user, getUser } = authContext;
+
+
 	const [drawer, setDrawer] = useState(false);
 
 	const showDrawer = () => setDrawer(!drawer);
@@ -18,6 +28,15 @@ const Header = (props) => {
 		backdrop = <BackDrop showDrawer={showDrawer} />;
 	}
 
+
+	
+
+	useEffect(() => {
+		auth.onAuthStateChanged((authUser) => {
+		  getUser(authUser)
+		  console.log(authUser)
+		})
+	  }, [])
 	return (
 		<>
 			<div className='flex items-center flex-wrap justify-between p-3 sticky top-0 bg-white border-b z-20 shadow'>
@@ -57,13 +76,13 @@ const Header = (props) => {
 							</div>
 						</a>
 					</Link>
-					<a href='/login'>
+					{!!user ? <p> {<HeaderOp />} </p>  : <a href={!user && '/login'}>
 						<button
 							style={{width: '100%'}}
 							className='px-8 text-sm tr flex-shrink-0 text-center h-10 cursor-pointer text-white bg-green-600 hover:bg-green-700 rounded-md flex items-center justify-center'>
 							Join
 						</button>
-					</a>
+					</a>}
 				</div>
 			<Topfiltered showDrawer={showDrawer} />
 			<FilterDrawer drawer={drawer} showDrawer={showDrawer} />
