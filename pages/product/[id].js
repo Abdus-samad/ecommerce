@@ -12,6 +12,11 @@ import {useRouter} from 'next/router';
 import Spinner from '../../components/Spinner';
 import Drawer from '../../components/Drawer/Drawer';
 import BackDrop from '../../components/Drawer/BackDrop';
+import Cartdrawer from '../../components/Cart/Cartdrawer';
+import BottomCart from '../../components/Cart/BottomCart';
+import Head from 'next/head'
+
+
 
 const ProductDetail = () => {
 	//  Drawer
@@ -64,6 +69,10 @@ const ProductDetail = () => {
 
 	return (
 		<>
+			<Head>
+				<title>{router.query.term} </title>
+			</Head>
+
 			<Header showDrawer={showDrawer} />
 			<Drawer drawer={drawer} showDrawer={showDrawer} />
 			{backdrop}
@@ -139,7 +148,10 @@ const ProductDetail = () => {
 					</div>
 				</div>
 			</div>
-			{/* <Cart /> */}
+			<Cart />
+			<BottomCart showDrawer={showDrawer} />
+			<Cartdrawer drawer={drawer} showDrawer={showDrawer}/>
+			{backdrop}
 		</>
 	);
 };

@@ -6,7 +6,7 @@ import "react-multi-carousel/lib/styles.css";
 
 const Carousel = ({ images }) => {
   return (
-    <div  style={{ width: 446}}>
+    <div  style={{ width: 320}}>
       <Simple deviceType={'desktop'} images={images} />
     </div>
   );
