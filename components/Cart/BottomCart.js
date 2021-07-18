@@ -20,7 +20,7 @@ const BottomCart = (props) => {
 	return (
 		<div className=''>
 			<button
-				onClick={props.showDrawer}
+				onClick={props.showCarts}
 				className='w-4/5 h-11 py-1 pr-1 pl-8 flex items-center bg-green-600 border-0 outline shadow-lg fixed  md:hidden'>
 				<CurrencyFormat
 					renderText={(value) => (

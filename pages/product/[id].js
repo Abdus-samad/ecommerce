@@ -23,6 +23,9 @@ const ProductDetail = () => {
 	const [drawer, setDrawer] = useState(false);
 
 	const showDrawer = () => setDrawer(!drawer);
+	const [Carts, setCarts] = useState(false);
+
+	const showCarts = () => setCarts(!Carts);
 
 	let backdrop;
 
@@ -30,7 +33,10 @@ const ProductDetail = () => {
 		backdrop = <BackDrop showDrawer={showDrawer} />;
 	}
 
-	//  Product
+	if (Carts) {
+		backdrop = <BackDrop showCarts={showCarts} />;
+	}
+	//  Productz
 	const router = useRouter();
 	const {id} = router.query;
 
@@ -149,8 +155,8 @@ const ProductDetail = () => {
 				</div>
 			</div>
 			<Cart />
-			<BottomCart showDrawer={showDrawer} />
-			<Cartdrawer drawer={drawer} showDrawer={showDrawer}/>
+			<BottomCart showCarts={showCarts} />
+			<Cartdrawer Carts={Carts} showCarts={showCarts}/>
 			{backdrop}
 		</>
 	);

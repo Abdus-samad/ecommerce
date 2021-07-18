@@ -59,14 +59,4 @@ const CartProduct = ({id, images, price, name, count}) => {
 
 export default CartProduct;
 
-/*
-padding: 5px;
-    border: 0px;
-    outline: 0px;
-    margin-left: 15px;
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.25);
-    transition: all 0.4s ease 0s;
-    background-color: transparent; 
 
-*/

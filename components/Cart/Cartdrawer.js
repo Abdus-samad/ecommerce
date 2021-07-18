@@ -18,7 +18,7 @@ const Cartdrawer = (props) => {
 		);
 
     return (
-        <div className={props.drawer ? 'bottom active' : 'bottom'}>
+        <div className={props.Carts ? 'bottom active' : 'bottom'}>
         <div className='w-full h-full flex flex-col rounded bg-white box-content'>
             <div className=' px-6 py-4 bg-white flex items-center justify-center border-b border-gray-100'>
                 <div className='inline-flex items-center text-green-700'>
@@ -30,7 +30,7 @@ const Cartdrawer = (props) => {
                     )}
                 </div>
                 <a className='absolute inline-flex items-center justify-center -top-11 bg-white w-9 h-9 rounded-full text-gray-800 backdrop-blur-2xl '>
-                    <XIcon className='h-5' onClick={props.showDrawer} />
+                    <XIcon className='h-5' onClick={props.showCarts} />
                 </a>
             </div>
             <div className='max-h-full w-full overflow-auto scrollbar'>

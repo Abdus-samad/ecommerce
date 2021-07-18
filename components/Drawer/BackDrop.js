@@ -1,8 +1,6 @@
 const BackDrop = (props) => {
     return (
-        <div className='backdrop' onClick={props.showDrawer}>
-            
-        </div>
+        <div className='backdrop' onClick={props.showDrawer} onClick={props.showCarts}/>
     )
 }
 
