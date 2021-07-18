@@ -236,7 +236,7 @@
 		@apply bottom-0 duration-[350ms];
 	}
 	.side {
-		@apply lg:w-[420px] w-[300px] bottom-0 z-30 -right-full bg-white shadow h-[100vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
+		@apply lg:w-[420px] bottom-0 z-30 -right-full bg-white shadow h-[100vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
 	}
 	.side.active {
 		@apply right-0 duration-[350ms];
