@@ -14,18 +14,17 @@ import Drawer from '../../components/Drawer/Drawer';
 import BackDrop from '../../components/Drawer/BackDrop';
 import Cartdrawer from '../../components/Cart/Cartdrawer';
 import BottomCart from '../../components/Cart/BottomCart';
-import Head from 'next/head'
+
 
 
 
 const ProductDetail = () => {
 	//  Drawer
 	const [drawer, setDrawer] = useState(false);
-
 	const showDrawer = () => setDrawer(!drawer);
-	const [Carts, setCarts] = useState(false);
 
-	const showCarts = () => setCarts(!Carts);
+	const [carts, setCart] = useState(false);
+	const showCart = () => setCart(!carts);
 
 	let backdrop;
 
@@ -33,8 +32,8 @@ const ProductDetail = () => {
 		backdrop = <BackDrop showDrawer={showDrawer} />;
 	}
 
-	if (Carts) {
-		backdrop = <BackDrop showCarts={showCarts} />;
+	if (carts) {
+		backdrop = <BackDrop showCart={showCart} />;
 	}
 	//  Productz
 	const router = useRouter();
@@ -75,9 +74,7 @@ const ProductDetail = () => {
 
 	return (
 		<>
-			<Head>
-				<title>{router.query.term} </title>
-			</Head>
+		
 
 			<Header showDrawer={showDrawer} />
 			<Drawer drawer={drawer} showDrawer={showDrawer} />
@@ -155,8 +152,8 @@ const ProductDetail = () => {
 				</div>
 			</div>
 			<Cart />
-			<BottomCart showCarts={showCarts} />
-			<Cartdrawer Carts={Carts} showCarts={showCarts}/>
+			<BottomCart showCart={showCart} />
+			<Cartdrawer carts={carts} showCart={showCart}/>
 			{backdrop}
 		</>
 	);

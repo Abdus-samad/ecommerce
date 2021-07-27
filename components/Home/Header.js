@@ -46,7 +46,7 @@ const Header = (props) => {
 				<Link href='/'>
 					<a className='inline-flex items-center p-2 ml-8'>
 						<Image
-							src='/cover.png'
+							src='/download.svg'
 							width={120}
 							height={50}
 							className='cursor-pointer'
@@ -76,7 +76,7 @@ const Header = (props) => {
 							</div>
 						</a>
 					</Link>
-					{!!user ? <p> {<HeaderOp />} </p>  : <a href={!user && '/login'}>
+					{!!user ? <HeaderOp /> : <a href={!user && '/login'}>
 						<button
 							style={{width: '100%'}}
 							className='px-8 text-sm tr flex-shrink-0 text-center h-10 cursor-pointer text-white bg-green-600 hover:bg-green-700 rounded-md flex items-center justify-center'>

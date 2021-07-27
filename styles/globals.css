@@ -148,10 +148,10 @@
 	.label {
 		@apply lg:flex-3 lg:max-w-4 flex-5 max-w-5 mb-[15px];
 	}
-	.contact-1 {
-		@apply inline-flex flex-col text-left p-[15px] items-start rounded bg-white border border-green-600 mr-[15px] relative text-base font-normal w-full cursor-pointer;
+	.contact.active{
+		@apply bg-white border border-green-600;
 	}
-	.contact-2 {
+	.contact {
 		@apply inline-flex flex-col text-left p-[15px] items-start rounded bg-gray-100 border border-gray-100 mr-[15px] relative text-base font-normal w-full cursor-pointer;
 	}
 	.contactBtn {
@@ -248,15 +248,212 @@
 		@apply left-0 duration-[350ms];
 	}
 
-/* PopOver */
+	/* PopOver */
 	.Popover {
 		@apply py-[20px] left-auto right-0 top-top block min-w-[200px] absolute rounded-[6px] z-[10000000] bg-white shadow-2xl;
 	}
 
-	.Item{
+	.Item {
 		@apply py-[12px] px-[30px] cursor-pointer whitespace-nowrap text-[15px] font-bold leading-[1.2em] transition-all duration-[.15s] ease-in-out hover:text-green-700;
 	}
-	.PopImg{
+	.PopImg {
 		@apply block w-[38px] h-[38px] overflow-hidden rounded-full cursor-pointer;
+	}
+
+	/* CheckOut */
+
+	.CheckoutAdress {
+		@apply lg:flex-3 lg:max-w-4 flex-5 max-w-5 mb-[15px]  flex-col text-left p-[15px] mr-[15px] items-start  border border-[#f7f7f7] inline-flex  rounded-[6px] cursor-pointer w-full transition-all duration-100 ease-in bg-[#f7f7f7] relative text-base font-normal text-[#0d1136];
+	}
+
+	.CheckoutAdress.active {
+		@apply border border-[#009e7f] bg-white;
+	}
+	.ContactA {
+		@apply lg:flex-3 lg:max-w-4 flex-5 max-w-5 mb-[15px]  flex-col text-left p-[15px] mr-[15px] items-start  border border-[#f7f7f7] inline-flex  rounded-[6px] cursor-pointer w-full transition-all duration-100 ease-in bg-[#f7f7f7] relative text-base font-normal text-[#0d1136];
+	}
+
+	.ContactA.active {
+		@apply border border-[#009e7f] bg-white;
+	}
+	.checkoutBtn {
+		@apply p-0 rounded-none border-0 bg-transparent top-[27px] right-[20px] lg:top-[40px] lg:right-[30px] absolute text-[#009e7f] font-bold text-[13px] items-center flex w-auto h-auto;
+	}
+	.ContactBtn {
+		@apply p-0 rounded-none border-0 bg-transparent top-[27px] right-[20px] lg:top-[100px] lg:right-[30px] absolute text-[#009e7f] font-bold text-[13px] items-center flex w-auto h-auto;
+	}
+	.dlabel {
+		@apply lg:flex-3 lg:max-w-4 py-[11px] px-[15px] flex-2 max-w-full mr-0 flex-col text-left items-start;
+	}
+	.del{
+	@apply inline-flex mb-[15px] relative text-[15px] font-normal text-[#0d1136] transition-all duration-100 ease-in border border-[#f7f7f7] rounded-[6px] bg-[#f7f7f7];
+	}
+	
+	.del.active{
+		@apply border border-[#009e7f] bg-white;
+	}
+	.subTotal{
+		@apply border-t border-[#e6e6e6] pt-[20px] px-[15px] mt-5;
+	}
+
+}
+
+@layer utilities {
+	
+
+	.scrollbar::-webkit-scrollbar {
+		width: 4px;
+		cursor: pointer;
+	}
+	.scrollbar::-webkit-scrollbar-track {
+		background-color: rgba(229, 231, 235, var(--bg-opacity));
+		cursor: pointer;
+	}
+	.scrollbar::-webkit-scrollbar-thumb:hover {
+		cursor: pointer;
+		background-color: #9aabc0;
+	}
+
+	.backdrop {
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: 9999;
+		position: fixed;
+	}
+
+	.Mcont {
+		max-height: 577px;
+		width: 360px;
+		height: auto;
+		position: absolute;
+		left: 503px;
+		top: 210.5px;
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
+	}
+
+	.area {
+		max-height: 577px;
+		width: 360px;
+		height: auto;
+		position: absolute;
+		left: 503px;
+		top: 120.5px;
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
+	}
+
+	@media (max-width: 767px) {
+		.rex {
+			flex: 0 0 100%;
+			max-width: 100%;
+			padding: 30px 25px 60px;
+			order: 0;
+		}
+		.gc {
+			flex: 0 0 100%;
+			max-width: 100%;
+			padding: 30px 25px;
+			border: 0px;
+			order: 1;
+		}
+		.Mcont {
+			max-height: 490px;
+			width: 360px;
+			height: auto;
+			position: absolute;
+			left: 40px;
+			top: 167px;
+			opacity: 1;
+			transform: scale3d(1, 1, 1);
+		}
+
+		.area {
+			max-height: 490px;
+			width: 360px;
+			height: auto;
+			position: absolute;
+			left: 40px;
+			top: 77px;
+			opacity: 1;
+			transform: scale3d(1, 1, 1);
+		}
+	}
+	@media (max-width: 0em) {
+		.basis {
+			flex-basis: 100%;
+			max-width: 100%;
+			display: block;
+		}
+		.MCont {
+			max-height: 490px;
+			width: 360px;
+			height: auto;
+			position: absolute;
+			left: 10px;
+			top: 167px;
+			opacity: 1;
+			transform: scale3d(1, 1, 1);
+		}
+	}
+	@media (min-width: 75em) {
+		.ex {
+			flex-basis: 41.6667%;
+			max-width: 41.6667%;
+			display: block;
+		}
+		.ce {
+			flex-basis: 16.6667%;
+			max-width: 16.6667%;
+			display: block;
+		}
+		.dp {
+			flex-basis: 100%;
+			max-width: 100%;
+			display: block;
+		}
+	}
+
+	@media only screen and (min-width: 48em) {
+		.dp {
+			flex-basis: 100%;
+			max-width: 100%;
+			display: block;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.dv {
+			flex: 1 1 100%;
+			max-width: 100%;
+			margin-right: 0px;
+		}
+	}
+	.nb:hover .btn {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.pop::before {
+		left: auto;
+		right: 15px;
+	}
+
+	.pop::before {
+		content: '';
+		position: absolute;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 0px 8px 9px;
+		border-color: transparent transparent rgb(255, 255, 255);
+		top: -8px;
+		box-shadow: rgb(142 142 142 / 14%) -4px -4px 8px -3px;
+		pointer-events: none;
 	}
 }

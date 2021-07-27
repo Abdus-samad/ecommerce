@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Side from '../Side/Side';
 import ImageSlider from '../Banner/ImageSlider';
 import Cart from '../Cart/Cart';
@@ -8,14 +8,13 @@ import Cartdrawer from '../Cart/Cartdrawer';
 import BackDrop from '../Drawer/BackDrop';
 
 const Body = () => {
-	const [drawer, setDrawer] = useState(false);
-
-	const showDrawer = () => setDrawer(!drawer);
+	const [carts, setCart] = useState(false);
+	const showCart = () => setCart(!carts);
 
 	let backdrop;
 
-	if (drawer) {
-		backdrop = <BackDrop showDrawer={showDrawer} />;
+	if (carts) {
+		backdrop = <BackDrop showCart={showCart} />;
 	}
 
 	return (
@@ -29,8 +28,8 @@ const Body = () => {
 			</main>
 
 			<Cart />
-			<BottomCart showDrawer={showDrawer} />
-			<Cartdrawer drawer={drawer} showDrawer={showDrawer}/>
+			<BottomCart showCart={showCart} />
+			<Cartdrawer carts={carts} showCart={showCart} />
 			{backdrop}
 		</div>
 	);

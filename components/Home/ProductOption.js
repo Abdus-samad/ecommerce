@@ -64,7 +64,7 @@ const ProductOption = ({id, images, price, name, count}) => {
 						<p className='text-xs flex-grow'>Add</p>
 						<span
 							onClick={() => cartObject()}
-							className='px-2 h-9 bg-gray-200 flex items-center hover:bg-green-600 transition-all hover:text-white duration-75 ease-in-out'>
+							className='px-2 h-9 bg-gray-200 flex items-center transition-all group-hover:text-white duration-75 ease-in-out'>
 							<PlusIcon className='h-5' />
 						</span>
 					</button>

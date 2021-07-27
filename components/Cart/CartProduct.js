@@ -19,12 +19,11 @@ const CartProduct = ({id, images, price, name, count}) => {
 		return product.count;
 	};
 
-	const productTotal = () => Number(price) * count
+	const productTotal = () => Number(price) * count;
 
 	const remove = () => {
 		removeFromCart(id);
 	};
-	
 
 	return (
 		<div className='text-base font-bold border-b border-gray-100 flex items-center py-8 px-6'>
@@ -37,7 +36,11 @@ const CartProduct = ({id, images, price, name, count}) => {
 					<PlusIcon className='size' onClick={() => cartObject()} />
 				</a>
 			</div>
-			<img src={images[0]} alt='' className='w-16 h-16 object-cover mx-4' />
+			<img
+				src={images[0]}
+				alt=''
+				className='w-16 h-16 object-cover mx-4'
+			/>
 			<div className='flex flex-col ml-4'>
 				<span className='leading-3 text-gray-800'>{name}</span>
 				<span className='my-3 text-green-700'>${price}</span>
@@ -49,6 +52,7 @@ const CartProduct = ({id, images, price, name, count}) => {
 				displayType={'text'}
 				thousandSeparator={true}
 				prefix={'$'}
+				fixedDecimalScale={true}
 			/>
 			<button className='p-1 ml-4 cursor-pointer text-gray-200 transition duration-100 bg-transparent'>
 				<XIcon className='h-5' onClick={() => remove()} />
@@ -58,5 +62,3 @@ const CartProduct = ({id, images, price, name, count}) => {
 };
 
 export default CartProduct;
-
-

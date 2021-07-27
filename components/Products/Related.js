@@ -36,19 +36,20 @@ const Related = ({id, images, price, name, count}) => {
 				</h3>
 				{cartProductCount(id) >= 1 ? (
 					<div className='flex bg-green-600 w-full h-9 text-white text-base font-bold justify-between items-center flex-shrink-0 rounded'>
-						<button className='border-none bg-tranparent text-white flex items-center h-full p-3 cursor-pointer'>
-							<MinusIcon
-								className='h-5'
-								onClick={() => remove()}
-							/>
-						</button>
+						<a
+							onClick={() => remove()}
+							className='border-none bg-tranparent text-white flex items-center h-full p-3 cursor-pointer'>
+							<MinusIcon className='h-5' />
+						</a>
 						<span>{cartProductCount(id)}</span>
-						<button className='border-none bg-tranparent text-white flex items-center h-full p-3 cursor-pointer outline-none'>
+						<a 
+						onClick={() => cartObject()}
+						className='border-none bg-tranparent text-white flex items-center h-full p-3 cursor-pointer outline-none'>
 							<PlusIcon
 								className='h-5'
-								onClick={() => cartObject()}
+								
 							/>
-						</button>
+						</a>
 					</div>
 				) : (
 					<button className='w-full focus:border-none  h-9 rounded cursor-pointer border-0 flex items-center hover:bg-green-700 border-green-700 bg-gray-100 hover:text-white overflow-hidden trasition-all duration-75 ease-in-out'>

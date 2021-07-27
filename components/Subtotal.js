@@ -31,6 +31,7 @@ const Subtotal = () => {
 				displayType={'text'}
 				thousandSeparator={true}
 				prefix={'$'}
+				fixedDecimalScale={true}
 			/>
 		</div>
 	);

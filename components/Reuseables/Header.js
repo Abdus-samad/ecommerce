@@ -1,26 +1,22 @@
 import {MenuIcon} from '@heroicons/react/outline';
-import {useContext, useEffect} from 'react'
+import {useContext, useEffect} from 'react';
 import Image from 'next/image';
 import {QuestionMarkCircleIcon} from '@heroicons/react/solid';
 import Link from 'next/link';
 import AuthContext from '../../context/Auth/authContext';
-import {auth} from '../../firebase'
-import HeaderOp from './HeaderOp'
-
+import {auth} from '../../firebase';
+import HeaderOp from './HeaderOp';
 
 const Header = (props) => {
-
-
 	const authContext = useContext(AuthContext);
-	const { user, getUser } = authContext;
+	const {user, getUser} = authContext;
 
-	
 	useEffect(() => {
 		auth.onAuthStateChanged((authUser) => {
-		  getUser(authUser)
-		  console.log(authUser)
-		})
-	  }, [])
+			getUser(authUser);
+			console.log(authUser);
+		});
+	}, []);
 	return (
 		<>
 			<div className='flex items-center flex-wrap p-3 sticky top-0 bg-white border-b z-20 shadow'>
@@ -30,7 +26,7 @@ const Header = (props) => {
 				<Link href='/'>
 					<a className='inline-flex items-center p-2 ml-8'>
 						<Image
-							src='/cover.png'
+							src='/download.svg'
 							width={120}
 							height={40}
 							className='cursor-pointer'
@@ -53,7 +49,7 @@ const Header = (props) => {
 						</a>
 					</Link>
 					{!!user ? (
-						<p> {<HeaderOp />} </p>
+						<HeaderOp />
 					) : (
 						<a href={!user && '/login'}>
 							<button

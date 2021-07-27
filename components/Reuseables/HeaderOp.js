@@ -31,7 +31,7 @@ const HeaderOp = () => {
 					onClick={dropDown}
 					className='w-full h-auto block'
 					src='/use.jpeg'
-					alt
+					alt=''
 				/>
 			</div>
 

@@ -14,7 +14,7 @@ const Data = [
 	{
 		title: 'Checkout',
 		Name: '',
-		path: '/Checkout',
+		path: '/checkout',
 	},
 	{
 		title: 'Your Order',

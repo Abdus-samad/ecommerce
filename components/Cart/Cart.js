@@ -1,18 +1,19 @@
 import {XIcon} from '@heroicons/react/outline';
-import {ShoppingBagIcon, ShoppingCartIcon} from '@heroicons/react/solid';
+import {ShoppingBagIcon} from '@heroicons/react/solid';
 import Empty from '../Icon/Empty';
 import {useContext, useState} from 'react';
 import Subtotal from '../Subtotal';
 import CartProduct from './CartProduct';
 import CartContext from '../../context/Cart/cartContext';
 import CurrencyFormat from 'react-currency-format';
+import {useRouter} from 'next/router';
 
 const Cart = () => {
+	const router = useRouter();
 	const [drawer, setDrawer] = useState(false);
 	const showDrawer = () => setDrawer(!drawer);
 
 	const cartContext = useContext(CartContext);
-
 	const {cart, loading} = cartContext;
 
 	const getCartTotal = (cart) =>
@@ -21,6 +22,10 @@ const Cart = () => {
 			0
 		);
 
+	const handleClick = (e) => {
+		e.preventDefault();
+		router.push('/checkout');
+	};
 	return (
 		<>
 			<div
@@ -74,6 +79,7 @@ const Cart = () => {
 							</button>
 						</span>
 						<button
+							onClick={handleClick}
 							className='h-11 flex items-center justify-between bg-green-600 shadow outline mb-4 ml-4'
 							style={{width: '(100% - 30px)'}}>
 							<CurrencyFormat
@@ -92,6 +98,7 @@ const Cart = () => {
 								displayType={'text'}
 								thousandSeparator={true}
 								prefix={'$'}
+								fixedDecimalScale={true}
 							/>
 						</button>
 					</div>
@@ -101,4 +108,4 @@ const Cart = () => {
 	);
 };
 
-export default Cart; 
+export default Cart;
