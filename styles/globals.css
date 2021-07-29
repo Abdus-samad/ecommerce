@@ -91,9 +91,7 @@
 		@apply min-w-[80px];
 	}
 	/* Modal */
-	.PayBtn {
-		@apply text-white bg-[#32325d] px-[14px] rounded-[6px] whitespace-nowrap inline-block h-[40px] text-sm font-semibold transition-all duration-150 ease cursor-pointer;
-	}
+
 	.textarea {
 		@apply h-auto min-h-[171px] pt-[15px] resize-none;
 	}
@@ -148,7 +146,7 @@
 	.label {
 		@apply lg:flex-3 lg:max-w-4 flex-5 max-w-5 mb-[15px];
 	}
-	.contact.active{
+	.contact.active {
 		@apply bg-white border border-green-600;
 	}
 	.contact {
@@ -167,7 +165,7 @@
 		@apply px-[30px] text-base font-bold cursor-pointer transition-all duration-[0.3s] flex items-center justify-center flex-shrink-0 text-center rounded-[6px] text-green-600;
 	}
 	.card {
-		@apply px-4 cursor-pointer transition-all duration-75 ease rounded flex items-center justify-center text-center;
+		@apply top-[27px] right-[20px] lg:top-[40px] lg:right-[30px] px-4 cursor-pointer transition-all duration-75 ease rounded flex items-center justify-center text-center;
 	}
 	.span {
 		@apply text-base font-bold text-gray-900;
@@ -224,7 +222,7 @@
 
 	/* Drawer s */
 	.bottom {
-		@apply w-full right-0   z-[999990] -bottom-full bg-white shadow h-[70vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
+		@apply w-full right-0 z-[999990] -bottom-full bg-white shadow h-[70vh] flex justify-center fixed transition-all  duration-[.35s] ease-in-out;
 	}
 	.bottom.active {
 		@apply bottom-0 duration-[350ms];
@@ -261,9 +259,11 @@
 	}
 
 	/* CheckOut */
-
+	.addressContainer {
+		@apply bg-white lg:pt-[30px] lg:px-[30px] lg:pb-[30px] pt-[20px] mb-5 shadow relative;
+	}
 	.CheckoutAdress {
-		@apply lg:flex-3 lg:max-w-4 flex-5 max-w-5 mb-[15px]  flex-col text-left p-[15px] mr-[15px] items-start  border border-[#f7f7f7] inline-flex  rounded-[6px] cursor-pointer w-full transition-all duration-100 ease-in bg-[#f7f7f7] relative text-base font-normal text-[#0d1136];
+		@apply lg:flex-3 lg:max-w-4 md:flex-5 md:max-w-5 flex-2 max-w-full mb-[15px]  flex-col text-left p-[15px] mr-[15px] items-start  border border-[#f7f7f7] inline-flex  rounded-[6px] cursor-pointer w-full transition-all duration-100 ease-in bg-[#f7f7f7] relative text-base font-normal text-[#0d1136];
 	}
 
 	.CheckoutAdress.active {
@@ -277,30 +277,43 @@
 		@apply border border-[#009e7f] bg-white;
 	}
 	.checkoutBtn {
-		@apply p-0 rounded-none border-0 bg-transparent top-[27px] right-[20px] lg:top-[40px] lg:right-[30px] absolute text-[#009e7f] font-bold text-[13px] items-center flex w-auto h-auto;
+		@apply p-0 rounded-none focus:outline-none  border-0 bg-transparent top-[27px] right-[20px] lg:top-[40px] lg:right-[30px] absolute text-[#009e7f] font-bold text-[13px] items-center flex w-auto h-auto;
 	}
 	.ContactBtn {
-		@apply p-0 rounded-none border-0 bg-transparent top-[27px] right-[20px] lg:top-[100px] lg:right-[30px] absolute text-[#009e7f] font-bold text-[13px] items-center flex w-auto h-auto;
+		@apply p-0 rounded-none border-0 focus:outline-none bg-transparent top-[27px] right-[20px] lg:top-[40px] lg:right-[30px] absolute text-[#009e7f] font-bold text-[13px] items-center flex w-auto h-auto;
 	}
 	.dlabel {
 		@apply lg:flex-3 lg:max-w-4 py-[11px] px-[15px] flex-2 max-w-full mr-0 flex-col text-left items-start;
 	}
-	.del{
-	@apply inline-flex mb-[15px] relative text-[15px] font-normal text-[#0d1136] transition-all duration-100 ease-in border border-[#f7f7f7] rounded-[6px] bg-[#f7f7f7];
+	.del {
+		@apply inline-flex mb-[15px] relative text-[15px] font-normal text-[#0d1136] transition-all duration-100 ease-in border border-[#f7f7f7] rounded-[6px] bg-[#f7f7f7];
 	}
-	
-	.del.active{
+
+	.PaymentInput {
+		@apply w-full h-[54px] rounded-[6px] border border-[#e6e6e6] focus:outline-none bg-[#e6e6e6] text-gray-900 font-normal text-base px-[18px] box-border transition-colors duration-[0.25s] ease;
+	}
+	.PayBtn {
+		@apply px-[30px] py-[0px] text-[15px] flex items-center justify-center flex-shrink-0 text-center border-[0px] h-[48px] font-bold cursor-pointer bg-[#019376] text-white transition-all duration-75 ease-in rounded-[6px] focus:outline-none;
+	}
+	.del.active {
 		@apply border border-[#009e7f] bg-white;
 	}
-	.subTotal{
+	.subTotal {
 		@apply border-t border-[#e6e6e6] pt-[20px] px-[15px] mt-5;
 	}
 
+	/* Order */
+
+	.order {
+		@apply bg-white border border-[#f7f7f7] px-[45px] py-[50px] lg:p-[60px] rounded-[6px] overflow-hidden relative lg:w-[870px] lmd:px-[45px] lmd:py-[50px] w-cac ml-auto mr-auto;
+	}
+
+	.home {
+		@apply inline-flex items-center justify-center absolute border border-[#e6e6e6]  hover:bg-[#009e7f] hover:text-white hover:border-[#009e7f]  top-[15px] right-[15px] transition-all duration-75 ease-in-out text-base font-normal text-[#77798c] py-[5px] px-[15px] h-[36px] rounded-[6px];
+	}
 }
 
 @layer utilities {
-	
-
 	.scrollbar::-webkit-scrollbar {
 		width: 4px;
 		cursor: pointer;
@@ -324,6 +337,7 @@
 		background-color: rgba(0, 0, 0, 0.7);
 		z-index: 9999;
 		position: fixed;
+		overflow: hidden;
 	}
 
 	.Mcont {
@@ -331,7 +345,7 @@
 		width: 360px;
 		height: auto;
 		position: absolute;
-		left: 503px;
+		left: 410px;
 		top: 210.5px;
 		opacity: 1;
 		transform: scale3d(1, 1, 1);
@@ -378,7 +392,7 @@
 			width: 360px;
 			height: auto;
 			position: absolute;
-			left: 40px;
+			left: 10px;
 			top: 77px;
 			opacity: 1;
 			transform: scale3d(1, 1, 1);
@@ -455,5 +469,46 @@
 		top: -8px;
 		box-shadow: rgb(142 142 142 / 14%) -4px -4px 8px -3px;
 		pointer-events: none;
+	}
+	@media (max-width: 767px) {
+		.col {
+			flex-direction: column;
+		}
+		.order {
+			order: 1;
+		}
+
+		.Checked {
+			order: 0;
+			width: 100%;
+			padding: 40px 15px 30px;
+			position: relative !important;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.addButton {
+			top: 27px;
+			right: 20px;
+		}
+	}
+	.iD::before {
+		counter-increment: section-counter 1;
+		content: counter(section-counter);
+		color: rgb(255, 255, 255);
+		font-size: 19px;
+		width: 35px;
+		height: 35px;
+		border-radius: 50%;
+		display: flex;
+		-webkit-box-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		justify-content: center;
+		background-color: rgb(0, 158, 127);
+		margin-right: 15px;
+	}
+	.counter {
+		counter-reset: section-counter 0;
 	}
 }

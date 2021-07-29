@@ -1,13 +1,10 @@
 import Head from 'next/head';
 import Header from '../components/Reuseables/Header';
-import Drawer from '../components/Drawer/Drawer';
 import BackDrop from '../components/Drawer/BackDrop';
+import Drawer from '../components/Drawer/Drawer';
 import {useState} from 'react';
-import Right from '../components/Checkout/right'
-import Left from '../components/Checkout/left';
 
-const Checkout = () => {
-
+const Orderreceived = () => {
 	const [drawer, setDrawer] = useState(false);
 	const showDrawer = () => setDrawer(!drawer);
 
@@ -18,7 +15,7 @@ const Checkout = () => {
 	}
 
 	return (
-		<div className=''>
+		<div>
 			<Head>
 				<title>Checkout</title>
 				<meta
@@ -30,15 +27,20 @@ const Checkout = () => {
 			<Header showDrawer={showDrawer} />
 			<Drawer drawer={drawer} showDrawer={showDrawer} />
 			{backdrop}
-			
-			<div className='lg:pt-[130px] lg:px-[60px] lg:pb-[60px] pt:pt-[60px] w-full flex relative lg:bg-[#f7f7f7] bg-white'>
-				<div className='lg:w-[970px] lg:ml-auto lg:mr-auto flex w-full col counter'>
-                 <Right />
-				 <Left />
-                </div>
+
+			<div className='bg-[#f7f7f7] relative pt-[100px] pb-[60px] min-h-screen'>
+				<div className='order'>
+					<a
+						href='/'
+						className='home'>Back to Home</a>
+				</div>
 			</div>
 		</div>
 	);
 };
 
-export default Checkout;
+export default Orderreceived;
+
+/**
+ 
+ */

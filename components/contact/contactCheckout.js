@@ -12,8 +12,8 @@ const Address = () => {
 	}, []);
 
 	return (
-		<div className='bg-white pt-[30px] px-[30px] pb-[30px] mb-5 shadow'>
-			<h3 className='text-xl font-normal text-[#0d1136] mb-[35px] flex items-center iD'>
+		<div className='addressContainer'>
+			<h3 className='text-xl font-normal text-[#0d1136] mb-[30px] flex items-center iD'>
 				Contact Number
 			</h3>
 			<div className='flex flex-col'>
@@ -47,7 +47,7 @@ const Address = () => {
 					))}
 					<button
 						onClick={() => setOpen(true)}
-						className='ContactBtn '>
+						className='ContactBtn'>
 						<div className='box-border mt-0 mr-2 mb-0 ml-0'>
 							<PlusIcon className='h-[20px]' />
 						</div>

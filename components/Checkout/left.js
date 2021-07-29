@@ -15,7 +15,7 @@ const left = () => {
 			0
 		);
 	return (
-		<div className='lg:w-[270px] lg:flex-shrink-0 lg:pt-[20px] order-none relative pt-[40px] px-[15px] pb-[30px]'>
+		<div className='lg:w-[270px] lg:flex-shrink-0 lg:pt-[20px] checked'>
 			<div className='w-full flex flex-col'>
 				<h3 className='text-[15px] font-bold text-[#0d1136] text-center mb-[40px]'>
 					Your Order
@@ -97,9 +97,3 @@ const left = () => {
 };
 
 export default left;
-/* 
-    width: 140px;
-    height: auto;
-}
-
-*/

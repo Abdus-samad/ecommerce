@@ -21,6 +21,7 @@ module.exports = {
 			},
 			width: {
 				calc: 'calc(100% - 330px)',
+				cac: 'calc(100% - 30px)',
 			},
 			maxWidth: {
 				4: 'calc(33.3333% - 10px)',
@@ -28,6 +29,9 @@ module.exports = {
 			},
 			inset: {
 				top: 'calc(100% + 15px)',
+			},
+			screens: {
+				lmd: '990px',
 			},
 		},
 	},

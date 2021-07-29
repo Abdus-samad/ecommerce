@@ -1,35 +1,40 @@
-import {PlusIcon} from '@heroicons/react/solid';
-import {useState} from 'react';
-import Modal from './Modal';
-import PaymentCard from './PaymentCard';
+import {useRouter} from 'next/router';
 
 const Payment = () => {
-	const [open, setOpen] = useState(false);
+	const router = useRouter();
+
+	const handleClick = (e) => {
+		e.preventDefault();
+		router.push('/order-received');
+	};
 
 	return (
-		<div className='mb-10 box-border -mx-2 flex-initial flex-wrap flex-row'>
-			<div className='box-boder flex-4 px-2 dp basis relative'>
-				<h3 className='text-base mb-6 flex items-center text-gray-800 font-semibold'>
-					Payment Option
-				</h3>
-				<header className='flex justify-between items-center -mt-4'>
-					<span className='text-sm font-bold text-green-600 block'>
-						Saved Cards
-					</span>
-					<a
-						onClick={() => setOpen(true)}
-						className='text-sm font-bold text-green-600 h-10 card'>
-						<span className='mr-2'>
-							<PlusIcon className='h-4' />
-						</span>
-						Add Cards
-					</a>
-				</header>
-				<div className='mt-4 -mx-3 relative'>
-					<PaymentCard />
+		<div className='addressContainer'>
+			<h3 className='text-xl font-normal text-[#0d1136] mb-[35px] flex items-center iD'>
+				Payment
+			</h3>
+			<form>
+				<h2 className='text-xl flex font-bold text-gray-800 mb-4'>
+					Enter Card Info
+				</h2>
+				<div className='w-full flex flex-col mb-4'>
+					<input type='text' className='PaymentInput' />
 				</div>
+			</form>
+			<span className='text-[13px] font-normal text-[#77798c] leading-6 mt-[30px] block'>
+				By making this purchase you agree to our
+				<span className='text-[13px] font-normal text-[#ff5b60] ml-1 cursor-pointer leading-6'>
+					terms and conditions.
+				</span>
+			</span>
+			<div className='mt-[25px]'>
+				<button
+					onClick={handleClick}
+					style={{width: '100%'}}
+					className='PayBtn'>
+					Proceed To Checkout
+				</button>
 			</div>
-			<Modal open={open} close={() => setOpen(false)} />
 		</div>
 	);
 };

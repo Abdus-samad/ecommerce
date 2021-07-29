@@ -4,14 +4,14 @@ const Modal = ({open, close}) => {
 	if (!open) return null;
 
 	return (
-		<div>
+		<div className='overflow-y-hidden z-[999999]'>
 			<div className='backdrop' onClick={close} />
 
 			<button onClick={close} className='Close'>
 				<XIcon className='h-8 w-8' />
 			</button>
 			<div className='ModalWrapper' >
-				<div className='Mcon  Mcont'>
+				<div className='Mcon Mcont'>
 					<div className='Modal'>
 						<form>
 							<h2 className='text-xl font-bold text-gray-800 mb-4'>

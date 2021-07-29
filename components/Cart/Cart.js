@@ -54,7 +54,7 @@ const Cart = () => {
 								<div className='flex items-center justify-center mb-5 mt-12'>
 									<Empty />
 								</div>
-								<span className='text-base pl-36 font-bold text-gray-700 w-full py-10 text-center'>
+								<span className='text-[14px] flex font-[400] text-[#77798c] relative justify-center mb-5 items-center'>
 									No Product Found
 								</span>
 							</div>

@@ -17,7 +17,7 @@ const Cartdrawer = (props) => {
 
 	return (
 		<div className={props.carts ? 'bottom active' : 'bottom'}>
-			<div className='w-full h-full flex flex-col rounded bg-white box-content'>
+			<div className='w-full h-full flex flex-col rounded bg-white box-content overflow-hidden'>
 				<div className=' px-6 py-4 bg-white flex items-center justify-center border-b border-gray-100'>
 					<div className='inline-flex items-center text-green-700'>
 						<ShoppingBagIcon className='h-7 w-5' />
@@ -37,7 +37,7 @@ const Cartdrawer = (props) => {
 							<div className='flex items-center justify-center mb-5 mt-12'>
 								<Empty />
 							</div>
-							<span className='text-base pl-24 font-bold text-gray-700 w-full py-10 text-center'>
+							<span className='text-[14px] flex font-[400] text-[#77798c] relative justify-center mb-5 items-center'>
 								No Product Found
 							</span>
 						</div>

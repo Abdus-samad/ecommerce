@@ -12,7 +12,7 @@ const Address = () => {
 	}, []);
 
 	return (
-		<div className='bg-white pt-[30px] px-[30px] pb-[30px] mb-5 shadow'>
+		<div className='addressContainer'>
 			<h3 className='text-xl font-normal text-[#0d1136] mb-[35px] flex items-center iD'>
 				Delivery Address
 			</h3>
