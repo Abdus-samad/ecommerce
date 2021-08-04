@@ -68,7 +68,7 @@ const Header = (props) => {
 							Offer
 						</a>
 					</Link>
-					<Link href='/'>
+					<Link href='/help'>
 						<a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-700  font-bold items-center justify-center hover:text-green-700'>
 							<div className='flex md:col-span-2 lg:col-span-1 lg:col-start-2  cursor-pointer'>
 								<QuestionMarkCircleIcon className='h-5 mr-1' />

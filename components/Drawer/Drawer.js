@@ -4,6 +4,7 @@ import AuthContext from '../../context/Auth/authContext';
 import Data from './data';
 import {auth} from '../../firebase';
 import {useEffect, useContext} from 'react';
+import Link from 'next/link';
 
 const Drawer = (props) => {
 	const router = useRouter();
@@ -64,9 +65,8 @@ const Drawer = (props) => {
 					<div>
 						{Data.map((item, index) => {
 							return (
-								<li key={index}>
+								<Link key={index} href={item.path}>
 									<a
-										href={item.path}
 										className={`block pf font-normal relative mb-5 cursor-pointer ${
 											router.asPath === item.path
 												? 'text-green-800 border-l-4 border-green-800'
@@ -78,7 +78,7 @@ const Drawer = (props) => {
 										}}>
 										<span className=''>{item.title}</span>
 									</a>
-								</li>
+								</Link>
 							);
 						})}
 					</div>

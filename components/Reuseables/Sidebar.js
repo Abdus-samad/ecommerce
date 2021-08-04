@@ -1,5 +1,6 @@
-import SData from './SData';
+import SData from '../Profile/SData';
 import {useRouter} from 'next/router';
+import Link from 'next/link';
 
 const Sidebar = () => {
 	const router = useRouter();
@@ -12,16 +13,16 @@ const Sidebar = () => {
 						<li>
 							{SData.map((item, index) => {
 								return (
-									<a
-										key={index}
-										href={item.path}
-										className={`flex items-center hover:text-green-800 proLog ${
-											router.asPath === item.path
-												? 'text-green-800 border-l-4 border-green-800'
-												: 'text-gray-800'
-										}`}>
-										<span>{item.title}</span>
-									</a>
+									<Link key={index} href={item.path}>
+										<a
+											className={`flex items-center hover:text-[#009e7f] proLog ${
+												router.asPath === item.path
+													? 'text-[#009e7f] border-l-4 border-[#009e7f]'
+													: 'text-gray-800'
+											}`}>
+											<span>{item.title}</span>
+										</a>
+									</Link>
 								);
 							})}
 						</li>

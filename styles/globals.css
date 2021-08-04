@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;1,100;1,300;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,500;1,600;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,900;1,100;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* display: block;
-    max-width: 100%;
-    max-height: 450px;
-    height: auto; */
 
 @layer components {
 	.grocery {
@@ -22,12 +21,6 @@
 	}
 	.tm {
 		@apply mx-[10px] mb-[10px];
-	}
-	.mh {
-		@apply pt-[140px];
-	}
-	.xm {
-		@apply px-[70px];
 	}
 
 	.yu {
@@ -109,14 +102,14 @@
 	}
 
 	.input {
-		@apply w-full h-[54px] rounded-[6px] border border-[#e6e6e6] text-gray-900 font-normal text-base px-[18px] box-border transition-colors duration-[0.25s] ease;
+		@apply w-full h-[54px] rounded-[6px] border border-[#e6e6e6] text-gray-900 font-normal text-base px-[18px] box-border transition-colors duration-[0.25s] ease-in;
 	}
 
 	.ModalBtn {
-		@apply px-[15px] text-base border-0 font-bold cursor-pointer text-white bg-green-600 rounded-[6px] flex items-center justify-center flex-shrink-0 text-center transition-all duration-150 ease;
+		@apply px-[15px] text-base border-0 font-bold cursor-pointer text-white bg-green-600 rounded-[6px] flex items-center justify-center flex-shrink-0 text-center transition-all duration-150 ease-in;
 	}
 	/* Profile */
-	.profileBody {
+	.SidebarBody {
 		@apply lg:pt-[140px] lg:px-[70px] pt-[100px] pb-[60px];
 	}
 	.proSide {
@@ -124,7 +117,7 @@
 	}
 
 	.proLog {
-		@apply py-[10px] px-[60px];
+		@apply py-[10px] px-[50px];
 	}
 	.proContainer {
 		@apply w-full lg:min-h-[200px] lg:pt-[60px] lg:px-[50px] lg:pb-[20px] flex lg:flex-col lg:border lg:border-gray-300 p-5 h-auto lg:w-calc;
@@ -290,9 +283,12 @@
 	}
 
 	.PaymentInput {
-		@apply w-full h-[54px] rounded-[6px] border border-[#e6e6e6] focus:outline-none bg-[#e6e6e6] text-gray-900 font-normal text-base px-[18px] box-border transition-colors duration-[0.25s] ease;
+		@apply w-full h-[54px] rounded-[6px] border border-[#e6e6e6] focus:outline-none bg-[#e6e6e6] text-gray-900 font-normal text-base px-[18px] box-border transition-colors duration-[0.25s] ease-in;
 	}
 	.PayBtn {
+		@apply px-[30px] py-[0px] text-[15px] flex items-center justify-center flex-shrink-0 text-center border-[0px] h-[48px] font-bold cursor-not-allowed bg-[#f1f1f1] text-[#909090] transition-all duration-75 ease-in rounded-[6px] focus:outline-none;
+	}
+	.PayBtnDisable {
 		@apply px-[30px] py-[0px] text-[15px] flex items-center justify-center flex-shrink-0 text-center border-[0px] h-[48px] font-bold cursor-pointer bg-[#019376] text-white transition-all duration-75 ease-in rounded-[6px] focus:outline-none;
 	}
 	.del.active {
@@ -301,30 +297,91 @@
 	.subTotal {
 		@apply border-t border-[#e6e6e6] pt-[20px] px-[15px] mt-5;
 	}
-
 	/* Order */
-
+	.OrderContainer.active {
+		@apply border-2 border-[#009e7f];
+	}
+	.OrderContainer {
+		@apply bg-[#f7f7f7] rounded overflow-hidden mb-[15px] flex flex-col cursor-pointer flex-shrink-0 border-2 border-transparent;
+	}
 	.order {
-		@apply bg-white border border-[#f7f7f7] px-[45px] py-[50px] lg:p-[60px] rounded-[6px] overflow-hidden relative lg:w-[870px] lmd:px-[45px] lmd:py-[50px] w-cac ml-auto mr-auto;
+		@apply bg-white border border-[#f7f7f7] px-[45px] py-[50px] lg:p-[60px] rounded-[6px] overflow-hidden relative lg:w-[870px]  w-cac ml-auto mr-auto;
 	}
 
 	.home {
 		@apply inline-flex items-center justify-center absolute border border-[#e6e6e6]  hover:bg-[#009e7f] hover:text-white hover:border-[#009e7f]  top-[15px] right-[15px] transition-all duration-75 ease-in-out text-base font-normal text-[#77798c] py-[5px] px-[15px] h-[36px] rounded-[6px];
 	}
+	.circle {
+		@apply  text-[13px] font-bold text-white w-[36px] h-[36px] flex items-center justify-center rounded-[50%] bg-[#009e7f] border border-dashed border-[#009e7f];
+	}
+
+	.Circle {
+		@apply relative w-full flex items-center justify-center mb-[15px];
+	}
+	.Block {
+		@apply flex flex-0 flex-col items-center;
+	}
+
+	.circle.active {
+		@apply bg-[#009e7f] text-white;
+	}
+	.progress {
+		@apply first:w-[50%] h-[4px] bg-[#e6e6e6] absolute top-[50%] left-0 last:w-[50%];
+	}
+  .table {
+	  @apply py-2 align-middle inline-block pl-[-90px];
+  }
 }
 
 @layer utilities {
+	
+	.ProgressBar:not(:last-child) >  .Circle::after {
+		content: '';
+		width: 100%;
+		height: 4px;
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		background-color: #009e7f;
+		margin: auto;
+		z-index: 1;
+
+	}
+
+	table.custom td {
+		border-top: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		padding: 1em 2em;
+	  }
+	  
+	  table.custom {
+		border: 1px solid #ccc;
+	  }
+	  
+	  table.custom thead {
+		background: #eee;
+	  }
+	.not {
+		flex-basis: 210px;
+	}
+	.minh {
+		min-height: calc(100vh - 190px);
+	}
 	.scrollbar::-webkit-scrollbar {
-		width: 4px;
+		width: 5px;
 		cursor: pointer;
+		border-radius: 10px;
+		background: rgba(0, 0, 0, 0.1);
 	}
 	.scrollbar::-webkit-scrollbar-track {
 		background-color: rgba(229, 231, 235, var(--bg-opacity));
 		cursor: pointer;
+		border-radius: 10px;
 	}
 	.scrollbar::-webkit-scrollbar-thumb:hover {
 		cursor: pointer;
-		background-color: #9aabc0;
+		border-radius: 10px;
+		background-color: #9e9e9e;
 	}
 
 	.backdrop {
@@ -510,5 +567,12 @@
 	}
 	.counter {
 		counter-reset: section-counter 0;
+	}
+	.fw::after {
+		content: ':';
+		position: absolute;
+		top: -1px;
+		right: -2px;
+		line-height: 1;
 	}
 }

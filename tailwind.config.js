@@ -18,6 +18,7 @@ module.exports = {
 				3: '1 1 calc(33.3333% - 10px)',
 				4: '0 0 auto',
 				5: '1 1 calc(50% - 10px)',
+				0: '1 1 0%',
 			},
 			width: {
 				calc: 'calc(100% - 330px)',
@@ -30,8 +31,10 @@ module.exports = {
 			inset: {
 				top: 'calc(100% + 15px)',
 			},
-			screens: {
-				lmd: '990px',
+			fontFamily: {
+				pop: ['Poppins'],
+				rob: ['Roboto'],
+				lato: ['Lato'],
 			},
 		},
 	},

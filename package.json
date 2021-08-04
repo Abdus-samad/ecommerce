@@ -12,23 +12,17 @@
 		"@heroicons/react": "^1.0.1",
 		"firebase": "^8.7.1",
 		"next": "10.2.3",
-		"pure-react-carousel": "^1.27.6",
+		"rc-table": "^7.17.1",
 		"react": "17.0.2",
 		"react-currency-format": "^1.0.0",
 		"react-dom": "17.0.2",
-		"react-id-swiper": "^4.0.0",
-		"react-login-modal": "^1.2.1",
-		"react-modal": "^3.14.3",
 		"react-multi-carousel": "^2.6.3",
-		"react-responsive-carousel": "^3.2.18",
-		"react-spring": "^9.2.3",
-		"react-spring-modal": "^2.0.7",
 		"swiper": "^6.7.5",
 		"uuid": "^8.3.2"
 	},
 	"devDependencies": {
-		"autoprefixer": "^10.2.6",
-		"postcss": "^8.3.1",
-		"tailwindcss": "^2.1.4"
+		"autoprefixer": "^10.3.1",
+		"postcss": "^8.3.6",
+		"tailwindcss": "^2.2.7"
 	}
 }

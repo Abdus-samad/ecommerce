@@ -16,7 +16,7 @@ const CheckoutProduct = ({id, name, count, price}) => {
 	const productTotal = () => Number(price) * count;
 
 	return (
-		<div className='last-child:mb-0 mb-[25px] flex w-full items-start'>
+		<div className='last:mb-0 mb-[25px] flex w-full items-start'>
 			<span className='text-[14px] font-bold text-[#0d1136]'>
 				{cartProductCount(id)}
 			</span>

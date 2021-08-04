@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Header from '../components/Reuseables/Header';
-import SideBar from '../components/Profile/Sidebar';
+import SideBar from '../components/Reuseables/Sidebar';
 import ProfileForm from '../components/Profile/ProfileForm';
 import Drawer from '../components/Drawer/Drawer';
 import BackDrop from '../components/Drawer/BackDrop';
@@ -31,7 +31,7 @@ const profile = () => {
 			<Header showDrawer={showDrawer} />
 			<Drawer drawer={drawer} showDrawer={showDrawer} />
 			{backdrop}
-			<div className='w-full h-auto min-h-screen flex flex-wrap bg-white profileBody'>
+			<div className='w-full h-auto min-h-screen flex flex-wrap bg-white SidebarBody top-t'>
 				<SideBar />
 				<div className='proContainer '>
 					<div className='flex flex-col w-full'>
