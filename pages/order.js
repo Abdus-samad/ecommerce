@@ -2,11 +2,21 @@ import Head from 'next/head';
 import Header from '../components/Reuseables/Header';
 import SideBar from '../components/Reuseables/Sidebar';
 import Orderdetail from '../components/order/Orderdetail';
-import Order from '../components/order/Order'
-import { useState } from 'react';
-const order = () => {
-	const [currentStep, setCurrentStep] = useState(1);
+import Order from '../components/order/Order';
+import OrderM from '../components/order/OrderM';
+import {useState} from 'react';
+import BackDrop from '../components/Drawer/BackDrop';
+import Drawer from '../components/Drawer/Drawer';
 
+const order = () => {
+	const [drawer, setDrawer] = useState(false);
+	const showDrawer = () => setDrawer(!drawer);
+
+	let backdrop;
+
+	if (drawer) {
+		backdrop = <BackDrop showDrawer={showDrawer} />;
+	}
 	return (
 		<div>
 			<Head>
@@ -17,14 +27,19 @@ const order = () => {
 				/>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			<Header />
+
+			<Header showDrawer={showDrawer} />
+			<Drawer drawer={drawer} showDrawer={showDrawer} />
+			{backdrop}
+
 			<div className='w-full h-auto min-h-screen flex flex-wrap bg-white SidebarBody '>
 				<SideBar />
 				<div className='lg:w-calc flex flex-start w-full px-[20px]'>
 					<div className='hidden lg:flex'>
-						<Orderdetail currentStep={currentStep} setCurrentStep={setCurrentStep}/>
-						<Order currentStep={currentStep} setCurrentStep={setCurrentStep}/>
+						<Orderdetail />
+						<Order />
 					</div>
+					<OrderM />
 				</div>
 			</div>
 		</div>

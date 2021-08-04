@@ -34,13 +34,13 @@ export default function Example() {
 	return (
 		<div className='flex flex-col'>
 			<div className='-my-2 overflow-x-auto -mx-[20px]'>
-				<div className='table'>
-					<div className='overflow-hidden'>
-						<table className='min-w-full '>
+				<div className='table min-w-full w-[450px]'>
+					<div className='overflow-hidden min-w-full w-[450px]'>
+						<table className='min-w-full w-[450px]'>
 							<thead className='bg-gray-50'>
 								<tr>
 									{head.map((item) => (
-										<th className='first:pl-[110px] pr-[60px] first:text-left py-[8px] px-[20px] text-center text-[13px] font-bold text-[#0d1136] lastt:text-right'>
+										<th className='first:pl-[110px] first:text-left py-[8px] px-[20px] text-center text-[13px] font-bold text-[#0d1136] lastt:text-right'>
 											{item.Name}
 										</th>
 									))}

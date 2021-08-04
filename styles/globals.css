@@ -312,7 +312,7 @@
 		@apply inline-flex items-center justify-center absolute border border-[#e6e6e6]  hover:bg-[#009e7f] hover:text-white hover:border-[#009e7f]  top-[15px] right-[15px] transition-all duration-75 ease-in-out text-base font-normal text-[#77798c] py-[5px] px-[15px] h-[36px] rounded-[6px];
 	}
 	.circle {
-		@apply  text-[13px] font-bold text-white w-[36px] h-[36px] flex items-center justify-center rounded-[50%] bg-[#009e7f] border border-dashed border-[#009e7f];
+		@apply text-[13px] font-bold text-white w-[36px] h-[36px] flex items-center justify-center rounded-[50%] bg-[#009e7f] border border-dashed border-[#009e7f];
 	}
 
 	.Circle {
@@ -328,14 +328,20 @@
 	.progress {
 		@apply first:w-[50%] h-[4px] bg-[#e6e6e6] absolute top-[50%] left-0 last:w-[50%];
 	}
-  .table {
-	  @apply py-2 align-middle inline-block pl-[-90px];
-  }
+	.table {
+		@apply py-2 align-middle inline-block pl-[-90px];
+	}
+	.orm {
+		@apply bg-[#f7f7f7] rounded-[6px] mb-[15px] flex flex-col cursor-pointer flex-shrink-0 border border-transparent;
+	}
+	.orm.active {
+		@apply bg-white border border-[#f1f1f1];
+	}
+	
 }
 
 @layer utilities {
-	
-	.ProgressBar:not(:last-child) >  .Circle::after {
+	.ProgressBar:not(:last-child) > .Circle::after {
 		content: '';
 		width: 100%;
 		height: 4px;
@@ -345,22 +351,21 @@
 		background-color: #009e7f;
 		margin: auto;
 		z-index: 1;
-
 	}
 
 	table.custom td {
 		border-top: 1px solid #ccc;
 		border-right: 1px solid #ccc;
 		padding: 1em 2em;
-	  }
-	  
-	  table.custom {
+	}
+
+	table.custom {
 		border: 1px solid #ccc;
-	  }
-	  
-	  table.custom thead {
+	}
+
+	table.custom thead {
 		background: #eee;
-	  }
+	}
 	.not {
 		flex-basis: 210px;
 	}
@@ -574,5 +579,33 @@
 		top: -1px;
 		right: -2px;
 		line-height: 1;
+	}
+	.arrow {
+		display: inline-block;
+		content: '\20';
+		width: 0;
+		height: 0;
+		font-size: 0;
+		line-height: 0;
+		border-top: 3px solid transparent;
+		border-bottom: 3px solid transparent;
+		border-left: 4px solid #666;
+		vertical-align: middle;
+		margin-right: 8px;
+	}
+	.arrowdown {
+		display: inline-block;
+		content: '\20';
+		width: 0;
+		height: 0;
+		font-size: 0;
+		line-height: 0;
+		position: relative;
+		top: 2px;
+		border-left: 3px solid transparent;
+		border-right: 3px solid transparent;
+		border-top: 4px solid #666;
+		border-bottom: 3px solid transparent;
+		margin-right: 6px;
 	}
 }

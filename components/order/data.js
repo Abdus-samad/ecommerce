@@ -21,39 +21,49 @@ export const detail = [
 	{
 		title: 'Order',
 		type: 'Order On The Way',
-		numb: '#1',
+		numb: '1',
+		name: 'Order Date',
+		other: '7th April 2019',
+		time: 'Delivery Time',
+		date: '13th April',
+		total: 'Total Price',
+		price: '249.7',
 	},
 	{
 		title: 'Order',
 		type: 'Order Received',
-		numb: '#2',
+		numb: '2',
+		name: 'Order Date',
+		other: '7th April 2019',
+		time: 'Delivery Time',
+		date: ' 17th April',
+		total: 'Total Price',
+		price: '339',
 	},
 	{
 		title: 'Order',
 		type: 'Order Delivered',
-		numb: '#3',
+		numb: '3',
+		name: 'Order Date',
+		other: '12th April 2019',
+		time: 'Delivery Time',
+		date: '17th April',
+		total: 'Total Price',
+		price: '318',
 	},
 	{
 		title: 'Order',
 		type: 'Order Received',
-		numb: '#4',
+		numb: '4',
+		name: 'Order Date',
+		other: '17th April 2019',
+		time: 'Delivery Time',
+		date: '17th April',
+		total: 'Total Price',
+		price: '339',
 	},
 ];
 
-export const small = [
-	{
-		name: 'Order Date',
-		type: '7th April 2019',
-	},
-	{
-		name: 'Delivery Time',
-		type: '13th April',
-	},
-	{
-		name: 'Total Price',
-		type: '$249.7',
-	},
-];
 
 export const total = [
 	{
@@ -62,7 +72,7 @@ export const total = [
 	},
 	{
 		name: 'Discount',
-		total: '0'
+		total: '0',
 	},
 	{
 		name: 'Delivery Fee',
@@ -74,8 +84,63 @@ export const total = [
 	},
 ];
 
-
-
+export const details = [
+	{
+		title: 'Order',
+		type: 'Order On The Way',
+		numb: '1',
+		name: 'Order Date',
+		other: '7th April 2019',
+		time: 'Delivery Time',
+		date: '13th April',
+		total: 'Total Price',
+		price: '249.7',
+	},
+	{
+		title: 'Order',
+		type: 'Order Received',
+		numb: '2',
+		name: 'Order Date',
+		other: '7th April 2019',
+		time: 'Delivery Time',
+		date: ' 17th April',
+		total: 'Total Price',
+		price: '339',
+	},
+	{
+		title: 'Order',
+		type: 'Order Delivered',
+		numb: '3',
+		name: 'Order Date',
+		other: '12th April 2019',
+		time: 'Delivery Time',
+		date: '17th April',
+		total: 'Total Price',
+		price: '318',
+	},
+	{
+		title: 'Order',
+		type: 'Order Received',
+		numb: '4',
+		name: 'Order Date',
+		other: '17th April 2019',
+		time: 'Delivery Time',
+		date: '17th April',
+		total: 'Total Price',
+		price: '339',
+	},
+	{
+		title: 'Order',
+		type: 'Order Received',
+		numb: '5',
+		name: 'Order Date',
+		other: '17th April 2019',
+		time: 'Delivery Time',
+		date: '17th April',
+		total: 'Total Price',
+		price: '339',
+	},
+];
 
 
 

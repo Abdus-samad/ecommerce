@@ -1,19 +1,19 @@
 import {useEffect, useState} from 'react';
-import {detail, small} from './data';
+import {detail} from './data';
 
 const Orderdetail = (props) => {
 	const [current, setCurrent] = useState(false);
 
 	const handleClick = (clickType) => {
-        let newStep = props.currentStep;
-        (clickType == "next") ? newStep++ : newStep--;
- 
-        // Check if steps are within the boundary
-        if (newStep > 0 == newStep <= stepArray.length) {
-            setCurrentStep(newStep)
-        }
-    }
- 
+		let newStep = props.currentStep;
+		clickType == 'next' ? newStep++ : newStep--;
+
+		// Check if steps are within the boundary
+		if (newStep > 0 == newStep <= stepArray.length) {
+			setCurrentStep(newStep);
+		}
+	};
+
 	useEffect(() => {
 		setCurrent(detail[0]);
 	}, []);
@@ -33,7 +33,7 @@ const Orderdetail = (props) => {
 				<div className='w-full px-[20px] pb-[20px]'>
 					{detail.map((item, index) => (
 						<div
-						onClick={() => handleClick()} 
+							onClick={() => handleClick()}
 							key={index}
 							onClick={() => setCurrent(item)}
 							className={
@@ -45,7 +45,7 @@ const Orderdetail = (props) => {
 								<span className='font-bold text-[15px] text-[#0d1136]'>
 									{item.title}
 									<span className='font-normal'>
-										{item.numb}
+										#{item.numb}
 									</span>
 								</span>
 								<span className='bg-[#2e70fa1a] text-[#2e70fa] font-normal p-[10px] rounded-[6px] text-[13px]'>
@@ -53,13 +53,15 @@ const Orderdetail = (props) => {
 								</span>
 							</div>
 							<div className='flex flex-col p-[20px]'>
-								{small.map((typ, i) => (
-									<div
-										key={i}
-										className='text-[13px] font-normal text-[#0d1136] flex justify-between items-center w-full mb-[15px] last:font-bold last;mb-0'>
-										{typ.name} :<span>{typ.type}</span>
-									</div>
-								))}
+								<div className='text-[13px] font-normal text-[#0d1136] flex justify-between items-center w-full mb-[15px] last:font-bold last;mb-0'>
+									{item.name} :<span>{item.other}</span>
+								</div>
+								<div className='text-[13px] font-normal text-[#0d1136] flex justify-between items-center w-full mb-[15px] last:font-bold last;mb-0'>
+									{item.time} :<span>{item.date}</span>
+								</div>
+								<div className='text-[13px] font-normal text-[#0d1136] flex justify-between items-center w-full mb-[15px] last:font-bold last;mb-0'>
+									{item.total} :<span> ${item.price}</span>
+								</div>
 							</div>
 						</div>
 					))}
