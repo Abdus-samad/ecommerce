@@ -9,6 +9,10 @@ import BackDrop from '../components/Drawer/BackDrop';
 import Drawer from '../components/Drawer/Drawer';
 
 const order = () => {
+	const [currentStep, setCurrentStep] = useState(1);
+
+	const stepArray = ['Order Received', 'Order On The Way', 'Order Delivered'];
+
 	const [drawer, setDrawer] = useState(false);
 	const showDrawer = () => setDrawer(!drawer);
 
@@ -36,10 +40,22 @@ const order = () => {
 				<SideBar />
 				<div className='lg:w-calc flex flex-start w-full px-[20px]'>
 					<div className='hidden lg:flex'>
-						<Orderdetail />
-						<Order />
+						<Orderdetail
+							currentStep={currentStep}
+							setCurrentStep={setCurrentStep}
+							stepArray={stepArray}
+						/>
+						<Order
+							currentStep={currentStep}
+							setCurrentStep={setCurrentStep}
+							stepArray={stepArray}
+						/>
 					</div>
-					<OrderM />
+					<OrderM
+						currentStep={currentStep}
+						setCurrentStep={setCurrentStep}
+						stepArray={stepArray}
+					/>
 				</div>
 			</div>
 		</div>

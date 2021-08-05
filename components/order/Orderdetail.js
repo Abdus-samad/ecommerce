@@ -8,9 +8,8 @@ const Orderdetail = (props) => {
 		let newStep = props.currentStep;
 		clickType == 'next' ? newStep++ : newStep--;
 
-		// Check if steps are within the boundary
-		if (newStep > 0 == newStep <= stepArray.length) {
-			setCurrentStep(newStep);
+		if (newStep > 0 === newStep <= props.stepArray.length) {
+			props.setCurrentStep(newStep);
 		}
 	};
 
@@ -33,9 +32,11 @@ const Orderdetail = (props) => {
 				<div className='w-full px-[20px] pb-[20px]'>
 					{detail.map((item, index) => (
 						<div
-							onClick={() => handleClick()}
 							key={index}
-							onClick={() => setCurrent(item)}
+							onClick={() => {
+								setCurrent(item);
+								handleClick('next');
+							}}
 							className={
 								current === item
 									? 'OrderContainer active'

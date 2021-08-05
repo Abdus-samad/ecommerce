@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import ProgressBar from '../Stepper/ProgressBar';
 import {details, total} from './data';
-import Table from './Table'
+import Table from './Table';
 
-const OrderM = () => {
+const OrderM = (props) => {
 	const [clicked, setClicked] = useState(false);
 
 	const toggle = (index) => {
@@ -21,6 +21,7 @@ const OrderM = () => {
 				<div className='bg-transparent rounded-none border-none'>
 					{details.map((item, index) => (
 						<div
+							key={index}
 							onClick={() => toggle(index)}
 							className={
 								clicked === index ? 'orm active' : 'orm'
@@ -78,7 +79,9 @@ const OrderM = () => {
 												<div className='w-full flex flex-col flex-shrink-0 p-[20px]'>
 													{total.map(
 														(item, index) => (
-															<div className='font-rob text-[15px] font-normal text-[#77798c] mb-[15px] w-full flex items-center justify-between last:font-bold last:text-[#0d1136] last:mb-0'>
+															<div
+																key={index}
+																className='font-rob text-[15px] font-normal text-[#77798c] mb-[15px] w-full flex items-center justify-between last:font-bold last:text-[#0d1136] last:mb-0'>
 																{item.name}
 																<div className='text-[#0d1136]'>
 																	$
@@ -91,8 +94,12 @@ const OrderM = () => {
 											</div>
 										</div>
 									</div>
-                                    <ProgressBar />
-                                    <Table />
+									<ProgressBar
+										currentStep={props.currentStep}
+										setCurrentStep={props.setCurrentStep}
+										stepArray={props.stepArray}
+									/>
+									<Table />
 								</div>
 							) : null}
 						</div>

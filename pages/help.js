@@ -33,7 +33,7 @@ const Help = () => {
 			<Drawer drawer={drawer} showDrawer={showDrawer} />
 			{backdrop}
 			<div className='bg-[#f7f7f7] relative pt-[130px] pb-[60px] min-h-screen flex flex-col justify-between'>
-				<div className='w-[870px] ml-auto mr-auto rounded-[6px] overflow-hidden relative'>
+				<div className='lg:w-[870px] lg:ml-auto lg:mr-auto rounded-[6px] overflow-hidden relative lg:p-[0px] p-[30px]'>
 					<h3 className='text-[21px] font-bold text-[#0d1136] leading-5 mb-[25px] w-full text-center'>
 						F.A.Q
 					</h3>

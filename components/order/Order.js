@@ -1,8 +1,8 @@
 import {total} from './data';
-import Table from './Table'
+import Table from './Table';
 import ProgressBar from '../Stepper/ProgressBar';
 
-const Order = () => {
+const Order = (props) => {
 	return (
 		<div className='minh w-full flex flex-col border border-[#f1f1f1]'>
 			<h3
@@ -23,14 +23,19 @@ const Order = () => {
 				</div>
 				<div className='w-[235px] flex flex-col flex-shrink-0 p-[20px]'>
 					{total.map((item, index) => (
-						<div className='font-rob text-[15px] font-normal text-[#77798c] mb-[15px] w-full flex items-center justify-between last:font-bold last:text-[#0d1136] last:mb-0'>
+						<div 
+						key={index}
+						className='font-rob text-[15px] font-normal text-[#77798c] mb-[15px] w-full flex items-center justify-between last:font-bold last:text-[#0d1136] last:mb-0'>
 							{item.name}
 							<div className='text-[#0d1136]'>${item.total}</div>
 						</div>
 					))}
 				</div>
 			</div>
-			<ProgressBar />
+			<ProgressBar 
+				currentStep={props.currentStep}
+				setCurrentStep={props.setCurrentStep}
+				stepArray={props.stepArray}/>
 			<div>
 				<Table />
 			</div>

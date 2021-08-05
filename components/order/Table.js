@@ -15,9 +15,8 @@ const items = [
 		price: '100',
 		scale: '2lb',
 		image: '/onions.jpg',
-	}
+	},
 ];
-
 
 const head = [
 	{
@@ -39,16 +38,18 @@ export default function Example() {
 						<table className='min-w-full w-[450px]'>
 							<thead className='bg-gray-50'>
 								<tr>
-									{head.map((item) => (
-										<th className='first:pl-[110px] first:text-left py-[8px] px-[20px] text-center text-[13px] font-bold text-[#0d1136] lastt:text-right'>
+									{head.map((item, index) => (
+										<th
+											key={index}
+											className='first:pl-[110px] first:text-left py-[8px] px-[20px] text-center text-[13px] font-bold text-[#0d1136] lastt:text-right'>
 											{item.Name}
 										</th>
 									))}
 								</tr>
 							</thead>
 							<tbody className='bg-white border-none'>
-								{items.map((item) => (
-									<tr key={item.email}>
+								{items.map((item, index) => (
+									<tr key={index}>
 										<td className='p-[20px] text-[15px] font-normal text-[#0d1136] border-none'>
 											<span className='flex items-center'>
 												<span className='flex-shrink-0 h-[75px] w-[75px]'>

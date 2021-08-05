@@ -1,12 +1,12 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {CheckIcon} from '@heroicons/react/solid';
 
-const Stepper = ({steps, currentStepNumber}) => {
+const Stepper = (props) => {
 	const [stepperSteps, setStep] = useState([]);
 	const stepsStateRef = useRef();
 
 	useEffect(() => {
-		const stepsState = steps.map((step, index) => {
+		const stepsState = props.stepArray.map((step, index) => {
 			const stepObj = {};
 			stepObj.description = step;
 			stepObj.completed = false;
@@ -17,17 +17,17 @@ const Stepper = ({steps, currentStepNumber}) => {
 
 		stepsStateRef.current = stepsState;
 
-		const currentSteps = updateStep(currentStepNumber - 1, stepsState);
+		const currentSteps = updateStep(props.currentStep- 1, stepsState);
 		setStep(currentSteps);
 	}, []);
 
 	useEffect(() => {
 		const currentSteps = updateStep(
-			currentStepNumber - 1,
+			props.currentStep- 1,
 			stepsStateRef.current
 		);
 		setStep(currentSteps);
-	}, [currentStepNumber]);
+	}, [props.currentStep]);
 
 	function updateStep(stepNumber, steps) {
 		const newSteps = [...steps];
@@ -39,7 +39,7 @@ const Stepper = ({steps, currentStepNumber}) => {
 				newSteps[stepCounter] = {
 					...newSteps[stepCounter],
 					selected: true,
-					completed: false,
+					completed: true,
 				};
 				stepCounter++;
 			}
@@ -84,8 +84,8 @@ const Stepper = ({steps, currentStepNumber}) => {
 						) : (
 							index + 1
 						)}
-						<div className='progressBar'></div>
 					</div>
+						 <div className="flex-auto border-t-2 transition duration-500 ease-in-out border-gray-300 last-border-none"> </div>
 					<div className='absolute top-0 font-bold text-[15px]  text-center mt-[50px] w-32 text-xs '>
 						{' '}
 						{step.description}{' '}
