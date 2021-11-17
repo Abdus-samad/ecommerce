@@ -7,6 +7,7 @@ import Empty from '../Icon/Empty';
 
 const BottomCart = (props) => {
 
+	
 
 	const cartContext = useContext(CartContext);
 	const {cart} = cartContext;
@@ -21,7 +22,7 @@ const BottomCart = (props) => {
 		<div>
 			<button
 				onClick={props.showCart}
-				className='w-4/5 h-11 py-1 pr-1 pl-8 flex items-center bg-green-600 border-0 outline shadow-lg fixed  md:hidden'>
+				className='fixed flex items-center w-4/5 py-1 pl-8 pr-1 bg-green-600 border-0 shadow-lg h-11 outline md:hidden'>
 				<CurrencyFormat
 					renderText={(value) => (
 						<>
@@ -30,11 +31,11 @@ const BottomCart = (props) => {
 									<ShoppingCartIcon className='h-5' />
 								</span>
 							</span>
-							<span className='text-sm font-bold pl-1 pr-3 text-white'>
+							<span className='pl-1 pr-3 text-sm font-bold text-white'>
 								{cart.length} items
 							</span>
 
-							<span className='h-10  w-24 ml-auto mr-0 rounded-3xl overflow-hidden inline-flex  items-center justify-center bg-white text-green-600 font-bold text-xs'>
+							<span className='inline-flex items-center justify-center w-24 h-10 ml-auto mr-0 overflow-hidden text-xs font-bold text-green-600 bg-white rounded-3xl'>
 								{value}
 							</span>
 						</>

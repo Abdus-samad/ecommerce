@@ -1,21 +1,22 @@
-import {useContext, useState} from 'react';
-import {loginContext} from './loginContext';
-import {auth} from '../../firebase';
-import {useRouter} from 'next/router';
+import { useContext, useState } from 'react';
+import { loginContext } from './loginContext';
+import { auth } from '../../firebase';
+import { useRouter } from 'next/router';
 
 const SignUp = () => {
 	const router = useRouter();
 
-	const {SwitchToSignIn} = useContext(loginContext);
+	const { SwitchToSignIn } = useContext(loginContext);
 
 	const [user, setUser] = useState({
 		email: '',
 		password: '',
 	});
 
-	const {email, password} = user;
+	const { email, password } = user;
 
-	const onChange = (e) => setUser({...user, [e.target.name]: e.target.value});
+	const onChange = (e) =>
+		setUser({ ...user, [e.target.name]: e.target.value });
 
 	const register = (e) => {
 		e.preventDefault();
@@ -34,7 +35,7 @@ const SignUp = () => {
 				<input
 					type='email'
 					placeholder='Email'
-					className='block w-full px-5 text-base border border-gray-300 rounded text-gray-800 transition-all duration-100 ease h-12 mb-3 bg-gray-300'
+					className='block w-full h-12 px-5 mb-3 text-base text-gray-800 transition-all duration-100 bg-gray-300 border border-gray-300 rounded ease'
 					value={email}
 					name='email'
 					onChange={onChange}
@@ -43,37 +44,38 @@ const SignUp = () => {
 				<input
 					type='password'
 					placeholder='password'
-					className='block w-full px-5 text-base border border-gray-300 rounded text-gray-800 transition-all duration-100 ease h-12 mb-3 bg-gray-300'
+					className='block w-full h-12 px-5 mb-3 text-base text-gray-800 transition-all duration-100 bg-gray-300 border border-gray-300 rounded ease'
 					value={password}
 					name='password'
 					onChange={onChange}
 					required
 				/>
-				<p className='text-xs font-medium text-gray-800 w-full text-center da mb-2'>
-					By signing up, you agree to Pickbazar's
+				<p className='w-full mb-2 text-xs font-medium text-center text-gray-800 pt-[20px]'>
+					By signing up, you agree to Pickbazar's <br/>
 					<a className='font-bold text-blue-800 underline'>
 						Terms & Condtion
 					</a>
 				</p>
 				<button
 					onClick={register}
-					className='px-8 text-base font-bold cursor-pointer transition-all duration-100 ease w-full rounded flex items-center justify-center flex-shrink-0 text-center border-0 text-white h-12 bg-green-600'>
+					className='flex items-center justify-center flex-shrink-0 w-full h-12 px-8 text-base font-bold text-center text-white transition-all duration-100 border-0 rounded cursor-pointer bg-secondary-main ease'>
+					{' '}
 					Continue
 				</button>
 			</form>
-			<div className='py-4 w-full flex justify-center items-center relative'>
-				<span className='text-base font-medium text-gray-800 px-3 relative'>
+			<div className='relative flex items-center justify-center w-full py-4'>
+				<span className='relative px-3 text-base font-medium text-gray-800'>
 					or
 				</span>
 			</div>
-			<button className='mb-4 px-8 text-base font-bold cursor-pointer transition-all duration-100 ease w-full rounded flex items-center justify-center flex-shrink-0 text-center border-0 text-white h-12 bg-blue-600'>
+			<button className='flex items-center justify-center flex-shrink-0 w-full h-12 px-8 mb-4 text-base font-bold text-center text-white transition-all duration-100 bg-blue-600 border-0 rounded cursor-pointer ease'>
 				Continue with Google
 			</button>
 			<p className='p-5 text-base font-medium text-gray-500'>
 				Already have an account?
 				<button
 					onClick={SwitchToSignIn}
-					className='bg-transparent border-0 otline-0 font-bold underline text-green-700 cursor-pointer'>
+					className='font-bold text-green-700 underline bg-transparent border-0 cursor-pointer otline-0'>
 					Login
 				</button>
 			</p>

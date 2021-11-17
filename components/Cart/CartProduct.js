@@ -26,23 +26,23 @@ const CartProduct = ({id, images, price, name, count}) => {
 	};
 
 	return (
-		<div className='text-base font-bold border-b border-gray-100 flex items-center py-8 px-6'>
-			<div className='flex text-base radius justify-between items-center overflow-hidden flex-shrink-0 flex-col-reverse bg-gray-200'>
-				<a className='border-none bg-transparent flex items-center justify-center h-full cursor-pointer text-gray-500'>
+		<div className='flex items-center px-6 py-8 text-base font-bold border-b border-gray-100'>
+			<div className='flex flex-col-reverse items-center justify-between flex-shrink-0 overflow-hidden text-base bg-gray-200 radius'>
+				<a className='flex items-center justify-center h-full text-gray-500 bg-transparent border-none cursor-pointer'>
 					<MinusIcon className='size' onClick={() => remove()} />
 				</a>
 				<span>{cartProductCount(id)}</span>
-				<a className='border-none bg-transparent flex items-center justify-center h-full p-3 cursor-pointer text-gray-500'>
+				<a className='flex items-center justify-center h-full p-3 text-gray-500 bg-transparent border-none cursor-pointer'>
 					<PlusIcon className='size' onClick={() => cartObject()} />
 				</a>
 			</div>
 			<img
 				src={images[0]}
 				alt=''
-				className='w-16 h-16 object-cover mx-4'
+				className='object-cover w-16 h-16 mx-4'
 			/>
 			<div className='flex flex-col ml-4'>
-				<span className='leading-3 text-gray-800'>{name}</span>
+				<span className='text-gray-800 l'>{name}</span>
 				<span className='my-3 text-green-700'>${price}</span>
 			</div>
 			<CurrencyFormat
@@ -54,7 +54,7 @@ const CartProduct = ({id, images, price, name, count}) => {
 				prefix={'$'}
 				fixedDecimalScale={true}
 			/>
-			<button className='p-1 ml-4 cursor-pointer text-gray-200 transition duration-100 bg-transparent'>
+			<button className='p-1 ml-4 text-gray-200 transition duration-100 bg-transparent cursor-pointer'>
 				<XIcon className='h-5' onClick={() => remove()} />
 			</button>
 		</div>

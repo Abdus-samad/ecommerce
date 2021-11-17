@@ -1,14 +1,15 @@
-import {useContext} from 'react';
+import { useContext } from 'react';
 import CartContext from '../../context/Cart/cartContext';
-import {MinusIcon, PlusIcon} from '@heroicons/react/outline';
+import { MinusIcon, PlusIcon } from '@heroicons/react/outline';
+import Image from 'next/image';
 
-const Related = ({id, images, price, name, count}) => {
+const Related = ({ id, images, price, name, count }) => {
 	const cartContext = useContext(CartContext);
 
-	const {addToCart, cart, removeFromCart} = cartContext;
+	const { addToCart, cart, removeFromCart } = cartContext;
 
 	const cartObject = () => {
-		addToCart({id, images, price, name, count});
+		addToCart({ id, images, price, name, count });
 	};
 
 	const cartProductCount = (id) => {
@@ -20,43 +21,46 @@ const Related = ({id, images, price, name, count}) => {
 		removeFromCart(id);
 	};
 	return (
-		<div className='flex flex-col flex-grow rounded-md border border-gray-100 bg-white cursor-pointer hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
-			<div className='relative flex items-center justify-center overflow-hidden flex-grow'>
-				<img src={images[0]} className='max-w-full max-h-full h-auto' />
+		<div className='flex flex-col flex-grow transition-all duration-200 transform bg-white border border-gray-100 rounded-md cursor-pointer hover:shadow-md hover:border-opacity-0 hover:-translate-y-1'>
+			<div className='flex items-center justify-center flex-grow overflow-hidden '>
+				<img
+					src={images[0]}
+					
+					className='w-full'
+				/>
 			</div>
-			<div className='box-border  px-5 pb-5  '>
+			<div className='box-border px-5 pb-5 '>
 				<div className='flex items-center mb-3'>
-					<span className='text-gray-800 text-lg font-semibold'>
+					<span className='text-lg font-semibold text-gray-800'>
 						${price}
 					</span>
 				</div>
 
-				<h3 className='mb-8 text-gray-500 text-sm font-normal'>
+				<h3 className='mb-8 text-sm font-normal text-gray-500'>
 					{name}
 				</h3>
 				{cartProductCount(id) >= 1 ? (
-					<div className='flex bg-green-600 w-full h-9 text-white text-base font-bold justify-between items-center flex-shrink-0 rounded'>
-						<a
-							onClick={() => remove()}
-							className='border-none bg-tranparent text-white flex items-center h-full p-3 cursor-pointer'>
-							<MinusIcon className='h-5' />
-						</a>
+					<div className='flex items-center justify-between flex-shrink-0 w-full text-base font-bold text-white rounded bg-secondary-main h-9'>
+						<button className='flex items-center h-full p-3 text-white border-none cursor-pointer bg-tranparent'>
+							<MinusIcon
+								className='h-5'
+								onClick={() => remove()}
+							/>
+						</button>
 						<span>{cartProductCount(id)}</span>
-						<a 
-						onClick={() => cartObject()}
-						className='border-none bg-tranparent text-white flex items-center h-full p-3 cursor-pointer outline-none'>
+						<button className='flex items-center h-full p-3 text-white border-none outline-none cursor-pointer bg-tranparent'>
 							<PlusIcon
 								className='h-5'
-								
+								onClick={() => cartObject()}
 							/>
-						</a>
+						</button>
 					</div>
 				) : (
-					<button className='w-full focus:border-none  h-9 rounded cursor-pointer border-0 flex items-center hover:bg-green-700 border-green-700 bg-gray-100 hover:text-white overflow-hidden trasition-all duration-75 ease-in-out'>
-						<p className='text-xs flex-grow'>Add</p>
+					<button className='flex items-center w-full overflow-hidden duration-75 ease-in-out bg-gray-100 border-0 border-green-700 rounded cursor-pointer group focus:border-none h-9 hover:bg-secondary-100 hover:text-white trasition-all'>
+						<p className='flex-grow text-xs'>Add</p>
 						<span
 							onClick={() => cartObject()}
-							className='px-2 h-9 bg-gray-200 flex items-center hover:bg-green-600 transition-all hover:text-white duration-75 ease-in-out'>
+							className='flex items-center px-2 transition-all duration-75 ease-in-out bg-gray-200 h-9 hover:text-white group-hover:bg-secondary-main'>
 							<PlusIcon className='h-5' />
 						</span>
 					</button>

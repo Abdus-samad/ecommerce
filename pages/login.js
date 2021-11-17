@@ -29,27 +29,27 @@ const login = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<loginContext.Provider value={ContextV}>
-				<div className='w-full h-full flex box-border'>
-					<div className='wrapper rounded border bg-white  shadow p-8'>
-						<div className='w-full h-full box-border'>
+				<div className='box-border flex items-center justify-center w-full h-full'>
+					<div className='p-8 bg-white border rounded shadow wrapper'>
+						<div className='box-border w-full h-full'>
 							<div className='text-center bg-white'>
 								<div className='loginContent'>
 									{active === 'signin' && (
 										<div>
-											<h3 className='mb-2 text-2xl font-semibold text-green-600'>
+											<h3 className='mb-2 text-2xl font-semibold text-secondary-main'>
 												Welcome Back
 											</h3>
-											<span className='mb-7 text-base font-normal block text-gray-400'>
+											<span className='block text-base font-normal text-gray-400 mb-7'>
 												Login with your email & password
 											</span>
 										</div>
 									)}
 									{active === 'signup' && (
 										<div>
-											<h3 className='mb-2 text-2xl font-semibold text-green-600'>
+											<h3 className='mb-2 text-2xl font-semibold text-secondary-main'>
 												Sign Up
 											</h3>
-											<span className='mb-7 text-base font-normal block text-gray-400'>
+											<span className='block text-base font-normal text-gray-400 mb-7'>
 												By signing up, you agree to
 												Pickbazar's
 											</span>

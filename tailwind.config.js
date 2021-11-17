@@ -7,6 +7,18 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {
+			colors: {
+				primary: {
+					DEFAULT: '#f1f1f1',
+					primary: '#e6e6e6',
+				},
+				secondary: {
+					main: '#009e7f',
+					100: '#019376',
+					shade1: '#f1f1f1',
+					light: '#f7f7f7',
+				},
+			},
 			gridTemplateColumns: {
 				gr: '300px minmax(0px, 1fr)',
 				sm: 'minmax(0px, 1fr)',

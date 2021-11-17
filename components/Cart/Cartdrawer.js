@@ -1,4 +1,5 @@
 import {ShoppingBagIcon, XIcon} from '@heroicons/react/outline';
+import {useRouter} from 'next/router';
 import {useContext} from 'react';
 import CurrencyFormat from 'react-currency-format';
 import CartContext from '../../context/Cart/cartContext';
@@ -6,6 +7,13 @@ import Empty from '../Icon/Empty';
 import CartProduct from './CartProduct';
 
 const Cartdrawer = (props) => {
+const router = useRouter();
+
+	const handleClick = (e) => {
+		e.preventDefault();
+		router.push('/checkout');
+	};
+
 	const cartContext = useContext(CartContext);
 	const {cart, loading} = cartContext;
 
@@ -61,7 +69,9 @@ const Cartdrawer = (props) => {
 							Do you have voucher
 						</button>
 					</span>
-					<button className='h-11 w-5/6 flex items-center justify-between bg-green-600 shadow outline mb-4 ml-4'>
+					<button
+						onClick={handleClick}
+						className='h-11 w-5/6 flex items-center justify-between bg-green-600 shadow outline mb-4 ml-4'>
 						<CurrencyFormat
 							renderText={(value) => (
 								<>

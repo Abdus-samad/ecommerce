@@ -15,13 +15,13 @@ const Subtotal = () => {
 			<CurrencyFormat
 				renderText={(value) => (
 					<>
-						<a className='text-sm flex items-center justify-center tp text-white'>
+						<a className='flex items-center justify-center text-sm text-white tp w'>
 							<span>
 								<ShoppingCartIcon className='h-5' />
 							</span>
 							{cart.length} items
 						</a>
-						<span className='h-8 w-auto rounded overflow-hidden inline-flex bor items-center justify-center bg-white text-green-600 tm'>
+						<span className='inline-flex items-center justify-center w-auto h-8 overflow-hidden text-green-600 bg-white rounded bor tm'>
 							{value}
 						</span>
 					</>

@@ -53,9 +53,7 @@
 	.wrapper {
 		@apply max-h-[600px] w-[458px] left-[20px] top-[30px] h-auto absolute lg:top-[30px] lg:left-[454px];
 	}
-	.da {
-		@apply pt-[20px] px-[30px];
-	}
+	
 	.line {
 		@apply rounded px-5 py-4 mb-4 mr-10 relative text-sm font-medium text-gray-900 max-w-[240px] w-full transition-all duration-[0.25s] ease-linear;
 	}
@@ -102,7 +100,7 @@
 	}
 
 	.input {
-		@apply w-full h-[54px] rounded-[6px] border border-[#e6e6e6] text-gray-900 font-normal text-base px-[18px] box-border transition-colors duration-[0.25s] ease-in;
+		@apply w-full h-[54px] rounded-[6px] border border-primary-primary text-gray-900 font-normal text-base px-[18px] box-border transition-colors duration-[0.25s] ease-in;
 	}
 
 	.ModalBtn {
@@ -134,7 +132,7 @@
 		@apply mb-[20px] max-w-full lg:px-[0.5em] lg:flex-auto;
 	}
 	.formContainer {
-		@apply box-border flex flex-initial flex-col lg:flex-row -mx-2;
+		@apply box-border flex flex-col flex-initial -mx-2 lg:flex-row;
 	}
 	.label {
 		@apply lg:flex-3 lg:max-w-4 flex-5 max-w-5 mb-[15px];
@@ -191,7 +189,7 @@
 		@apply relative min-h-[180px];
 	}
 	.img {
-		@apply w-full h-full object-left object-cover lg:h-full;
+		@apply object-cover object-left w-full h-full lg:h-full;
 	}
 	.next {
 		@apply right-5;
@@ -207,7 +205,7 @@
 	}
 	/* Filter */
 	.sidebar {
-		@apply bg-white text-center py-4 px-2 rounded cursor-pointer border-2 border-white;
+		@apply px-2 py-4 text-center bg-white border-2 border-white rounded cursor-pointer;
 	}
 	.sidebar.active {
 		@apply border-2 border-gray-900;
@@ -256,34 +254,34 @@
 		@apply bg-white lg:pt-[30px] lg:px-[30px] lg:pb-[30px] pt-[20px] mb-5 shadow relative;
 	}
 	.CheckoutAdress {
-		@apply lg:flex-3 lg:max-w-4 md:flex-5 md:max-w-5 flex-2 max-w-full mb-[15px]  flex-col text-left p-[15px] mr-[15px] items-start  border border-[#f7f7f7] inline-flex  rounded-[6px] cursor-pointer w-full transition-all duration-100 ease-in bg-[#f7f7f7] relative text-base font-normal text-[#0d1136];
+		@apply lg:flex-3 lg:max-w-4 md:flex-5 md:max-w-5 flex-2 max-w-full mb-[15px]  flex-col text-left p-[15px] mr-[15px] items-start  border border-secondary-light inline-flex  rounded-[6px] cursor-pointer w-full transition-all duration-100 ease-in bg-secondary-light relative text-base font-normal text-[#0d1136];
 	}
 
 	.CheckoutAdress.active {
-		@apply border border-[#009e7f] bg-white;
+		@apply bg-white border border-secondary-main;
 	}
 	.ContactA {
-		@apply lg:flex-3 lg:max-w-4 flex-5 max-w-5 mb-[15px]  flex-col text-left p-[15px] mr-[15px] items-start  border border-[#f7f7f7] inline-flex  rounded-[6px] cursor-pointer w-full transition-all duration-100 ease-in bg-[#f7f7f7] relative text-base font-normal text-[#0d1136];
+		@apply lg:flex-3 lg:max-w-4 flex-5 max-w-5 mb-[15px]  flex-col text-left p-[15px] mr-[15px] items-start  border border-secondary-light inline-flex  rounded-[6px] cursor-pointer w-full transition-all duration-100 ease-in bg-secondary-light relative text-base font-normal text-[#0d1136];
 	}
 
 	.ContactA.active {
-		@apply border border-[#009e7f] bg-white;
+		@apply bg-white border border-secondary-main;
 	}
 	.checkoutBtn {
-		@apply p-0 rounded-none focus:outline-none  border-0 bg-transparent top-[27px] right-[20px] lg:top-[40px] lg:right-[30px] absolute text-[#009e7f] font-bold text-[13px] items-center flex w-auto h-auto;
+		@apply p-0 rounded-none focus:outline-none  border-0 bg-transparent top-[27px] right-[20px] lg:top-[40px] lg:right-[30px] absolute text-secondary-main font-bold text-[13px] items-center flex w-auto h-auto;
 	}
 	.ContactBtn {
-		@apply p-0 rounded-none border-0 focus:outline-none bg-transparent top-[27px] right-[20px] lg:top-[40px] lg:right-[30px] absolute text-[#009e7f] font-bold text-[13px] items-center flex w-auto h-auto;
+		@apply p-0 rounded-none border-0 focus:outline-none bg-transparent top-[27px] right-[20px] lg:top-[40px] lg:right-[30px] absolute text-secondary-main font-bold text-[13px] items-center flex w-auto h-auto;
 	}
 	.dlabel {
 		@apply lg:flex-3 lg:max-w-4 py-[11px] px-[15px] flex-2 max-w-full mr-0 flex-col text-left items-start;
 	}
 	.del {
-		@apply inline-flex mb-[15px] relative text-[15px] font-normal text-[#0d1136] transition-all duration-100 ease-in border border-[#f7f7f7] rounded-[6px] bg-[#f7f7f7];
+		@apply inline-flex mb-[15px] relative text-[15px] font-normal text-[#0d1136] transition-all duration-100 ease-in border border-secondary-light rounded-[6px] bg-secondary-light;
 	}
 
 	.PaymentInput {
-		@apply w-full h-[54px] rounded-[6px] border border-[#e6e6e6] focus:outline-none bg-[#e6e6e6] text-gray-900 font-normal text-base px-[18px] box-border transition-colors duration-[0.25s] ease-in;
+		@apply w-full h-[54px] rounded-[6px] border border-primary-primary focus:outline-none bg-primary-primary text-gray-900 font-normal text-base px-[18px] box-border transition-colors duration-[0.25s] ease-in;
 	}
 	.PayBtn {
 		@apply px-[30px] py-[0px] text-[15px] flex items-center justify-center flex-shrink-0 text-center border-[0px] h-[48px] font-bold cursor-not-allowed bg-[#f1f1f1] text-[#909090] transition-all duration-75 ease-in rounded-[6px] focus:outline-none;
@@ -292,47 +290,47 @@
 		@apply px-[30px] py-[0px] text-[15px] flex items-center justify-center flex-shrink-0 text-center border-[0px] h-[48px] font-bold cursor-pointer bg-[#019376] text-white transition-all duration-75 ease-in rounded-[6px] focus:outline-none;
 	}
 	.del.active {
-		@apply border border-[#009e7f] bg-white;
+		@apply bg-white border border-secondary-main;
 	}
 	.subTotal {
-		@apply border-t border-[#e6e6e6] pt-[20px] px-[15px] mt-5;
+		@apply border-t border-primary-primary pt-[20px] px-[15px] mt-5;
 	}
 	/* Order */
 	.OrderContainer.active {
-		@apply border-2 border-[#009e7f];
+		@apply border-2 border-secondary-main;
 	}
 	.OrderContainer {
-		@apply bg-[#f7f7f7] rounded overflow-hidden mb-[15px] flex flex-col cursor-pointer flex-shrink-0 border-2 border-transparent;
+		@apply bg-secondary-light rounded overflow-hidden mb-[15px] flex flex-col cursor-pointer flex-shrink-0 border-2 border-transparent;
 	}
 	.order {
-		@apply bg-white border border-[#f7f7f7] px-[45px] py-[50px] lg:p-[60px] rounded-[6px] overflow-hidden relative lg:w-[870px]  w-cac ml-auto mr-auto;
+		@apply bg-white border border-secondary-light px-[45px] py-[50px] lg:p-[60px] rounded-[6px] overflow-hidden relative lg:w-[870px]  w-cac ml-auto mr-auto;
 	}
 
 	.home {
-		@apply inline-flex items-center justify-center absolute border border-[#e6e6e6]  hover:bg-[#009e7f] hover:text-white hover:border-[#009e7f]  top-[15px] right-[15px] transition-all duration-75 ease-in-out text-base font-normal text-[#77798c] py-[5px] px-[15px] h-[36px] rounded-[6px];
+		@apply inline-flex items-center justify-center absolute border border-primary-primary  hover:bg-secondary-main hover:text-white hover:border-secondary-main  top-[15px] right-[15px] transition-all duration-75 ease-in-out text-base font-normal text-[#77798c] py-[5px] px-[15px] h-[36px] rounded-[6px];
 	}
 	.circle {
-		@apply text-[13px] font-bold text-white w-[36px] h-[36px] flex items-center justify-center rounded-[50%] bg-[#009e7f] border border-dashed border-[#009e7f];
+		@apply text-[13px] font-bold text-white w-[36px] h-[36px] flex items-center justify-center rounded-[50%] bg-secondary-main border border-dashed border-secondary-main;
 	}
 
 	.Circle {
 		@apply relative w-full flex items-center justify-center mb-[15px];
 	}
 	.Block {
-		@apply flex flex-0 flex-col items-center;
+		@apply flex flex-col items-center flex-0;
 	}
 
 	.circle.active {
-		@apply bg-[#009e7f] text-white;
+		@apply text-white bg-secondary-main;
 	}
 	.progress {
-		@apply first:w-[50%] h-[4px] bg-[#e6e6e6] absolute top-[50%] left-0 last:w-[50%];
+		@apply first:w-[50%] h-[4px] bg-primary-primary absolute top-[50%] left-0 last:w-[50%];
 	}
 	.table {
 		@apply py-2 align-middle inline-block pl-[-90px];
 	}
 	.orm {
-		@apply bg-[#f7f7f7] rounded-[6px] mb-[15px] flex flex-col cursor-pointer flex-shrink-0 border border-transparent;
+		@apply bg-secondary-light rounded-[6px] mb-[15px] flex flex-col cursor-pointer flex-shrink-0 border border-transparent;
 	}
 	.orm.active {
 		@apply bg-white border border-[#f1f1f1];
