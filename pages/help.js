@@ -2,8 +2,7 @@ import Head from 'next/head';
 import {useState} from 'react';
 import BackDrop from '../components/Common/Drawer/BackDrop';
 import Drawer from '../components/Common/Drawer/Drawer';
-import Header from '../components/Reuseables/Header';
-import {PlusIcon, MinusIcon} from '@heroicons/react/outline';
+import Header from '../components/Common/Header';
 import Accordion from '../components/Accordion/Accordion';
 
 const Help = () => {
