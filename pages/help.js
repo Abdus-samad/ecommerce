@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import {useState} from 'react';
-import BackDrop from '../components/Drawer/BackDrop';
-import Drawer from '../components/Drawer/Drawer';
+import BackDrop from '../components/Common/Drawer/BackDrop';
+import Drawer from '../components/Common/Drawer/Drawer';
 import Header from '../components/Reuseables/Header';
 import {PlusIcon, MinusIcon} from '@heroicons/react/outline';
 import Accordion from '../components/Accordion/Accordion';

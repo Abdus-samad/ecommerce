@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { MinusIcon, PlusIcon } from '@heroicons/react/outline';
 import CartContext from '../../context/Cart/cartContext';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ProductOption = ({ id, images, price, name, count }) => {
 	const cartContext = useContext(CartContext);
@@ -23,13 +24,17 @@ const ProductOption = ({ id, images, price, name, count }) => {
 	};
 
 	return (
-		<div className='flex flex-col flex-grow transition-all duration-200 transform bg-white border border-gray-100 rounded-md cursor-pointer hover:shadow-md hover:border-opacity-0 hover:-translate-y-1'>
+		<div className='flex flex-col flex-grow py-6 transition-all duration-200 transform bg-white border border-gray-100 rounded-md cursor-pointer hover:shadow-md hover:border-opacity-0 hover:-translate-y-1'>
 			<div className='relative flex items-center justify-center flex-grow overflow-hidden'>
 				<Link href='/product/[id]' as={`/product/${id}`}>
-					<img
-						src={images[0]}
-						className='h-auto max-w-full max-h-full '
-					/>
+					<a>
+						<Image
+							width={230}
+							height={240}
+							src={images[0]}
+							className='h-auto max-w-full max-h-full '
+						/>
+					</a>
 				</Link>
 			</div>
 			<div className='box-border px-5 pb-5 '>

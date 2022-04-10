@@ -1,15 +1,22 @@
-import {ADD_TO_CART, FILTER_PRODUCT, REMOVE_FROM_CART} from '../Types';
+import {
+	ADD_TO_CART,
+	CLEAR_ITEM,
+	FILTER_PRODUCT,
+	REMOVE_FROM_CART,
+} from '../Types';
 
 const reducer = (state, action) => {
 	switch (action.type) {
 		case ADD_TO_CART:
-			let foundItem = state.cart.find(({id}) => id === action.payload.id);
+			let foundItem = state.cart.find(
+				({ id }) => id === action.payload.id
+			);
 			if (foundItem) {
 				return {
 					...state,
 					cart: state.cart.map((item) =>
 						item.id === action.payload.id
-							? {...item, count: String(Number(item.count) + 1)}
+							? { ...item, count: String(Number(item.count) + 1) }
 							: item
 					),
 				};
@@ -18,18 +25,18 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				cart: [...state.cart, action.payload],
-				loading: false
+				loading: false,
 			};
 
 		case REMOVE_FROM_CART:
-			let secondItem = state.cart.find(({id}) => id === action.payload);
+			let secondItem = state.cart.find(({ id }) => id === action.payload);
 
 			if (secondItem && Number(secondItem.count) > 1) {
 				return {
 					...state,
 					cart: state.cart.map((item) =>
 						item.id === action.payload
-							? {...item, count: String(Number(item.count) - 1)}
+							? { ...item, count: String(Number(item.count) - 1) }
 							: item
 					),
 				};
@@ -42,11 +49,10 @@ const reducer = (state, action) => {
 			if (index >= 0) {
 				newCart.splice(index, 1);
 			}
-
 			return {
 				...state,
 				cart: newCart.length ? newCart : [],
-				loading: false
+				loading: false,
 			};
 
 		case FILTER_PRODUCT:
@@ -54,10 +60,14 @@ const reducer = (state, action) => {
 				...state,
 				filter: state.cart.filter((cart) => {
 					const regex = new RegExp(`${action.payload}`, 'gi');
-					return (
-						cart.Tag.match(regex)
-					);
+					return cart.Tag.match(regex);
 				}),
+			};
+
+		case CLEAR_ITEM:
+			return {
+				...state,
+				cart: [],
 			};
 	}
 };

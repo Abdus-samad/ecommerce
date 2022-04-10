@@ -1,16 +1,11 @@
-import {XIcon} from '@heroicons/react/outline';
-import {ShoppingBagIcon, ShoppingCartIcon} from '@heroicons/react/solid';
-import {useContext, useState} from 'react';
+import { ShoppingCartIcon } from '@heroicons/react/solid';
+import { useContext, useState } from 'react';
 import CurrencyFormat from 'react-currency-format';
-import CartContext from '../../context/Cart/cartContext';
-import Empty from '../Icon/Empty';
+import CartContext from '../../../context/Cart/cartContext';
 
 const BottomCart = (props) => {
-
-	
-
 	const cartContext = useContext(CartContext);
-	const {cart} = cartContext;
+	const { cart } = cartContext;
 
 	const getCartTotal = (cart) =>
 		cart?.reduce(

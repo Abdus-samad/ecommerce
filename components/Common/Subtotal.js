@@ -1,5 +1,5 @@
 import CurrencyFormat from 'react-currency-format';
-import CartContext from '../context/Cart/cartContext';
+import CartContext from '../../context/Cart/cartContext';
 import React, {useContext} from 'react';
 import {ShoppingCartIcon} from '@heroicons/react/solid';
 

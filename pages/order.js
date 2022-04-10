@@ -1,12 +1,12 @@
 import Head from 'next/head';
-import Header from '../components/Reuseables/Header';
-import SideBar from '../components/Reuseables/Sidebar';
+import Header from '../components/Common/Header';
+import SideBar from '../components/Common/Sidebar';
 import Orderdetail from '../components/order/Orderdetail';
 import Order from '../components/order/Order';
 import OrderM from '../components/order/OrderM';
 import {useState} from 'react';
-import BackDrop from '../components/Drawer/BackDrop';
-import Drawer from '../components/Drawer/Drawer';
+import BackDrop from '../components/Common/Drawer/BackDrop';
+import Drawer from '../components/Common/Drawer/Drawer';
 
 const order = () => {
 	const [currentStep, setCurrentStep] = useState(1);
@@ -36,7 +36,7 @@ const order = () => {
 			<Drawer drawer={drawer} showDrawer={showDrawer} />
 			{backdrop}
 
-			<div className='w-full h-auto min-h-screen flex flex-wrap bg-white SidebarBody '>
+			<div className='flex flex-wrap w-full h-auto min-h-screen bg-white SidebarBody '>
 				<SideBar />
 				<div className='lg:w-calc flex flex-start w-full px-[20px]'>
 					<div className='hidden lg:flex'>

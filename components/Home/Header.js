@@ -3,12 +3,12 @@ import { useState, useContext, useEffect } from 'react';
 import Image from 'next/image';
 import { QuestionMarkCircleIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
-import Topfiltered from '../Side/Topfiltered';
-import FilterDrawer from '../Side/FilterDrawer';
-import BackDrop from '../Drawer/BackDrop';
+import Topfiltered from '../filter/Topfiltered';
+import FilterDrawer from '../filter/FilterDrawer';
+import BackDrop from '../Common/Drawer/BackDrop';
 import { auth } from '../../firebase';
 import AuthContext from '../../context/Auth/authContext';
-import HeaderOp from '../Reuseables/HeaderOp';
+import HeaderOp from '../Common/HeaderOp';
 
 const Header = (props) => {
 	const authContext = useContext(AuthContext);
@@ -27,7 +27,6 @@ const Header = (props) => {
 	useEffect(() => {
 		auth.onAuthStateChanged((authUser) => {
 			getUser(authUser);
-			console.log(authUser);
 		});
 	}, []);
 	return (

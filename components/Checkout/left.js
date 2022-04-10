@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import Empty from '../Icon/Empty';
+import Empty from '../Common/Icon/Empty';
 import CartContext from '../../context/Cart/cartContext';
 import CheckoutProduct from './CheckoutProduct';
 import CurrencyFormat from 'react-currency-format';
@@ -16,7 +16,7 @@ const left = () => {
 		);
 	return (
 		<div className='lg:w-[270px] lg:flex-shrink-0 lg:pt-[20px] checked'>
-			<div className='w-full flex flex-col'>
+			<div className='flex flex-col w-full'>
 				<h3 className='text-[15px] font-bold text-[#0d1136] text-center mb-[40px]'>
 					Your Order
 				</h3>

@@ -21,12 +21,13 @@ const Related = ({ id, images, price, name, count }) => {
 		removeFromCart(id);
 	};
 	return (
-		<div className='flex flex-col flex-grow transition-all duration-200 transform bg-white border border-gray-100 rounded-md cursor-pointer hover:shadow-md hover:border-opacity-0 hover:-translate-y-1'>
-			<div className='flex items-center justify-center flex-grow overflow-hidden '>
-				<img
+		<div className='flex flex-col flex-grow transition-all duration-200 transform bg-white w-[90%] border border-gray-100 rounded-md cursor-pointer hover:shadow-md hover:border-opacity-0 hover:-translate-y-1'>
+			<div className='relative flex items-center justify-center flex-grow overflow-hidden'>
+				<Image
+				width={200}
+				height={200}
 					src={images[0]}
-					
-					className='w-full'
+					className='h-auto max-w-full max-h-full '
 				/>
 			</div>
 			<div className='box-border px-5 pb-5 '>

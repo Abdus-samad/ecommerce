@@ -1,13 +1,13 @@
-import Beverage from '../Icon/Beverage';
-import BreakFast from '../Icon/BreakFast';
-import Cooking from '../Icon/Cooking';
-import Dairy from '../Icon/Dairy';
-import Fruit from '../Icon/Friut'
-import Health from '../Icon/Health';
-import Home from '../Icon/Home';
-import Meat from '../Icon/Meat';
-import Pet from '../Icon/Pet';
-import Snack from '../Icon/Snack';
+import Beverage from '../Common/Icon/Beverage';
+import BreakFast from '../Common/Icon/BreakFast';
+import Cooking from '../Common/Icon/Cooking';
+import Dairy from '../Common/Icon/Dairy';
+import Fruit from '../Common/Icon/Friut'
+import Health from '../Common/Icon/Health';
+import Home from '../Common/Icon/Home';
+import Meat from '../Common/Icon/Meat';
+import Pet from '../Common/Icon/Pet';
+import Snack from '../Common/Icon/Snack';
 
 const Data = [
 	{

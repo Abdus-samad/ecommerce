@@ -1,10 +1,10 @@
+import { useState } from 'react';
 import Head from 'next/head';
-import Header from '../components/Reuseables/Header';
-import SideBar from '../components/Reuseables/Sidebar';
+import Header from '../components/Common/Header';
+import SideBar from '../components/Common/Sidebar';
 import ProfileForm from '../components/Profile/ProfileForm';
-import Drawer from '../components/Drawer/Drawer';
-import BackDrop from '../components/Drawer/BackDrop';
-import {useState} from 'react';
+import Drawer from '../components/Common/Drawer/Drawer';
+import BackDrop from '../components/Common/Drawer/BackDrop';
 import Contact from '../components/contact/contact';
 import Address from '../components/Address/Address';
 
@@ -31,7 +31,7 @@ const profile = () => {
 			<Header showDrawer={showDrawer} />
 			<Drawer drawer={drawer} showDrawer={showDrawer} />
 			{backdrop}
-			<div className='w-full h-auto min-h-screen flex flex-wrap bg-white SidebarBody top-t'>
+			<div className='flex flex-wrap w-full h-auto min-h-screen bg-white SidebarBody top-t'>
 				<SideBar />
 				<div className='proContainer '>
 					<div className='flex flex-col w-full'>

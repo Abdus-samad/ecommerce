@@ -1,12 +1,10 @@
-import React, {useContext, useState} from 'react';
-import Data from './Data';
-import {useRouter} from 'next/router';
+import React, { useContext, useState } from 'react';
+import { useRouter } from 'next/router';
 import { auth } from '../../firebase';
-import AuthContext from '../../context/Auth/authContext'
-
+import AuthContext from '../../context/Auth/authContext';
+import { popup } from '../../data';
 
 const HeaderOp = () => {
-
 	const authContext = useContext(AuthContext);
 	const { user } = authContext;
 
@@ -17,12 +15,11 @@ const HeaderOp = () => {
 		setShow(!show);
 	};
 
-
-	const handleAuth = () =>{
-		if(user) {
-		  auth.signOut()
+	const handleAuth = () => {
+		if (user) {
+			auth.signOut();
 		}
-	   }
+	};
 
 	return (
 		<div className='relative ml-3'>
@@ -38,7 +35,7 @@ const HeaderOp = () => {
 			{show && (
 				<div className='Popover pop'>
 					<div>
-						{Data.map((item, index) => {
+						{popup.map((item, index) => {
 							return (
 								<div key={index}>
 									<a
@@ -61,7 +58,7 @@ const HeaderOp = () => {
 					</div>
 
 					<a
-					onClick={handleAuth}
+						onClick={handleAuth}
 						style={{
 							display: 'flex',
 							alignItems: ' center',

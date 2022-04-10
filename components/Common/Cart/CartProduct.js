@@ -1,16 +1,16 @@
-import {MinusIcon, PlusIcon, XIcon} from '@heroicons/react/outline';
+import { MinusIcon, PlusIcon, XIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
-import {useContext} from 'react';
+import { useContext } from 'react';
 import CurrencyFormat from 'react-currency-format';
-import CartContext from '../../context/Cart/cartContext';
+import CartContext from '../../../context/Cart/cartContext';
 
-const CartProduct = ({id, images, price, name, count}) => {
+const CartProduct = ({ id, images, price, name, count }) => {
 	const cartContext = useContext(CartContext);
 
-	const {addToCart, cart, removeFromCart} = cartContext;
+	const { addToCart, cart, removeFromCart, clearItem } = cartContext;
 
 	const cartObject = () => {
-		addToCart({id, images, price, name, count});
+		addToCart({ id, images, price, name, count });
 	};
 
 	const cartProductCount = (id) => {
@@ -23,6 +23,10 @@ const CartProduct = ({id, images, price, name, count}) => {
 
 	const remove = () => {
 		removeFromCart(id);
+	};
+
+	const clear = () => {
+		clearItem();
 	};
 
 	return (
@@ -55,7 +59,7 @@ const CartProduct = ({id, images, price, name, count}) => {
 				fixedDecimalScale={true}
 			/>
 			<button className='p-1 ml-4 text-gray-200 transition duration-100 bg-transparent cursor-pointer'>
-				<XIcon className='h-5' onClick={() => remove()} />
+				<XIcon className='h-5' onClick={() => clear()} />
 			</button>
 		</div>
 	);

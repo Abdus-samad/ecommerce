@@ -1,15 +1,10 @@
-import React, {useRef, useState} from 'react';
-
-import {Swiper, SwiperSlide} from 'swiper/react';
-
-
+import React, { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import 'swiper/components/navigation/navigation.min.css';
-
-import SwiperCore, {Navigation} from 'swiper/core';
-import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/react/outline';
-
+import SwiperCore, { Navigation } from 'swiper/core';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
 
 SwiperCore.use([Navigation]);
 
@@ -17,23 +12,23 @@ export default function App() {
 	return (
 		<>
 			<Swiper
-      slidesPerView={1}
+				slidesPerView={1}
 				navigation={{
 					nextEl: '.next',
 					prevEl: '.prev',
 				}}
 				loop={true}
-				style={{marginBottom: '25px', minHeight: '180px'}}>
+				style={{ marginBottom: '25px', minHeight: '180px' }}>
 				<SwiperSlide>
 					<div className='Image'>
-						<img src='/Hero_one.jpg' alt='' className='img'/>
+						<img src='/Hero_one.jpg' alt='' className='img' />
 					</div>
 				</SwiperSlide>
 				<SwiperSlide>
-          <div className='Image'>
-            <img src='/Hero-Two.jpg' alt="" className='img'/>
-          </div>
-        </SwiperSlide>
+					<div className='Image'>
+						<img src='/Hero-Two.jpg' alt='' className='img' />
+					</div>
+				</SwiperSlide>
 				<button className='Nav next'>
 					<ChevronRightIcon className='h-5' />
 				</button>

@@ -1,5 +1,5 @@
-import {useState} from 'react';
-import {PlusIcon, MinusIcon} from '@heroicons/react/solid';
+import { useState } from 'react';
+import { PlusIcon, MinusIcon } from '@heroicons/react/solid';
 import data from './data';
 
 const Accordion = () => {
@@ -9,7 +9,6 @@ const Accordion = () => {
 		if (clicked === index) {
 			return setClicked(null);
 		}
-
 		setClicked(index);
 	};
 
@@ -18,7 +17,7 @@ const Accordion = () => {
 			{data.map((item, index) => (
 				<div
 					key={index}
-					className='mb-[10px] border border-[#f1f1f1] rounded bg-white overflow-hidden  transition-all duration-100 ease-out'>
+					className='mb-[10px] border border-secondary-shade1 rounded bg-white overflow-hidden  transition-all duration-100 ease-out'>
 					<div
 						onClick={() => toggle(index)}
 						className='flex items-center py-[23px] pr-[25px] pl-[30px] cursor-pointer focus:outline-none relative justify-between transition-all duration-100 ease-out'>

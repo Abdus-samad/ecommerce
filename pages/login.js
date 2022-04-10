@@ -1,7 +1,7 @@
 import LoginForm from '../components/Auth/LoginForm';
 import SignUp from '../components/Auth/SignUp';
-import {useState} from 'react';
-import {loginContext} from '../components/Auth/loginContext';
+import { useState } from 'react';
+import { loginContext } from '../components/Auth/loginContext';
 import Head from 'next/head';
 
 const login = () => {
@@ -30,10 +30,10 @@ const login = () => {
 			</Head>
 			<loginContext.Provider value={ContextV}>
 				<div className='box-border flex items-center justify-center w-full h-full'>
-					<div className='p-8 bg-white border rounded shadow wrapper'>
+					<div className='p-8 bg-white border rounded shadow lg:w-[458px] lg:top-[100px] top-[30px] h-auto absolute lg:left-[35%]'>
 						<div className='box-border w-full h-full'>
 							<div className='text-center bg-white'>
-								<div className='loginContent'>
+								<div className='pt-[2px] px-[30px]'>
 									{active === 'signin' && (
 										<div>
 											<h3 className='mb-2 text-2xl font-semibold text-secondary-main'>

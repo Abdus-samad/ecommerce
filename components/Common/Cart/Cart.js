@@ -1,12 +1,14 @@
-import {XIcon} from '@heroicons/react/outline';
-import {ShoppingBagIcon} from '@heroicons/react/solid';
+import { XIcon } from '@heroicons/react/outline';
+import { ShoppingBagIcon } from '@heroicons/react/solid';
 import Empty from '../Icon/Empty';
-import {useContext, useState} from 'react';
+import { useContext, useState } from 'react';
 import Subtotal from '../Subtotal';
 import CartProduct from './CartProduct';
-import CartContext from '../../context/Cart/cartContext';
+import CartContext from '../../../context/Cart/cartContext';
 import CurrencyFormat from 'react-currency-format';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
+
+
 
 const Cart = () => {
 	const router = useRouter();
@@ -14,7 +16,7 @@ const Cart = () => {
 	const showDrawer = () => setDrawer(!drawer);
 
 	const cartContext = useContext(CartContext);
-	const {cart, loading} = cartContext;
+	const { cart, loading } = cartContext;
 
 	const getCartTotal = (cart) =>
 		cart?.reduce(
@@ -30,28 +32,28 @@ const Cart = () => {
 		<>
 			<div
 				onClick={showDrawer}
-				className='hidden  h-auto w-auto right-0 z-10 top -mt-11 md:flex flex-col items-center justify-center bg-green-600 p-0 shadow-md rounded-tl-md rounded-bl-md border-0 cursor-pointer fixed'>
+				className='fixed right-0 z-10 flex-col items-center justify-center hidden w-auto h-auto p-0 bg-green-600 border-0 shadow-md cursor-pointer top -mt-11 md:flex rounded-tl-md rounded-bl-md'>
 				<Subtotal />
 			</div>
 			<div className={drawer ? 'side active' : 'side'}>
-				<div className='w-full h-full flex flex-col rounded bg-white box-content'>
-					<div className=' px-6 py-4 bg-white flex items-center justify-between border-b border-gray-100'>
+				<div className='box-content flex flex-col w-full h-full bg-white rounded'>
+					<div className='flex items-center justify-between px-6 py-4 bg-white border-b border-gray-100 '>
 						<div className='inline-flex items-center text-green-700'>
-							<ShoppingBagIcon className='h-7 w-5' />
+							<ShoppingBagIcon className='w-5 h-7' />
 							{!!cart ? (
-								<span className='text-base font-bold text-green-700 pl-2'>{` ${cart.length} item`}</span>
+								<span className='pl-2 text-base font-bold text-green-700'>{` ${cart.length} item`}</span>
 							) : (
 								''
 							)}
 						</div>
-						<a className='w-4 h-4 inline-flex items-center justify-center p-0 border-0 outline-none flex-shrink-0 cursor-pointer text-gray-300 transition-all duration-75 bg-transparent'>
+						<a className='inline-flex items-center justify-center flex-shrink-0 w-4 h-4 p-0 text-gray-300 transition-all duration-75 bg-transparent border-0 outline-none cursor-pointer'>
 							<XIcon className='h-5' onClick={showDrawer} />
 						</a>
 					</div>
-					<div className='max-h-full w-full overflow-auto scrollbar'>
+					<div className='w-full max-h-full overflow-auto scrollbar'>
 						{!loading && cart.length === 0 ? (
 							<div className='max-h-full bg-white'>
-								<div className='flex items-center justify-center mb-5 mt-12'>
+								<div className='flex items-center justify-center mt-12 mb-5'>
 									<Empty />
 								</div>
 								<span className='text-[14px] flex font-[400] text-[#77798c] relative justify-center mb-5 items-center'>
@@ -72,23 +74,23 @@ const Cart = () => {
 							))
 						)}
 					</div>
-					<div className='w-full flex flex-col mt-auto'>
-						<span className='my-5 flex justify-center'>
-							<button className='inline-flex bg-transparent text-base font-bold text-green-700 transition duration-100 ease'>
+					<div className='flex flex-col w-full mt-auto'>
+						<span className='flex justify-center my-5'>
+							<button className='inline-flex text-base font-bold text-green-700 transition duration-100 bg-transparent ease'>
 								Do you have voucher
 							</button>
 						</span>
 						<button
 							onClick={handleClick}
-							className='h-11 flex items-center justify-between bg-green-600 shadow outline mb-4 ml-4'
-							style={{width: '(100% - 30px)'}}>
+							className='flex items-center justify-between mb-4 ml-4 bg-green-600 shadow h-11 outline'
+							style={{ width: '(100% - 30px)' }}>
 							<CurrencyFormat
 								renderText={(value) => (
 									<>
-										<a className='w-full flex items-center justify-between pl-7 text-base font-bold text-white pr-2'>
+										<a className='flex items-center justify-between w-full pr-2 text-base font-bold text-white pl-7'>
 											Checkout
 										</a>
-										<span className='h-10 w-auto px-7 rounded-3xl inline-flex text-base font-bold text-green-600 items-center justify-center bg-white'>
+										<span className='inline-flex items-center justify-center w-auto h-10 text-base font-bold text-green-600 bg-white px-7 rounded-3xl'>
 											{value}
 										</span>
 									</>

@@ -1,5 +1,5 @@
-import {PencilIcon, XIcon} from '@heroicons/react/solid';
-import {useState, useEffect} from 'react';
+import { PencilIcon, XIcon } from '@heroicons/react/solid';
+import { useState, useEffect } from 'react';
 import Modal from './Modal';
 import data from './data';
 
@@ -12,13 +12,13 @@ const contact = () => {
 	}, []);
 
 	return (
-		<div className='mb-10 box-border -mx-2 flex-initial flex-wrap flex-row'>
-			<div className='box-boder flex-4 px-2 dp'>
-				<h3 className='text-base mb-6 flex items-center text-gray-800 font-semibold'>
+		<div className='box-border flex-row flex-wrap flex-initial mb-10 -mx-2'>
+			<div className='px-2 box-boder flex-4 dp'>
+				<h3 className='flex items-center mb-6 text-base font-semibold text-gray-800'>
 					Contact Number
 				</h3>
 				<div className='flex flex-col flex-wrap'>
-					<div className='flex-grow flex flex-wrap justify-between'>
+					<div className='flex flex-wrap justify-between flex-grow'>
 						{data.map((item, index) => (
 							<label
 								onClick={() => setCurrent(item)}
@@ -28,7 +28,7 @@ const contact = () => {
 										? 'contact label nb active'
 										: 'contact label nb'
 								}>
-								<span className='text-sm font-bold text-gray-800 mb-1'>
+								<span className='mb-1 text-sm font-bold text-gray-800'>
 									{item.type}
 								</span>
 								<span className='text-base font-normal text-gray-600'>
@@ -37,10 +37,10 @@ const contact = () => {
 								<span className='btn wrap'>
 									<span
 										onClick={() => setOpen(true)}
-										className='contactBtn bg-green-600'>
+										className='bg-green-600 contactBtn'>
 										<PencilIcon className='h-4' />{' '}
 									</span>
-									<span className='contactBtn bg-red-500'>
+									<span className='bg-red-500 contactBtn'>
 										<XIcon className='h-4' />{' '}
 									</span>
 								</span>
@@ -54,7 +54,7 @@ const contact = () => {
 					</div>
 				</div>
 			</div>
-			<Modal open={open} close={() => setOpen(false)} />
+			{open && <Modal open={open} close={() => setOpen(false)} />}
 		</div>
 	);
 };

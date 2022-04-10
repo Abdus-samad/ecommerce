@@ -2,7 +2,7 @@ import {ShoppingBagIcon, XIcon} from '@heroicons/react/outline';
 import {useRouter} from 'next/router';
 import {useContext} from 'react';
 import CurrencyFormat from 'react-currency-format';
-import CartContext from '../../context/Cart/cartContext';
+import CartContext from '../../../context/Cart/cartContext';
 import Empty from '../Icon/Empty';
 import CartProduct from './CartProduct';
 
@@ -25,24 +25,24 @@ const router = useRouter();
 
 	return (
 		<div className={props.carts ? 'bottom active' : 'bottom'}>
-			<div className='w-full h-full flex flex-col rounded bg-white box-content overflow-hidden'>
-				<div className=' px-6 py-4 bg-white flex items-center justify-center border-b border-gray-100'>
+			<div className='box-content flex flex-col w-full h-full overflow-hidden bg-white rounded'>
+				<div className='flex items-center justify-center px-6 py-4 bg-white border-b border-gray-100 '>
 					<div className='inline-flex items-center text-green-700'>
-						<ShoppingBagIcon className='h-7 w-5' />
+						<ShoppingBagIcon className='w-5 h-7' />
 						{!!cart ? (
-							<span className='text-base font-bold text-green-700 pl-2'>{` ${cart.length} item`}</span>
+							<span className='pl-2 text-base font-bold text-green-700'>{` ${cart.length} item`}</span>
 						) : (
 							''
 						)}
 					</div>
-					<a className='absolute inline-flex items-center justify-center -top-11 bg-white w-9 h-9 rounded-full text-gray-800 backdrop-blur-2xl '>
+					<a className='absolute inline-flex items-center justify-center text-gray-800 bg-white rounded-full -top-11 w-9 h-9 backdrop-blur-2xl '>
 						<XIcon className='h-5' onClick={props.showCart} />
 					</a>
 				</div>
-				<div className='max-h-full w-full overflow-auto scrollbar'>
+				<div className='w-full max-h-full overflow-auto scrollbar'>
 					{!loading && cart.length === 0 ? (
 						<div className='max-h-full bg-white'>
-							<div className='flex items-center justify-center mb-5 mt-12'>
+							<div className='flex items-center justify-center mt-12 mb-5'>
 								<Empty />
 							</div>
 							<span className='text-[14px] flex font-[400] text-[#77798c] relative justify-center mb-5 items-center'>
@@ -63,22 +63,22 @@ const router = useRouter();
 						))
 					)}
 				</div>
-				<div className='w-full flex flex-col mt-auto'>
-					<span className='my-5 flex justify-center'>
-						<button className='inline-flex bg-transparent text-base font-bold text-green-700 transition duration-100 ease'>
+				<div className='flex flex-col w-full mt-auto'>
+					<span className='flex justify-center my-5'>
+						<button className='inline-flex text-base font-bold text-green-700 transition duration-100 bg-transparent ease'>
 							Do you have voucher
 						</button>
 					</span>
 					<button
 						onClick={handleClick}
-						className='h-11 w-5/6 flex items-center justify-between bg-green-600 shadow outline mb-4 ml-4'>
+						className='flex items-center justify-between w-5/6 mb-4 ml-4 bg-green-600 shadow h-11 outline'>
 						<CurrencyFormat
 							renderText={(value) => (
 								<>
-									<a className='w-full flex items-center justify-between pl-7 text-base font-bold text-white pr-2'>
+									<a className='flex items-center justify-between w-full pr-2 text-base font-bold text-white pl-7'>
 										Checkout
 									</a>
-									<span className='h-10 w-auto px-7 rounded-3xl inline-flex text-base font-bold text-green-600 items-center justify-center bg-white'>
+									<span className='inline-flex items-center justify-center w-auto h-10 text-base font-bold text-green-600 bg-white px-7 rounded-3xl'>
 										{value}
 									</span>
 								</>

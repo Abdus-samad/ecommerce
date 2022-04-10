@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import Header from '../components/Reuseables/Header';
-import BackDrop from '../components/Drawer/BackDrop';
-import Drawer from '../components/Drawer/Drawer';
-import {useState} from 'react';
-import {data} from '../components/order/data';
+import Header from '../components/Common/Header';
+import BackDrop from '../components/Common/Drawer/BackDrop';
+import Drawer from '../components/Common/Drawer/Drawer';
+import { useState } from 'react';
+import { data } from '../components/order/data';
 
 const Orderreceived = () => {
 	const [drawer, setDrawer] = useState(false);

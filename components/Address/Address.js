@@ -1,5 +1,5 @@
-import {PencilIcon, XIcon} from '@heroicons/react/solid';
-import {useState, useEffect} from 'react';
+import { PencilIcon, XIcon } from '@heroicons/react/solid';
+import { useState, useEffect } from 'react';
 import Modal from '../Address/Modal';
 import data from './data';
 
@@ -13,13 +13,13 @@ const Address = () => {
 	}, []);
 
 	return (
-		<div className='mb-10 box-border -mx-2 flex-initial flex-wrap flex-row'>
-			<div className='box-border flex-4 px-2 dp relative'>
-				<h3 className='text-base mb-6 flex items-center text-gray-800 font-semibold'>
+		<div className='box-border flex-row flex-wrap flex-initial mb-10 -mx-2'>
+			<div className='box-border relative px-2 flex-4 dp'>
+				<h3 className='flex items-center mb-6 text-base font-semibold text-gray-800'>
 					Delivery Address
 				</h3>
 				<div className='flex flex-col'>
-					<div className='flex-grow flex flex-wrap justify-between'>
+					<div className='flex flex-wrap justify-between flex-grow'>
 						{data.map((item, index) => (
 							<label
 								onClick={() => setCurrent(item)}
@@ -29,7 +29,7 @@ const Address = () => {
 										? 'contact label nb active'
 										: 'contact label nb'
 								}>
-								<span className='text-sm font-bold text-gray-800 mb-1'>
+								<span className='mb-1 text-sm font-bold text-gray-800'>
 									{item.name}
 								</span>
 								<span className='text-base font-normal text-gray-600'>
@@ -38,10 +38,10 @@ const Address = () => {
 								<span className='btn wrap'>
 									<span
 										onClick={() => setOpen(true)}
-										className='contactBtn bg-green-600'>
+										className='bg-green-600 contactBtn'>
 										<PencilIcon className='h-4' />{' '}
 									</span>
-									<span className='contactBtn bg-red-500'>
+									<span className='bg-red-500 contactBtn'>
 										<XIcon className='h-4' />{' '}
 									</span>
 								</span>
@@ -56,7 +56,7 @@ const Address = () => {
 					</div>
 				</div>
 			</div>
-			<Modal open={open} close={() => setOpen(false)} />
+			{open && <Modal open={open} close={() => setOpen(false)} />}
 		</div>
 	);
 };

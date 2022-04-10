@@ -1,12 +1,11 @@
-import React, {useState} from 'react';
-import Side from '../Side/Side';
+import React, { useState } from 'react';
+import Filter from '../filter/Filter';
 import ImageSlider from '../Banner/ImageSlider';
-import Cart from '../Cart/Cart';
 import Product from './Product';
-import BottomCart from '../Cart/BottomCart';
-import Cartdrawer from '../Cart/Cartdrawer';
-import BackDrop from '../Drawer/BackDrop';
-
+import BackDrop from '../Common/Drawer/BackDrop';
+import Cart from '../Common/Cart/Cart';
+import BottomCart from '../Common/Cart/BottomCart';
+import Cartdrawer from '../Common/Cart/Cartdrawer';
 const Body = () => {
 	const [carts, setCart] = useState(false);
 	const showCart = () => setCart(!carts);
@@ -19,7 +18,7 @@ const Body = () => {
 
 	return (
 		<div className='grocery'>
-			<Side />
+			<Filter />
 			<main>
 				<ImageSlider />
 				<section>

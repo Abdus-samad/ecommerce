@@ -28,7 +28,7 @@ const LoginForm = () => {
 				<input
 					type='email'
 					placeholder='Email'
-					className='block w-full px-5 text-base border border-gray-300 rounded text-gray-800 transition-all duration-100 ease h-12 mb-3 bg-gray-300'
+					className='block w-full h-12 px-5 mb-3 text-base text-gray-800 transition-all duration-100 bg-gray-300 border border-gray-300 rounded ease'
 					value={email}
 					name='email'
 					onChange={onChange}
@@ -37,7 +37,7 @@ const LoginForm = () => {
 				<input
 					type='password'
 					placeholder='password'
-					className='block w-full px-5 text-base border border-gray-300 rounded text-gray-800 transition-all duration-100 ease h-12 mb-3 bg-gray-300'
+					className='block w-full h-12 px-5 mb-3 text-base text-gray-800 transition-all duration-100 bg-gray-300 border border-gray-300 rounded ease'
 					value={password}
 					name='password'
 					onChange={onChange}
@@ -45,29 +45,29 @@ const LoginForm = () => {
 				/>
 				<button
 					onClick={signIn}
-					className='px-8 text-base font-bold cursor-pointer transition-all duration-100 ease w-full rounded flex items-center justify-center flex-shrink-0 text-center border-0 text-white h-12 bg-green-600'>
+					className='flex items-center justify-center flex-shrink-0 w-full h-12 px-8 text-base font-bold text-center text-white transition-all duration-100 bg-green-600 border-0 rounded cursor-pointer ease'>
 					Continue
 				</button>
 			</form>
-			<div className='py-4 w-full flex justify-center items-center relative'>
-				<span className='text-base font-medium text-gray-800 px-3 relative'>
+			<div className='relative flex items-center justify-center w-full py-4'>
+				<span className='relative px-3 text-base font-medium text-gray-800'>
 					or
 				</span>
 			</div>
-			<button className='mb-4 px-8 text-base font-bold cursor-pointer transition-all duration-100 ease w-full rounded flex items-center justify-center flex-shrink-0 text-center border-0 text-white h-12 bg-blue-600'>
+			<button className='flex items-center justify-center flex-shrink-0 w-full h-12 px-8 mb-4 text-base font-bold text-center text-white transition-all duration-100 bg-blue-600 border-0 rounded cursor-pointer ease'>
 				Continue with Google
 			</button>
 			<p className='p-5 text-base font-medium text-gray-500'>
 				Don't have any account?
 				<button
 					onClick={SwitchToSignUp}
-					className='bg-transparent border-0 otline-0 font-bold underline text-green-700 cursor-pointer'>
+					className='font-bold text-green-700 underline bg-transparent border-0 cursor-pointer otline-0'>
 					SignUp
 				</button>
 			</p>
 			<p className='p-5 text-base font-medium text-gray-500'>
 				Forgot your password?
-				<button className='bg-transparent border-0 otline-0 font-bold underline text-green-700 cursor-pointer'>
+				<button className='font-bold text-green-700 underline bg-transparent border-0 cursor-pointer otline-0'>
 					Reset It
 				</button>
 			</p>

@@ -1,5 +1,4 @@
 import ProductOption from './ProductOption';
-import PaginationButtons from '../Reuseables/Pagination';
 import ProductContext from '../../context/Product/productContext';
 import {useContext} from 'react';
 
@@ -8,7 +7,7 @@ const Product = () => {
 	const {products, filtered} = productContext;
 
 	return (
-		<div className='grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 gap-5'>
+		<div className='grid grid-cols-2 gap-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3'>
 			{filtered
 				? filtered.map((product) => (
 						<ProductOption
@@ -32,8 +31,6 @@ const Product = () => {
 							category={product.category}
 						/>
 				  ))}
-
-			<PaginationButtons />
 		</div>
 	);
 };

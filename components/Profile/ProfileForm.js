@@ -1,35 +1,32 @@
-import {useState} from 'react';
-import FormModal from '../Modals/FormModal';
-import {PencilIcon, XIcon, PlusIcon} from '@heroicons/react/solid';
-import Payment from '../payment/Payment';
-const ProfileForm = () => {
+import { useState } from 'react';
 
+const ProfileForm = () => {
 	const [profile, setProfile] = useState({
 		name: '',
 		email: '',
-	  });
-	
-	  const { name, email } = profile;
-	
-	  const onChange = (e) => setProfile({ ...profile, [e.target.name]: e.target.value });
+	});
+
+	const { name, email } = profile;
+
+	const onChange = (e) =>
+		setProfile({ ...profile, [e.target.name]: e.target.value });
 
 	return (
-		<div >
-			<div className='w-full flex items-center justify-between mb-6'>
+		<div>
+			<div className='flex items-center justify-between w-full mb-6'>
 				<h3 className='text-xl font-semibold text-gray-800'>
 					Your Profile
 				</h3>
 			</div>
 			<div
-				className='  formContainer  '
+				className=' formContainer'
 				style={{
 					marginBottom: '50px',
 					display: 'flex',
 				}}>
 				<div
-					className='formContent basis ex
-				'>
-					<label className='font-bold text-sm text-gray-800 leading-4 mb-4 flex'>
+					className='formContent basis ex '>
+					<label className='flex mb-4 text-sm font-bold leading-4 text-gray-800'>
 						Name
 					</label>
 					<input
@@ -39,12 +36,12 @@ const ProfileForm = () => {
 						height='48px'
 						className='block form'
 						value={name}
-					name='name'
-					onChange={onChange}
+						name='name'
+						onChange={onChange}
 					/>
 				</div>
 				<div className='formContent basis ex'>
-					<label className='font-bold text-sm text-gray-800 leading-4 mb-4 flex'>
+					<label className='flex mb-4 text-sm font-bold leading-4 text-gray-800'>
 						Email
 					</label>
 					<input
@@ -54,12 +51,12 @@ const ProfileForm = () => {
 						height='48px'
 						className='block form'
 						value={email}
-					name='email'
-					onChange={onChange}
+						name='email'
+						onChange={onChange}
 					/>
 				</div>
 				<div className='formContent basis ce ex'>
-					<a style={{width: '100%'}} className='formBtn mt-8'>
+					<a style={{ width: '100%' }} className='mt-8 formBtn'>
 						Save
 					</a>
 				</div>

@@ -5,3 +5,4 @@ export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const GET_PRODUCT = 'GET_PRODUCT';
 export const USER_ERROR = 'USER_ERROR';
 export const SET_USER = 'SET_USER';
+export const CLEAR_ITEM = 'CLEAR_ITEM';

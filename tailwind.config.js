@@ -11,6 +11,7 @@ module.exports = {
 				primary: {
 					DEFAULT: '#f1f1f1',
 					primary: '#e6e6e6',
+					100: '#f7f8f9',
 				},
 				secondary: {
 					main: '#009e7f',
