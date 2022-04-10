@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import React, { useEffect } from 'react';
 import { MinusIcon, PlusIcon } from '@heroicons/react/outline';
 import { ShoppingCartIcon } from '@heroicons/react/solid';
@@ -6,16 +6,15 @@ import { useContext, useState } from 'react';
 import CartContext from '../../context/Cart/cartContext';
 import ProductContext from '../../context/Product/productContext';
 import Carousel from '../../components/carousel/Carousel';
-import Header from '../../components/Reuseables/Header';
+import Header from '../../components/Common/Header';
 import Option from '../../components/Products/Option';
 import { useRouter } from 'next/router';
 import Spinner from '../../components/Common/Spinner';
 import Drawer from '../../components/Common/Drawer/Drawer';
 import BackDrop from '../../components/Common/Drawer/BackDrop';
-import Cart from '../../components/Common/Cart/Cart'
-import BottomCart from '../../components/Common/Cart/BottomCart'
-import Cartdrawer from '../../components/Common/Cart/Cartdrawer'
-
+import Cart from '../../components/Common/Cart/Cart';
+import BottomCart from '../../components/Common/Cart/BottomCart';
+import Cartdrawer from '../../components/Common/Cart/Cartdrawer';
 
 const ProductDetail = () => {
 	//  Drawer
