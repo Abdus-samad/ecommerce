@@ -31,7 +31,7 @@ const Checkout = () => {
 			{backdrop}
 
 			<div className='lg:pt-[130px] lg:px-[60px] lg:pb-[60px] pt:pt-[60px] w-full flex relative lg:bg-[#f7f7f7] bg-white'>
-				<div className='lg:w-[970px] lg:ml-auto lg:mr-auto flex w-full col counter'>
+				<div className='lg:w-[970px] flex lg:mx-[300px] w-full col counter'>
 					<Right />
 					<Left />
 				</div>

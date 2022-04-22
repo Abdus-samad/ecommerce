@@ -28,12 +28,7 @@ const ProductOption = ({ id, images, price, name, count }) => {
 			<div className='relative flex items-center justify-center flex-grow overflow-hidden'>
 				<Link href='/product/[id]' as={`/product/${id}`}>
 					<a>
-						<Image
-							width={230}
-							height={240}
-							src={images[0]}
-							className='h-auto max-w-full max-h-full '
-						/>
+						<Image width={230} height={240} src={images[0]} />
 					</a>
 				</Link>
 			</div>

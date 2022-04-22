@@ -6,10 +6,10 @@ import Payment from '../payment/Payment'
 
 const right = () => {
 	return (
-		<div className='relative w-full overflow-hidden flex flex-col mr-5 p-5 order'>
+		<div className='relative flex flex-col w-full p-5 mr-5 overflow-hidden order'>
 			<Address />
-			<Delivery />
 			<Contact />
+			<Delivery />
 			<Payment />
 		</div>
 	);

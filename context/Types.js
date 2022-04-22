@@ -3,6 +3,25 @@ export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const FILTER_PRODUCT = 'FILTER_PRODUCT';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const GET_PRODUCT = 'GET_PRODUCT';
+export const PRODUCT_ERROR = 'PRODUCT_ERROR';
+export const CLEAR_ITEM = 'CLEAR_ITEM';
+
 export const USER_ERROR = 'USER_ERROR';
 export const SET_USER = 'SET_USER';
-export const CLEAR_ITEM = 'CLEAR_ITEM';
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+export const REGISTER_FAIL = 'REGISTER_FAIL';
+
+export const ADD_CONTACT = 'ADD_CONTACT';
+export const GET_CONTACTS = 'GET_CONTACTS';
+export const DELETE_CONTACTS = 'DELETE_CONTACTS';
+export const EDIT_CONTACTS = 'EDIT_CONTACTS';
+export const CONTACT_ERROR = 'CONTACT_ERROR';
+
+export const SET_CURRENT = 'SET_CURRENT';
+export const CLEAR_CURRENT = 'CLEAR_CURRENT';
+
+export const ADD_ADDRESS = 'ADD_ADDRESS';
+export const GET_ADDRESS = 'GET_ADDRESS';
+export const DELETE_ADDRESS = 'DELETE_ADDRESS';
+export const EDIT_ADDRESS = 'EDIT_ADDRESS';
+export const ADDRESS_ERROR = 'ADDRESS_ERROR';

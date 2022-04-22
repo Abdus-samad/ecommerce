@@ -17,7 +17,7 @@ const BottomCart = (props) => {
 		<div>
 			<button
 				onClick={props.showCart}
-				className='fixed flex items-center w-4/5 py-1 pl-8 pr-1 bg-green-600 border-0 shadow-lg h-11 outline md:hidden'>
+				className='fixed flex items-center justify-center w-4/5 py-1 pl-8 pr-1 bg-green-600 border-0 shadow-lg h-11 outline md:hidden left-[10%]'>
 				<CurrencyFormat
 					renderText={(value) => (
 						<>

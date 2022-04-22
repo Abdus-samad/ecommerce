@@ -2,13 +2,15 @@ import { XIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 import AuthContext from '../../../context/Auth/authContext';
 import { auth } from '../../../firebase';
-import { useEffect, useContext } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import Link from 'next/link';
 import { drawer } from '../../../data';
+import { AnimatePresence } from 'framer-motion';
+import Auth from '../../Auth/Auth';
 
 const Drawer = (props) => {
 	const router = useRouter();
-
+	const [show, setShow] = useState(false);
 	const authContext = useContext(AuthContext);
 	const { user, getUser } = authContext;
 
@@ -23,6 +25,10 @@ const Drawer = (props) => {
 			getUser(authUser);
 		});
 	}, []);
+
+	const popup = () => {
+		setShow(!show);
+	};
 
 	return (
 		<div className={props.drawer ? 'menu active' : 'menu'}>
@@ -51,7 +57,7 @@ const Drawer = (props) => {
 							</div>
 						</div>
 					) : (
-						<a href={!user && '/login'}>
+						<a onClick={popup}>
 							<button
 								style={{ width: '100%' }}
 								className='flex items-center justify-center flex-shrink-0 h-10 px-8 text-sm text-center text-white bg-green-600 rounded-md cursor-pointer tr hover:bg-green-700'>
@@ -92,6 +98,13 @@ const Drawer = (props) => {
 					</div>
 				</div>
 			</ul>
+			<AnimatePresence exitBeforeEnter>
+				{show && (
+					<div style={{ overflow: 'hidden' }}>
+						<Auth popup={popup} />
+					</div>
+				)}
+			</AnimatePresence>
 		</div>
 	);
 };

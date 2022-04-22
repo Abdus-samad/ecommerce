@@ -9,12 +9,24 @@ import BackDrop from '../Common/Drawer/BackDrop';
 import { auth } from '../../firebase';
 import AuthContext from '../../context/Auth/authContext';
 import HeaderOp from '../Common/HeaderOp';
+import Auth from '../Auth/Auth';
+import { AnimatePresence } from 'framer-motion';
 
 const Header = (props) => {
 	const authContext = useContext(AuthContext);
 	const { user, getUser } = authContext;
-
+	const [show, setShow] = useState(false);
 	const [drawer, setDrawer] = useState(false);
+
+	const popup = () => {
+		setShow(!show);
+	};
+
+	useEffect(() => {
+		auth.onAuthStateChanged((authUser) => {
+			getUser(authUser);
+		});
+	}, []);
 
 	const showDrawer = () => setDrawer(!drawer);
 
@@ -24,19 +36,14 @@ const Header = (props) => {
 		backdrop = <BackDrop showDrawer={showDrawer} />;
 	}
 
-	useEffect(() => {
-		auth.onAuthStateChanged((authUser) => {
-			getUser(authUser);
-		});
-	}, []);
 	return (
 		<>
-			<div className='sticky top-0 z-20 flex flex-wrap items-center justify-between p-3 px-10 bg-white border-b shadow'>
-				<a className='z-10 ml-8 lg:hidden'>
+			<div className='sticky top-0 z-20 flex flex-wrap items-center justify-between p-3 px-5 bg-white border-b shadow'>
+				<a className='z-10 ml-3 lg:hidden'>
 					<MenuIcon className='h-6' onClick={props.showDrawer} />
 				</a>
 				<Link href='/'>
-					<a className='inline-flex items-center p-2 ml-8'>
+					<a className='inline-flex items-center p-2 ml-5'>
 						<Image
 							src='/download.svg'
 							width={120}
@@ -71,7 +78,7 @@ const Header = (props) => {
 					{!!user ? (
 						<HeaderOp />
 					) : (
-						<a href={!user && '/login'}>
+						<a onClick={popup}>
 							<button
 								style={{ width: '100%' }}
 								className='flex items-center justify-center flex-shrink-0 h-10 px-8 text-sm text-center text-white rounded-md cursor-pointer bg-secondary-main tr hover:bg-secondary-100'>
@@ -84,6 +91,13 @@ const Header = (props) => {
 				<FilterDrawer drawer={drawer} showDrawer={showDrawer} />
 				{backdrop}
 			</div>
+			<AnimatePresence exitBeforeEnter>
+				{show && (
+					<div style={{ overflow: 'hidden' }}>
+						<Auth popup={popup} />
+					</div>
+				)}
+			</AnimatePresence>
 		</>
 	);
 };

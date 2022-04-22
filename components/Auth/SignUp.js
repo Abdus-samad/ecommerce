@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react';
 import { loginContext } from './loginContext';
-import { auth } from '../../firebase';
+
 import { useRouter } from 'next/router';
+import AuthContext from '../../context/Auth/authContext';
+import { auth } from '../../firebase';
 
 const SignUp = () => {
-	const router = useRouter();
-
 	const { SwitchToSignIn } = useContext(loginContext);
 
 	const [user, setUser] = useState({
@@ -18,20 +18,14 @@ const SignUp = () => {
 	const onChange = (e) =>
 		setUser({ ...user, [e.target.name]: e.target.value });
 
-	const register = (e) => {
+	const onSubmit = (e) => {
 		e.preventDefault();
-		auth.createUserWithEmailAndPassword(email, password)
-			.then((auth) => {
-				if (auth) {
-					router.push('/');
-				}
-			})
-			.catch((error) => alert(error.message));
+		auth.createUserWithEmailAndPassword(email, password).then()
 	};
 
 	return (
 		<>
-			<form className=''>
+			<form onSubmit={onSubmit}>
 				<input
 					type='email'
 					placeholder='Email'
@@ -51,14 +45,12 @@ const SignUp = () => {
 					required
 				/>
 				<p className='w-full mb-2 text-xs font-medium text-center text-gray-800 pt-[20px]'>
-					By signing up, you agree to Pickbazar's <br/>
+					By signing up, you agree to Pickbazar's <br />
 					<a className='font-bold text-blue-800 underline'>
 						Terms & Condtion
 					</a>
 				</p>
-				<button
-					onClick={register}
-					className='flex items-center justify-center flex-shrink-0 w-full h-12 px-8 text-base font-bold text-center text-white transition-all duration-100 border-0 rounded cursor-pointer bg-secondary-main ease'>
+				<button className='flex items-center justify-center flex-shrink-0 w-full h-12 px-8 text-base font-bold text-center text-white transition-all duration-100 border-0 rounded cursor-pointer bg-secondary-main ease'>
 					{' '}
 					Continue
 				</button>

@@ -67,10 +67,3 @@ const ProfileForm = () => {
 
 export default ProfileForm;
 
-/**
-margin-top: 15px;
-    margin-left: -10px;
-    margin-right: -10px;
-    position: relative;
-
- */

@@ -1,14 +1,13 @@
-import React, {useReducer} from 'react';
-import AuthContext from './authContext';
+import React, { useReducer } from 'react';
+import authContext from './authContext';
 import reducer from './authReducer';
-import { SET_USER, USER_ERROR } from '../Types';
+import { SET_USER } from '../Types';
+import { auth } from '../../firebase';
 
 const AuthState = (props) => {
 	const initialState = {
 		user: null,
-		loading: false,
 	};
-
 	const [state, dispatch] = useReducer(reducer, initialState);
 
 	const getUser = (authUser) => {
@@ -26,14 +25,13 @@ const AuthState = (props) => {
 	};
 
 	return (
-		<AuthContext.Provider
-         value={{
-            user: state.user,
-            getUser
-
-        }}>
-            {props.children}
-        </AuthContext.Provider>
+		<authContext.Provider
+			value={{
+				user: state.user,
+				getUser,
+			}}>
+			{props.children}
+		</authContext.Provider>
 	);
 };
 

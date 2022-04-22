@@ -1,20 +1,29 @@
 import { MenuIcon } from '@heroicons/react/outline';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { QuestionMarkCircleIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
 import AuthContext from '../../context/Auth/authContext';
 import { auth } from '../../firebase';
 import HeaderOp from '../Common/HeaderOp';
+import Auth from '../Auth/Auth';
+
 const Header = (props) => {
+	const [show, setShow] = useState(false);
 	const authContext = useContext(AuthContext);
 	const { user, getUser } = authContext;
+	const popup = () => {
+		setShow(!show);
+	};
+
 
 	useEffect(() => {
 		auth.onAuthStateChanged((authUser) => {
 			getUser(authUser);
 		});
 	}, []);
+
+	
 	return (
 		<>
 			<div className='sticky top-0 z-20 flex flex-wrap items-center p-3 bg-white border-b shadow'>
@@ -22,7 +31,7 @@ const Header = (props) => {
 					<MenuIcon className='h-6' onClick={props.showDrawer} />
 				</a>
 				<Link href='/'>
-					<a className='inline-flex items-center p-2 ml-8'>
+					<a className='inline-flex items-center p-2 ml-4'>
 						<Image
 							src='/download.svg'
 							width={120}
@@ -49,7 +58,7 @@ const Header = (props) => {
 					{!!user ? (
 						<HeaderOp />
 					) : (
-						<a href={!user && '/login'}>
+						<a onClick={popup}>
 							<button
 								style={{ width: '100%' }}
 								className='flex items-center justify-center flex-shrink-0 h-10 px-8 text-sm text-center text-white bg-green-600 rounded-md cursor-pointer tr hover:bg-green-700'>
@@ -59,6 +68,12 @@ const Header = (props) => {
 					)}
 				</div>
 			</div>
+
+			{show && (
+				<div style={{ overflow: 'hidden' }}>
+					<Auth popup={popup} />
+				</div>
+			)}
 		</>
 	);
 };

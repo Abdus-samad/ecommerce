@@ -8,10 +8,10 @@
 
 @layer components {
 	.grocery {
-		@apply lg:pt-[20px] lg:px-[2rem] grid-cols-sm md:grid-cols-sm lg:pb-[10px] grid lg:grid-cols-gr gap-[30px] pt-[68px] pb-[100px] min-h-screen md:pt-[68px] md:pb-[50px];
+		@apply lg:pt-[20px] lg:px-[2rem] grid-cols-sm md:grid-cols-sm lg:pb-[10px] grid lg:grid-cols-gr gap-[30px] pt-[30px] pb-[50px] min-h-screen md:pt-[68px] md:pb-[50px];
 	}
 	.Nav {
-		@apply w-[30px] h-[30px] top-[50%] flex items-center font-bold justify-center  bg-white shadow rounded-full absolute -mt-4 z-10;
+		@apply w-[30px] h-[30px] top-[30%] md:top-[50%] flex items-center font-bold justify-center  bg-white shadow rounded-full absolute -mt-4 z-10;
 	}
 	.top {
 		@apply top-[50%];
@@ -92,7 +92,6 @@
 		@apply w-[300px] flex-shrink mr-7;
 	}
 
-	
 	.proContainer {
 		@apply w-full lg:min-h-[200px] lg:pt-[60px] lg:px-[50px] lg:pb-[20px] flex lg:flex-col lg:border lg:border-gray-300 p-5 h-auto lg:w-calc;
 	}
@@ -162,13 +161,13 @@
 		@apply block max-w-full max-h-[450px] h-auto;
 	}
 	.Image {
-		@apply relative min-h-[180px];
+		@apply relative min-h-[180px] transition-all duration-700 ease-in-out;
 	}
 	.img {
-		@apply object-cover object-left w-full h-full lg:h-full;
+		@apply object-cover object-left w-full h-full transition-all duration-700 ease-in-out;
 	}
 	.next {
-		@apply right-5;
+		@apply right-5 bottom-4;
 	}
 	.prev {
 		@apply left-5;
@@ -350,11 +349,13 @@
 		cursor: pointer;
 		border-radius: 10px;
 		background: rgba(0, 0, 0, 0.1);
+		transition: all 500ms ease-in-out;
 	}
 	.scrollbar::-webkit-scrollbar-track {
 		background-color: rgba(229, 231, 235, var(--bg-opacity));
 		cursor: pointer;
 		border-radius: 10px;
+		transition: all 500ms ease-in-out;
 	}
 	.scrollbar::-webkit-scrollbar-thumb:hover {
 		cursor: pointer;

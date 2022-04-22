@@ -1,13 +1,13 @@
-import {ShoppingBagIcon, XIcon} from '@heroicons/react/outline';
-import {useRouter} from 'next/router';
-import {useContext} from 'react';
+import { ShoppingBagIcon, XIcon } from '@heroicons/react/outline';
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
 import CurrencyFormat from 'react-currency-format';
 import CartContext from '../../../context/Cart/cartContext';
 import Empty from '../Icon/Empty';
 import CartProduct from './CartProduct';
 
 const Cartdrawer = (props) => {
-const router = useRouter();
+	const router = useRouter();
 
 	const handleClick = (e) => {
 		e.preventDefault();
@@ -15,7 +15,7 @@ const router = useRouter();
 	};
 
 	const cartContext = useContext(CartContext);
-	const {cart, loading} = cartContext;
+	const { cart, loading } = cartContext;
 
 	const getCartTotal = (cart) =>
 		cart?.reduce(
@@ -63,12 +63,7 @@ const router = useRouter();
 						))
 					)}
 				</div>
-				<div className='flex flex-col w-full mt-auto'>
-					<span className='flex justify-center my-5'>
-						<button className='inline-flex text-base font-bold text-green-700 transition duration-100 bg-transparent ease'>
-							Do you have voucher
-						</button>
-					</span>
+				<div className='flex flex-col items-center w-full mt-auto'>
 					<button
 						onClick={handleClick}
 						className='flex items-center justify-between w-5/6 mb-4 ml-4 bg-green-600 shadow h-11 outline'>

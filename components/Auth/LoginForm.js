@@ -1,30 +1,29 @@
-import {useContext, useState} from 'react';
-import {auth} from '../../firebase';
-import {useRouter} from 'next/router';
-import {loginContext} from './loginContext';
+import { useContext, useState } from 'react';
+import { auth } from '../../firebase';
+import { useRouter } from 'next/router';
+import { loginContext } from './loginContext';
 
 const LoginForm = () => {
-	const {SwitchToSignUp} = useContext(loginContext);
+	const { SwitchToSignUp } = useContext(loginContext);
 	const router = useRouter();
 	const [user, setUser] = useState({
 		email: '',
 		password: '',
 	});
 
-	const {email, password} = user;
+	const { email, password } = user;
 
-	const onChange = (e) => setUser({...user, [e.target.name]: e.target.value});
+	const onChange = (e) =>
+		setUser({ ...user, [e.target.name]: e.target.value });
 
-	const signIn = (e) => {
+	const onSubmit = (e) => {
 		e.preventDefault();
-		auth.signInWithEmailAndPassword(email, password).then((auth) => {
-			router.push('/');
-		});
+		auth.signInWithEmailAndPassword(email, password)
 	};
 
 	return (
 		<>
-			<form>
+			<form onSubmit={onSubmit}>
 				<input
 					type='email'
 					placeholder='Email'
@@ -76,16 +75,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-/**
-background-color: transparent;
-    border: 0px;
-    outline: 0px;
-    box-shadow: none;
-    padding: 0px;
-    font-size: calc(14px);
-    font-weight: 700;
-    color: rgb(0, 158, 127);
-    text-decoration: underline;
-    cursor: pointer;
-
- */

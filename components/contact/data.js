@@ -1,6 +1,6 @@
 const data = [
 	{
-		type: 'Primary',
+		type: '',
 		number: '09090463445',
 	},
 	{
