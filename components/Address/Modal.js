@@ -1,7 +1,9 @@
-import { XIcon } from '@heroicons/react/solid';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
+import { XIcon } from '@heroicons/react/solid';
 import { useContext, useEffect, useState } from 'react';
 import AddressContext from '../../context/Address/addressContext';
+import { badSuspension } from '../../animation';
 
 const Modal = ({ open, setOpen }) => {
 	const addressContext = useContext(AddressContext);
@@ -52,7 +54,13 @@ const Modal = ({ open, setOpen }) => {
 			<div className='top-0 left-0 w-full h-full z-[1042] overflow-hidden fixed'>
 				<div className='top-0 left-0 w-full h-full z-[1042] overflow-hidden fixed'>
 					<div className='max-w-full mx-auto z-[1045] align-middle relative'>
-						<div className='absolute w-[400px] lg:w-[400px] h-auto bg-primary-100 mt-[200px] p-[30px] left-[20%] lg:left-[40%] transition-all duration-500 ease-in-out'>
+						<motion.div
+							variants={badSuspension}
+							initial='hidden'
+							animate='visible'
+							exit='exit'
+							className='absolute w-full md:w-[400px] md:left-[25%] lg:w-[400px] h-auto bg-primary-100
+							 mt-[300px] p-[30px] lg:left-[40%] transition-all duration-500 ease-in-out'>
 							<form onSubmit={onSubmit}>
 								<h2 className='mb-4 text-xl font-bold text-gray-800'>
 									{current ? 'Edit Address' : 'Add Address'}
@@ -100,7 +108,7 @@ const Modal = ({ open, setOpen }) => {
 									}
 								/>
 							</form>
-						</div>
+						</motion.div>
 					</div>
 				</div>
 			</div>

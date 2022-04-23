@@ -36,7 +36,6 @@ const ProfileForm = () => {
 						height='48px'
 						className='block form'
 						value={name}
-						name='name'
 						onChange={onChange}
 					/>
 				</div>
@@ -47,11 +46,10 @@ const ProfileForm = () => {
 					<input
 						type='text'
 						label='Name'
-						name='name'
+						name='email'
 						height='48px'
 						className='block form'
 						value={email}
-						name='email'
 						onChange={onChange}
 					/>
 				</div>

@@ -1,61 +1,54 @@
-import { PencilIcon, PlusIcon, XIcon } from '@heroicons/react/solid';
-import { useState, useEffect } from 'react';
-// import data from './data';
+import { PlusIcon } from '@heroicons/react/solid';
+import { useState, useEffect, useContext } from 'react';
+
+import AddressContext from '../../context/Address/addressContext';
+import CheckOutItem from './Card/CheckOutItem';
+
 import Modal from './Modal';
 
 const Address = () => {
 	const [open, setOpen] = useState(false);
-	const [current, setCurrent] = useState(false);
+	const [active, setActive] = useState(false);
+
+	const addressContext = useContext(AddressContext);
+	const { getAddress, address } = addressContext;
 
 	useEffect(() => {
-		setCurrent(data[0]);
+		getAddress();
 	}, []);
 
 	return (
-		<div className='addressContainer'>
-			<h3 className='text-xl font-normal text-[#0d1136] mb-[35px] flex items-center iD'>
-				Delivery Address
-			</h3>
-			<div className='flex flex-col'>
-				<div className='flex flex-wrap justify-start flex-grow'>
-					<label
-						onClick={() => setCurrent(item)}
-						key={index}
-						className={
-							current === item
-								? 'dv CheckoutAdress active nb'
-								: 'dv CheckoutAdress nb'
-						}>
-						<span className='text-[13px] font-medium text-[#0d1136] mb-[5px]'>
-							{item.name}
-						</span>
-						<span className='text-base font-normal text-[#424561]'>
-							{item.address}
-						</span>
-						<span className='btn wrap'>
-							<span
+		<>
+			{address && (
+				<div className='addressContainer'>
+					<h3 className='text-xl font-normal text-[#0d1136] mb-[35px] flex items-center iD'>
+						Delivery Address
+					</h3>
+					<div className='flex flex-col'>
+						<div className='flex flex-wrap justify-start flex-grow'>
+							{address.map((add) => (
+								<CheckOutItem
+									key={add.id}
+									add={add}
+									setOpen={setOpen}
+									active={active}
+									setActive={setActive}
+								/>
+							))}
+							<button
 								onClick={() => setOpen(true)}
-								className='bg-green-600 contactBtn'>
-								<PencilIcon className='h-4' />{' '}
-							</span>
-							<span className='bg-red-500 contactBtn'>
-								<XIcon className='h-4' />{' '}
-							</span>
-						</span>
-					</label>
-
-					<button
-						onClick={() => setOpen(true)}
-						className='checkoutBtn'>
-						<div className='box-border mt-0 mb-0 ml-0 mr-2'>
-							<PlusIcon className='h-[20px]' />
+								className='checkoutBtn'>
+								<div className='box-border mt-0 mb-0 ml-0 mr-2'>
+									<PlusIcon className='h-[20px]' />
+								</div>
+								Add Address
+							</button>
 						</div>
-						Add Address
-					</button>
+					</div>
+					<Modal open={open} setOpen={setOpen} />
 				</div>
-			</div>
-			<Modal open={open} close={() => setOpen(false)} />
-		</div>
+			)}
+		</>
 	);
 };
 

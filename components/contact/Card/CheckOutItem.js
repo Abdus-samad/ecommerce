@@ -1,7 +1,7 @@
 import { PencilIcon, PlusIcon, XIcon } from '@heroicons/react/solid';
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import ProfileContext from '../../context/Profile/profileContext';
+import ProfileContext from '../../../context/Profile/profileContext';
 
 const CheckOutItem = ({ contact, setOpen, setActive, active }) => {
 	const profileContext = useContext(ProfileContext);

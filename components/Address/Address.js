@@ -1,14 +1,14 @@
 import { useState, useEffect, useContext } from 'react';
 import AddressContext from '../../context/Address/addressContext';
 import Modal from '../Address/Modal';
-import AddressItem from './AddressItem';
+import AddressItem from './Card/AddressItem';
 
 const Address = () => {
 	const [active, setActive] = useState(false);
 	const [open, setOpen] = useState(false);
 
 	const addressContext = useContext(AddressContext);
-	const { getAddress, address, loading } = addressContext;
+	const { getAddress, address } = addressContext;
 
 	useEffect(() => {
 		getAddress();
@@ -26,6 +26,7 @@ const Address = () => {
 							<div className='flex flex-wrap justify-between flex-grow'>
 								{address.map((add) => (
 									<AddressItem
+										key={add.id}
 										add={add}
 										setOpen={setOpen}
 										active={active}

@@ -48,7 +48,7 @@ const AddressState = (props) => {
 		} catch (err) {
 			dispatch({
 				type: ADDRESS_ERROR,
-				payload: err.response.msg,
+				payload: err.res.msg,
 			});
 		}
 	};
@@ -74,7 +74,7 @@ const AddressState = (props) => {
 		} catch (err) {
 			dispatch({
 				type: ADDRESS_ERROR,
-				payload: err.response.msg,
+				payload: err.res.msg,
 			});
 		}
 	};
@@ -86,7 +86,7 @@ const AddressState = (props) => {
 		};
 		try {
 			const res = await axios.put(
-				`http://localhost:5000/address/${contact.id}`,
+				`http://localhost:5000/address/${address.id}`,
 				address,
 				config
 			);

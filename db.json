@@ -283,25 +283,25 @@
 	],
 	"address": [
 		{
-			"text": "21",
-			"type": "Home",
-			"id": 1
-		},
-		{
 			"text": "21b,redeem street dutse baupma",
 			"type": "Home",
 			"id": 2
+		},
+		{
+			"text": "1756 Roy Alley, GIRARDVILLE, Pennsylvania",
+			"type": "Office",
+			"id": 3
 		}
 	],
-	"profile": [
+	"contacts": [
 		{
-			"number": "08054176385",
-			"type": "Secondary",
+			"number": "032534790645",
+			"type": "Primary",
 			"id": 5
 		},
 		{
 			"number": "07062186100",
-			"type": "Primary",
+			"type": "Secondary",
 			"id": 6
 		}
 	]

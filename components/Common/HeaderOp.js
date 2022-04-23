@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { auth } from '../../firebase';
 import AuthContext from '../../context/Auth/authContext';
 import { popup } from '../../data';
+import { UserCircleIcon } from '@heroicons/react/solid';
 
 const HeaderOp = () => {
 	const authContext = useContext(AuthContext);
@@ -23,12 +24,11 @@ const HeaderOp = () => {
 
 	return (
 		<div className='relative ml-3'>
-			<div className='PopImg'>
-				<img
+			<div className='block w-10 h-10 overflow-hidden cursor-pointer'>
+				<UserCircleIcon
 					onClick={dropDown}
-					className='block w-full h-auto'
-					src='/Abd.png'
-					alt=''
+					className='block w-full h-auto text-gray-500'
+					src={user.photoURL}
 				/>
 			</div>
 

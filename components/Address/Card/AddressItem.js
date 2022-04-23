@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { PencilIcon, XIcon } from '@heroicons/react/solid';
 import PropTypes from 'prop-types';
-import AddressContext from '../../context/Address/addressContext';
+import AddressContext from '../../../context/Address/addressContext';
 
 const AddressItem = ({ add, setActive, active, setOpen }) => {
 	const addressContext = useContext(AddressContext);

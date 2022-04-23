@@ -1,7 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;1,100;1,300;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,500;1,600;1,800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,900;1,100;1,900&display=swap'); */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -82,7 +78,7 @@
 	}
 
 	.ModalBtn {
-		@apply px-[15px] text-base border-0 font-bold cursor-pointer text-white bg-green-600 rounded-[6px] flex items-center justify-center flex-shrink-0 text-center transition-all duration-150 ease-in;
+		@apply px-[15px] text-base border-0 font-bold cursor-pointer text-white bg-green-600 rounded-[6px] flex items-center justify-center mt-4 flex-shrink-0 text-center transition-all duration-150 ease-in;
 	}
 	/* Profile */
 	.SidebarBody {
@@ -219,9 +215,6 @@
 
 	.Item {
 		@apply py-[12px] px-[30px] cursor-pointer whitespace-nowrap text-[15px] font-bold leading-[1.2em] transition-all duration-[.15s] ease-in-out hover:text-green-700;
-	}
-	.PopImg {
-		@apply block w-[38px] h-[38px] overflow-hidden rounded-full cursor-pointer;
 	}
 
 	/* CheckOut */

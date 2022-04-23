@@ -1,8 +1,7 @@
-import { PencilIcon, PlusIcon, XIcon } from '@heroicons/react/solid';
+import {  PlusIcon } from '@heroicons/react/solid';
 import { useState, useEffect, useContext } from 'react';
-import data from './data';
 import Modal from '../contact/Modal';
-import CheckOutItem from './CheckOutItem';
+import CheckOutItem from './Card/CheckOutItem';
 import ProfileContext from '../../context/Profile/profileContext';
 
 const Address = () => {
@@ -28,6 +27,7 @@ const Address = () => {
 						<div className='flex flex-wrap justify-start flex-grow'>
 							{contacts.map((contact) => (
 								<CheckOutItem
+									key={contact.id}
 									contact={contact}
 									setOpen={setOpen}
 									active={active}

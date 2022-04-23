@@ -63,7 +63,7 @@ export const badSuspension = {
 	hidden: {
 		y: '-100vh',
 		opacity: 0,
-		transform: 'scale(0) rotateX(-360deg)',
+		transform: 'scale(1) rotateX(-360deg)',
 	},
 	visible: {
 		y: '0',

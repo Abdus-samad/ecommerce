@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { PencilIcon, XIcon } from '@heroicons/react/solid';
-import ProfileContext from '../../context/Profile/profileContext';
+import ProfileContext from '../../../context/Profile/profileContext';
 
 const ContactItem = ({ contact, setOpen, setActive, active }) => {
 	const profileContext = useContext(ProfileContext);

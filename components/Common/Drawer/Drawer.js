@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { drawer } from '../../../data';
 import { AnimatePresence } from 'framer-motion';
 import Auth from '../../Auth/Auth';
+import { UserCircleIcon } from '@heroicons/react/solid';
 
 const Drawer = (props) => {
 	const router = useRouter();
@@ -41,9 +42,9 @@ const Drawer = (props) => {
 				<div className='bg-gray-100 p-11'>
 					{!!user ? (
 						<div className='flex items-center '>
-							<div className='flex-shrink block w-12 h-12 mr-4 overflow-hidden rounded-3xl'>
-								<img
-									src='/Abd.png'
+							<div className='flex-shrink block w-12 h-12 mr-4 overflow-hidden rounded-3xl text-gray-500'>
+								<UserCircleIcon
+									src={user.PhotoUrl}
 									className='block w-full h-auto'
 								/>
 							</div>

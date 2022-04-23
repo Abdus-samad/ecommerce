@@ -60,7 +60,7 @@ const Modal = ({ open, setOpen }) => {
 							initial='hidden'
 							animate='visible'
 							exit='exit'
-							className='absolute w-full lg:w-[400px] h-auto bg-primary-100 mt-[290px] p-[30px] lg:left-[37%]'>
+							className='absolute lg:w-[400px] h-auto bg-primary-100 mt-[290px] p-[30px] lg:left-[37%] w-full md:w-[400px] md:left-[25%]'>
 							<form onSubmit={onSubmit}>
 								<h2 className='mb-4 text-xl font-bold text-gray-800'>
 									{current ? 'Edit Contact' : 'Add Contact'}

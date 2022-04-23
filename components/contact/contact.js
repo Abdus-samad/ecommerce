@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import Modal from './Modal';
 import { AnimatePresence } from 'framer-motion';
 import ProfileContext from '../../context/Profile/profileContext';
-import ContactItem from './ContactItem';
+import ContactItem from './Card/ContactItem';
 
 const contact = () => {
 	const [open, setOpen] = useState(false);

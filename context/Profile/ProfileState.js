@@ -24,7 +24,7 @@ const ProfileState = (props) => {
 
 	const getContacts = async () => {
 		try {
-			const res = await axios.get('http://localhost:5000/profile');
+			const res = await axios.get('http://localhost:5000/contacts');
 			dispatch({
 				type: GET_CONTACTS,
 				payload: res.data,
@@ -39,7 +39,7 @@ const ProfileState = (props) => {
 
 	const deleteContact = async (id) => {
 		try {
-			await axios.delete(`http://localhost:5000/profile/${id}`);
+			await axios.delete(`http://localhost:5000/contacts/${id}`);
 
 			dispatch({
 				type: DELETE_CONTACTS,
@@ -62,7 +62,7 @@ const ProfileState = (props) => {
 
 		try {
 			const res = await axios.post(
-				'http://localhost:5000/profile',
+				'http://localhost:5000/contacts',
 				contact,
 				config
 			);
@@ -74,7 +74,7 @@ const ProfileState = (props) => {
 		} catch (err) {
 			dispatch({
 				type: CONTACT_ERROR,
-				payload: err.response.msg,
+				payload: err.res.msg,
 			});
 		}
 	};
@@ -86,7 +86,7 @@ const ProfileState = (props) => {
 		};
 		try {
 			const res = await axios.put(
-				`http://localhost:5000/profile/${contact.id}`,
+				`http://localhost:5000/contacts/${contact.id}`,
 				contact,
 				config
 			);
