@@ -2,24 +2,30 @@ import { XIcon } from '@heroicons/react/outline';
 import PropTypes from 'prop-types';
 import LoginForm from './LoginForm';
 import SignUp from './SignUp';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { loginContext } from './loginContext';
 import { motion } from 'framer-motion';
 import { badSuspension, dropIn } from '../../animation';
+import { auth, db } from '../../firebase';
+import Reset from './Reset';
 
 const Auth = ({ popup }) => {
 	const [active, setActive] = useState('signin');
 
-	const SwitchToSignUp = () => {
+	const SwitchToRegister = () => {
 		setActive('signup');
 	};
-	const SwitchToSignIn = () => {
+	const SwitchToLogin = () => {
 		setActive('signin');
+	};
+	const SwitchToReset = () => {
+		setActive('reset');
 	};
 
 	const ContextV = {
-		SwitchToSignUp,
-		SwitchToSignIn,
+		SwitchToRegister,
+		SwitchToLogin,
+		SwitchToReset,
 	};
 	return (
 		<div style={{ oveflow: 'hidden' }}>
@@ -40,7 +46,7 @@ const Auth = ({ popup }) => {
 								animate='visible'
 								exit='exit'
 								className='box-border flex items-center justify-center w-full h-full '>
-								<div className='p-8 bg-white border rounded shadow lg:w-[458px] lg:top-[100px] md:top-[200px] top-[70px] h-auto absolute lg:left-[35%]'>
+								<div className='p-8 bg-white border rounded shadow lg:w-[458px] lg:top-[150px] md:top-[200px] top-[70px] h-auto absolute lg:left-[35%]'>
 									<div className='box-border w-full h-full'>
 										<div className='text-center bg-white'>
 											<div className='pt-[2px] px-[30px]'>
@@ -66,11 +72,26 @@ const Auth = ({ popup }) => {
 														</span>
 													</div>
 												)}
+												{active === 'reset' && (
+													<div>
+														<h3 className='mb-2 text-2xl font-semibold text-secondary-main'>
+															Forgot Password
+														</h3>
+														<span className='block text-base font-normal text-gray-400 mb-7'>
+															We'll send you a
+															link to reset your
+															password
+														</span>
+													</div>
+												)}
 												{active === 'signin' && (
 													<LoginForm />
 												)}
 												{active === 'signup' && (
 													<SignUp />
+												)}
+												{active === 'reset' && (
+													<Reset />
 												)}
 											</div>
 										</div>

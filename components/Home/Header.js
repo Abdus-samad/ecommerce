@@ -1,32 +1,28 @@
 import { MenuIcon, SearchIcon } from '@heroicons/react/outline';
-import { useState, useContext, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { QuestionMarkCircleIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
 import Topfiltered from '../filter/Topfiltered';
 import FilterDrawer from '../filter/FilterDrawer';
 import BackDrop from '../Common/Drawer/BackDrop';
-import { auth } from '../../firebase';
-import AuthContext from '../../context/Auth/authContext';
 import HeaderOp from '../Common/HeaderOp';
 import Auth from '../Auth/Auth';
 import { AnimatePresence } from 'framer-motion';
+import { useAuth } from '../../context/Admin/auth';
 
 const Header = (props) => {
-	const authContext = useContext(AuthContext);
-	const { user, getUser } = authContext;
 	const [show, setShow] = useState(false);
 	const [drawer, setDrawer] = useState(false);
+	const { user, getUser } = useAuth();
 
 	const popup = () => {
 		setShow(!show);
 	};
 
 	useEffect(() => {
-		auth.onAuthStateChanged((authUser) => {
-			getUser(authUser);
-		});
-	}, []);
+		getUser();
+	}, [user]);
 
 	const showDrawer = () => setDrawer(!drawer);
 

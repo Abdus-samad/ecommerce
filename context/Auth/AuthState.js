@@ -2,7 +2,6 @@ import React, { useReducer } from 'react';
 import authContext from './authContext';
 import reducer from './authReducer';
 import { SET_USER } from '../Types';
-import { auth } from '../../firebase';
 
 const AuthState = (props) => {
 	const initialState = {

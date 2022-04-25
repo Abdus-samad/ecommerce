@@ -1,29 +1,22 @@
 import { MenuIcon } from '@heroicons/react/outline';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { QuestionMarkCircleIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
-import AuthContext from '../../context/Auth/authContext';
-import { auth } from '../../firebase';
 import HeaderOp from '../Common/HeaderOp';
 import Auth from '../Auth/Auth';
+import { useAuth } from '../../context/Admin/auth';
 
 const Header = (props) => {
 	const [show, setShow] = useState(false);
-	const authContext = useContext(AuthContext);
-	const { user, getUser } = authContext;
+	const { user, getUser } = useAuth();
 	const popup = () => {
 		setShow(!show);
 	};
 
-
 	useEffect(() => {
-		auth.onAuthStateChanged((authUser) => {
-			getUser(authUser);
-		});
-	}, []);
-
-	
+		getUser();
+	}, [user]);
 	return (
 		<>
 			<div className='sticky top-0 z-20 flex flex-wrap items-center p-3 bg-white border-b shadow'>

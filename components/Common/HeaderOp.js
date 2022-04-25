@@ -1,25 +1,18 @@
 import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import { auth } from '../../firebase';
-import AuthContext from '../../context/Auth/authContext';
 import { popup } from '../../data';
 import { UserCircleIcon } from '@heroicons/react/solid';
+import { useAuth } from '../../context/Admin/auth';
 
 const HeaderOp = () => {
-	const authContext = useContext(AuthContext);
-	const { user } = authContext;
+	const { user } = useAuth();
 
 	const router = useRouter();
 	const [show, setShow] = useState(false);
 
 	const dropDown = () => {
 		setShow(!show);
-	};
-
-	const handleAuth = () => {
-		if (user) {
-			auth.signOut();
-		}
 	};
 
 	return (
@@ -58,7 +51,7 @@ const HeaderOp = () => {
 					</div>
 
 					<a
-						onClick={handleAuth}
+						onClick={() => auth.signOut()}
 						style={{
 							display: 'flex',
 							alignItems: ' center',

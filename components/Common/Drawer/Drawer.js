@@ -8,12 +8,12 @@ import { drawer } from '../../../data';
 import { AnimatePresence } from 'framer-motion';
 import Auth from '../../Auth/Auth';
 import { UserCircleIcon } from '@heroicons/react/solid';
+import { useAuth } from '../../../context/Admin/auth';
 
 const Drawer = (props) => {
 	const router = useRouter();
 	const [show, setShow] = useState(false);
-	const authContext = useContext(AuthContext);
-	const { user, getUser } = authContext;
+	const { user, getUser } = useAuth();
 
 	const handleAuth = () => {
 		if (user) {
@@ -21,15 +21,13 @@ const Drawer = (props) => {
 		}
 	};
 
-	useEffect(() => {
-		auth.onAuthStateChanged((authUser) => {
-			getUser(authUser);
-		});
-	}, []);
-
 	const popup = () => {
 		setShow(!show);
 	};
+
+	useEffect(() => {
+		getUser();
+	}, []);
 
 	return (
 		<div className={props.drawer ? 'menu active' : 'menu'}>
@@ -42,7 +40,7 @@ const Drawer = (props) => {
 				<div className='bg-gray-100 p-11'>
 					{!!user ? (
 						<div className='flex items-center '>
-							<div className='flex-shrink block w-12 h-12 mr-4 overflow-hidden rounded-3xl text-gray-500'>
+							<div className='flex-shrink block w-12 h-12 mr-4 overflow-hidden text-gray-500 rounded-3xl'>
 								<UserCircleIcon
 									src={user.PhotoUrl}
 									className='block w-full h-auto'
@@ -50,7 +48,7 @@ const Drawer = (props) => {
 							</div>
 							<div>
 								<h3 className='mb-2 text-sm font-bold text-gray-800'>
-									Alex Hunter
+									{user.email}
 								</h3>
 								<span className='block text-xs font-normal'>
 									09033356787

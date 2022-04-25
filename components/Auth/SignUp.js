@@ -1,12 +1,14 @@
 import { useContext, useState } from 'react';
 import { loginContext } from './loginContext';
-
+import { auth, provider } from '../../firebase';
 import { useRouter } from 'next/router';
+import { toast, ToastContainer } from 'react-toastify';
 import AuthContext from '../../context/Auth/authContext';
-import { auth } from '../../firebase';
 
 const SignUp = () => {
-	const { SwitchToSignIn } = useContext(loginContext);
+	const { SwitchToLogin } = useContext(loginContext);
+
+	const router = useRouter();
 
 	const [user, setUser] = useState({
 		email: '',
@@ -18,14 +20,26 @@ const SignUp = () => {
 	const onChange = (e) =>
 		setUser({ ...user, [e.target.name]: e.target.value });
 
-	const onSubmit = (e) => {
+	const onCreate = (e) => {
 		e.preventDefault();
-		auth.createUserWithEmailAndPassword(email, password).then()
+		auth.createUserWithEmailAndPassword(email, password).catch((error) => {
+			const msg = error.message;
+			toast.error(msg);
+		});
+	};
+
+	const Google = (e) => {
+		e.preventDefault();
+		auth.signInWithPopup(provider).catch((error) => {
+			const msg = error.message;
+			toast.error(msg);
+		});
 	};
 
 	return (
 		<>
-			<form onSubmit={onSubmit}>
+			<ToastContainer />
+			<form>
 				<input
 					type='email'
 					placeholder='Email'
@@ -50,7 +64,9 @@ const SignUp = () => {
 						Terms & Condtion
 					</a>
 				</p>
-				<button className='flex items-center justify-center flex-shrink-0 w-full h-12 px-8 text-base font-bold text-center text-white transition-all duration-100 border-0 rounded cursor-pointer bg-secondary-main ease'>
+				<button
+					onClick={onCreate}
+					className='flex items-center justify-center flex-shrink-0 w-full h-12 px-8 text-base font-bold text-center text-white transition-all duration-100 border-0 rounded cursor-pointer bg-secondary-main ease'>
 					{' '}
 					Continue
 				</button>
@@ -60,13 +76,15 @@ const SignUp = () => {
 					or
 				</span>
 			</div>
-			<button className='flex items-center justify-center flex-shrink-0 w-full h-12 px-8 mb-4 text-base font-bold text-center text-white transition-all duration-100 bg-blue-600 border-0 rounded cursor-pointer ease'>
+			<button
+				onClick={Google}
+				className='flex items-center justify-center flex-shrink-0 w-full h-12 px-8 mb-4 text-base font-bold text-center text-white transition-all duration-100 bg-blue-600 border-0 rounded cursor-pointer ease'>
 				Continue with Google
 			</button>
 			<p className='p-5 text-base font-medium text-gray-500'>
 				Already have an account?
 				<button
-					onClick={SwitchToSignIn}
+					onClick={SwitchToLogin}
 					className='font-bold text-green-700 underline bg-transparent border-0 cursor-pointer otline-0'>
 					Login
 				</button>
