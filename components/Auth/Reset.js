@@ -1,5 +1,6 @@
+import { sendPasswordResetEmail } from 'firebase/auth';
 import { useContext, useState } from 'react';
-import { auth } from '../../firebase';
+import { auth } from '../../context/Auth/firebaseClient';
 import { loginContext } from './loginContext';
 
 const Reset = () => {
@@ -15,7 +16,7 @@ const Reset = () => {
 
 	const Reset = (e) => {
 		e.preventDefault();
-		auth.sendPasswordResetEmail(email);
+		sendPasswordResetEmail(auth ,email);
 	};
 	return (
 		<>
@@ -26,8 +27,7 @@ const Reset = () => {
 					name='email'
 					value={email}
 					onChange={onChange}
-					className='block w-full h-12 px-5 mb-3 text-base text-gray-800 
-          transition-all duration-100 bg-gray-300 border border-gray-300 rounded ease'
+					className='block w-full h-12 px-5 mb-3 text-base text-gray-800 transition-all duration-100 bg-gray-300 border border-gray-300 rounded ease'
 				/>
 				<button
 					onClick={Reset}

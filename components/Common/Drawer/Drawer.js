@@ -1,25 +1,18 @@
 import { XIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
-import AuthContext from '../../../context/Auth/authContext';
-import { auth } from '../../../firebase';
 import { useEffect, useContext, useState } from 'react';
 import Link from 'next/link';
 import { drawer } from '../../../data';
 import { AnimatePresence } from 'framer-motion';
 import Auth from '../../Auth/Auth';
 import { UserCircleIcon } from '@heroicons/react/solid';
-import { useAuth } from '../../../context/Admin/auth';
+import { useAuth } from '../../../context/Auth/auth';
 
 const Drawer = (props) => {
 	const router = useRouter();
 	const [show, setShow] = useState(false);
-	const { user, getUser } = useAuth();
+	const { user, getUser, Logout } = useAuth();
 
-	const handleAuth = () => {
-		if (user) {
-			auth.signOut();
-		}
-	};
 
 	const popup = () => {
 		setShow(!show);
@@ -42,13 +35,13 @@ const Drawer = (props) => {
 						<div className='flex items-center '>
 							<div className='flex-shrink block w-12 h-12 mr-4 overflow-hidden text-gray-500 rounded-3xl'>
 								<UserCircleIcon
-									src={user.PhotoUrl}
+									src={user?.photoURL}
 									className='block w-full h-auto'
 								/>
 							</div>
 							<div>
 								<h3 className='mb-2 text-sm font-bold text-gray-800'>
-									{user.email}
+									{user.displayName}
 								</h3>
 								<span className='block text-xs font-normal'>
 									09033356787
@@ -90,7 +83,7 @@ const Drawer = (props) => {
 				<div className='border-t py-11'>
 					<div>
 						<span
-							onClick={handleAuth}
+							onClick={() => Logout()}
 							className='relative block font-normal text-gray-800 pf'>
 							Logout
 						</span>
