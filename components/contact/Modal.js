@@ -8,6 +8,10 @@ import { useProfile } from "../../context/firebase/database";
 const Modal = ({ open, setOpen }) => {
   const { contact, setContact, addandupdateContact } = useProfile();
   const inputRef = useRef();
+  const { number, type } = contact;
+
+  const onChange = (e) =>
+    setContact({ ...contact, [e.target.name]: e.target.value });
 
   useEffect(() => {
     const checkIfClicked = (e) => {
@@ -46,7 +50,7 @@ const Modal = ({ open, setOpen }) => {
                 initial='hidden'
                 animate='visible'
                 exit='exit'
-                className='absolute lg:w-[400px] h-auto bg-primary-100 mt-[290px] p-[30px] lg:left-[37%] w-full md:w-[400px] md:left-[25%]'>
+                className='absolute lg:w-[400px] h-auto bg-primary-100 mt-[290px] p-[30px] lg:left-[37%] w-full md:w-[400px] md:left-[25%] transition-all duration-500 ease-in-out'>
                 <form onSubmit={onSubmit} ref={inputRef}>
                   <h2 className='mb-4 text-xl font-bold text-gray-800'>
                     {contact.hasOwnProperty("timestamp")
@@ -54,19 +58,42 @@ const Modal = ({ open, setOpen }) => {
                       : "Add Contact"}
                   </h2>
                   <div className='flex flex-col w-full mb-4'>
-                    <label>Type</label>
-                    <p className='text-xs bg-gray-100'>Primary or Secondary</p>
-                    <input
-                      type='text'
-                      value={contact.type}
-                      onChange={(e) =>
-                        setContact({
-                          ...contact,
-                          type: e.target.value,
-                        })
-                      }
-                      className='w-full mb-3 h-[54px] rounded-[6px] border border-primary-primary text-gray-900 font-normal text-base px-[18px] focus:outline-none'
-                    />
+                    <div className='flex items-center'>
+                      <div className='flex items-center mb-4 mr-4'>
+                        <input
+                          id='radio1'
+                          type='radio'
+                          name='type'
+                          value='Primary'
+                          checked={type === "Primary"}
+                          onChange={onChange}
+                          className='hidden'
+                        />
+                        <label
+                          for='radio1'
+                          className='flex items-center cursor-pointer'>
+                          <span className='inline-block w-4 h-4 mr-1 border rounded-full border-grey'></span>
+                          Primary
+                        </label>
+                      </div>
+                      <div className='flex items-center mb-4 mr-4'>
+                        <input
+                          id='radio2'
+                          type='radio'
+                          name='type'
+                          value='Secondary'
+                          checked={type === "Secondary"}
+                          onChange={onChange}
+                          className='hidden'
+                        />
+                        <label
+                          for='radio2'
+                          className='flex items-center cursor-pointer'>
+                          <span className='inline-block w-4 h-4 mr-1 border rounded-full border-grey'></span>
+                          Secondary
+                        </label>
+                      </div>
+                    </div>
                     <label>Phone</label>
                     <input
                       type='text'

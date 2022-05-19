@@ -1,4 +1,4 @@
-import { PencilIcon,  XIcon } from "@heroicons/react/solid";
+import { PencilIcon, XIcon } from "@heroicons/react/solid";
 import PropTypes from "prop-types";
 import { useProfile } from "../../../context/firebase/database";
 
@@ -22,7 +22,7 @@ const CheckOutItem = ({ contact, setOpen, setActive, active }) => {
       {number && (
         <span className='text-base font-normal text-[#424561]'>{number}</span>
       )}
-      <span className='btn wrap'>
+      <span className='btn'>
         <span
           onClick={() => {
             setOpen(true);

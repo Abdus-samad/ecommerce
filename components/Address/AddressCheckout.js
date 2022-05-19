@@ -19,7 +19,7 @@ const Address = () => {
 
   return (
     <>
-      <div className='addressContainer'>
+      <div className='bg-white lg:pt-[30px] lg:px-[30px] lg:pb-[30px] pt-[20px] mb-5 shadow relative'>
         <h3 className='text-xl font-normal text-[#0d1136] mb-[35px] flex items-center iD'>
           Delivery Address
         </h3>

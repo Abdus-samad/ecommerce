@@ -19,7 +19,9 @@ const CheckOutItem = ({ add, setActive, active, setOpen }) => {
         {type}
       </span>
       {text && (
-        <span className='text-base font-normal text-[#424561]'>{text}</span>
+        <span className='text-base font-normal text-[#424561] break-all'>
+          {text}
+        </span>
       )}
       <span className='btn wrap'>
         <span

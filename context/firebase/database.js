@@ -20,7 +20,7 @@ export const ProfileState = ({ children }) => {
   const [details, setDetails] = useState([]);
   const [contact, setContact] = useState({
     number: "",
-    type: "Primary",
+    type: "",
   });
   const [address, setAddress] = useState({
     text: "",

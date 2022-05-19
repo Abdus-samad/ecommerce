@@ -7,12 +7,18 @@ import { useProfile } from "../../context/firebase/database";
 
 const Modal = ({ open, setOpen }) => {
   const { addandupdateAddress, setAddress, address } = useProfile();
+
+  const onChange = (e) =>
+    setAddress({ ...address, [e.target.name]: e.target.value });
+
+  const { type, text } = address;
+
   const addressRef = useRef();
   useEffect(() => {
     const checkIfClickedAddress = (e) => {
       if (!addressRef.current.contains(e.target)) {
         console.log("Outside input area");
-        setContact({ number: "", type: "" });
+        setAddress({ number: "", type: "" });
       } else {
         console.log("Inside input area");
       }
@@ -46,7 +52,7 @@ const Modal = ({ open, setOpen }) => {
               animate='visible'
               exit='exit'
               className='absolute w-full md:w-[400px] md:left-[25%] lg:w-[400px] h-auto bg-primary-100
-							 mt-[300px] p-[30px] lg:left-[40%] transition-all duration-500 ease-in-out'>
+							 mt-[150px] p-[30px] lg:left-[35%] transition-all duration-500 ease-in-out'>
               <form onSubmit={onSubmit} ref={addressRef}>
                 <h2 className='mb-4 text-xl font-bold text-gray-800'>
                   {address.hasOwnProperty("timestamp")
@@ -54,23 +60,44 @@ const Modal = ({ open, setOpen }) => {
                     : "Add Address"}
                 </h2>
 
-                <div className='flex flex-col w-full'>
-                  <label>Type</label>
-
-                  <p className='text-xs bg-gray-100'>Home or Office</p>
-                  <div className='flex items-center mb-4'>
-                    <input
-                      type='text'
-                      value={address.type}
-                      onChange={(e) =>
-                        setAddress({
-                          ...address,
-                          type: e.target.value,
-                        })
-                      }
-                      className='w-full mb-3 h-[54px] rounded-[6px] border border-primary-primary text-gray-900 font-normal text-base px-[18px] focus:outline-none'
-                    />{" "}
+                <div className='flex flex-col justify-center'>
+                  <div className='flex items-center'>
+                    <div className='flex items-center mb-4 mr-4'>
+                      <input
+                        id='radio1'
+                        type='radio'
+                        name='type'
+                        value='Home'
+                        checked={type === "Home"}
+                        onChange={onChange}
+                        className='hidden'
+                      />
+                      <label
+                        for='radio1'
+                        className='flex items-center cursor-pointer'>
+                        <span className='inline-block w-4 h-4 mr-1 border rounded-full border-grey'></span>
+                        Home
+                      </label>
+                    </div>
+                    <div className='flex items-center mb-4 mr-4'>
+                      <input
+                        id='radio2'
+                        type='radio'
+                        name='type'
+                        value='Office'
+                        checked={type === "Office"}
+                        onChange={onChange}
+                        className='hidden'
+                      />
+                      <label
+                        for='radio2'
+                        className='flex items-center cursor-pointer'>
+                        <span className='inline-block w-4 h-4 mr-1 border rounded-full border-grey'></span>
+                        Office
+                      </label>
+                    </div>
                   </div>
+
                   <textarea
                     placeholder='Enter Address'
                     value={address.text}
